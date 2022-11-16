@@ -1,0 +1,45 @@
+import React from "react";
+import "./index.scss";
+import heart from "../../image/header/heart.svg";
+import Group5 from "../../image/header/Group5.svg";
+import { Link } from "react-router-dom";
+export default function Header() {
+  return (
+   
+      <header className="header">
+        <nav>
+          <ul>
+            <li>
+              <a href="#">Главная</a>
+            </li>
+            <li>
+              <Link to="Новости">Новости</Link>
+            </li>
+
+            <li>
+              <a href="#">Размещение и тарифы</a>
+            </li>
+            <li>
+              <a href="#" className="link__a_underline">
+                <img src={Group5} alt="Векторное изображение карты" />
+                Объявления на карте
+              </a>
+            </li>
+            <li>
+              <a href="#">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+        <div className="block-header__div_group">
+          <div className="block-header__div_left">
+            <a href="#">Закладки</a>
+            <img src={heart} alt="Векторное изображение закладки" />
+          </div>
+          <div className="block-header__div_right">
+            <a href="#">Вход и регистрация</a>
+          </div>
+        </div>
+      </header>
+   
+  );
+}

@@ -1,0 +1,41 @@
+.dateNews{
+        width:141px;
+        height: 37px;
+        border-radius: 18px;
+        background-color:rgba(102, 78, 249, 0.1);
+        display:flex;
+        p{
+          width: 109px;
+    height: 17px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    margin: 0px 0px 0px 16px;
+    color: #664EF9;
+    font-family: 'Inter Medium';
+    font-size: 14px;
+    line-height: 17px;
+        }
+      
+}
+
+.card{
+    margin-top: 20px;
+    width: 81px;
+    height: 37px;
+    background-color:rgba(102, 78, 249, 0.1);
+    border-radius: 17px;
+    p{
+      width: 51px;
+  height: 17px;
+  font-family: 'Inter Bold';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #664EF9;
+  text-align:center;
+  margin:10px 15px 10px 15px;
+  
+    }
+  }

@@ -1,0 +1,47 @@
+.main-news__section{
+  display: block;
+  img:nth-child(1){//Проверить
+position: relative;
+bottom: 460px;
+width: 61.19px;
+height: 61.19px;
+left: 189px;
+  }
+  img:nth-child(2){//Проверить
+    width: 844px;
+    height: 563.24px;
+  position: relative;
+  bottom:50px;
+  left:250.19px;
+  filter: drop-shadow(0px 20px 40px rgba(39, 95, 158, 0.1));
+border-radius: 10px;
+  
+  }
+  .description-museum__div{
+    display: flex;
+    flex-direction: column;
+    margin-top: -34px;
+    width:844px;
+    height: 576px;
+    justify-content: space-between;
+    p{
+    font-family: 'Inter Regular';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+margin-left: 298px;
+color: #1E2123;
+margin-bottom: 0px;
+width:844px;
+display: flex;
+    }
+    p:nth-child(1){
+      margin-top: 0px;
+    }
+    p:nth-child(5){
+      margin-bottom: 0px;
+    }
+  }
+
+  }
