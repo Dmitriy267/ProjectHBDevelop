@@ -35,6 +35,10 @@ nav{
     font-size: 14px;
     line-height: 17px;
     color:#8291A3;
+    &:hover{
+      border-bottom: 3px #FFD54F solid;
+      padding-bottom: 9px;
+    }
    }
   }
    
@@ -68,12 +72,6 @@ nav{
     height: 17px;
    
   }
-  
-    .link__a_underline{ 
-      border-bottom: 3px #FFD54F solid;
-     padding-bottom: 9px;
-    }
-    
   
 }
 }

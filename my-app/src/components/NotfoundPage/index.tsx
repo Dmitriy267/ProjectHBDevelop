@@ -1,21 +1,22 @@
 import React from "react";
+import SectionErrorPage from '../SectionErrorPage/index.tsx';
+import BlockErrDiv from '../BlockErrDiv';
+import  {BlockLinkMainPage} from '../common/BlockLinkMainPage/index.tsx';
+import NumberErr from '../NumberErr';
+import styles from '../SectionErrorPage/SectionErrorPage.module.scss';
+import ellipsis from '../../image/Group 654.svg';
+function NotfoundPage() {
+    return (
+        <SectionErrorPage>
+            <BlockErrDiv titleErr='Ошибка 404' descripErr='Возможно, у вас опечатка в адресе страницы, или её просто не существует'>
+            <BlockLinkMainPage/>
+            </BlockErrDiv>
+            <NumberErr/>
+            <img  src={ellipsis} alt="Векторное изображение многоточий" className={styles.ellips1}/>
+            <img  src={ellipsis} alt="Векторное изображение многоточий" className={styles.ellips2}/>
+        
+        </SectionErrorPage>
 
-
-interface NotfoundPage{
-    titleErr:string;
-    descripErr:string;
-}
-function NotfoundPage({titleErr='', descripErr=''}:NotfoundPage){
-return(
-    <section className="error__section_centr">
-        <div className="block-err__div_com">
-            <div className="block-err__div_left">
-                <p>{titleErr}</p>
-                <p>{descripErr}</p>
-
-            </div>
-        </div>
-    </section>
-)
+    )
 }
 export default NotfoundPage

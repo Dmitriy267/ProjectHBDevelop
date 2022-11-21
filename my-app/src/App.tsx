@@ -8,8 +8,9 @@ import "./styles.scss";
 import {Routes, Route} from 'react-router-dom';
 import PageNewsMain from './components/PageNewsMain';
 import PageNewsList from './components/PageNewsList';
-import { RouteMainCom } from './components/RouteMainCom';
+import { RouteMainCom } from './components/RouteMainCom/RouteMainCom';
 import NotfoundPage from './components/NotfoundPage';
+import ContactsPage from './components/ContactsPage';
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
         <Route path='/' element={<RouteMainCom/>}>
           <Route path='/Новость' element={<PageNewsMain />} />
           <Route path='/Новости' element={<PageNewsList />} />
-          <Route path='*' element={<NotfoundPage titleErr='re' descripErr='rt'/>} />
+          <Route path='/Контактная' element={<ContactsPage />} />
+          <Route path='*' element={<NotfoundPage/>} />
 
           </Route>
       </Routes>

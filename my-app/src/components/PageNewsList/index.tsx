@@ -5,6 +5,7 @@ import loup from "../../image/loup.svg";
 import circle from "../../image/circle.svg";
 import CardInfoNews from '../CardInfoNews';
 function PageNewsList() {
+
   return (
     <section className="page-news__section">
       <div className="block-page-news__div">
@@ -18,12 +19,12 @@ function PageNewsList() {
         <p className="title-news-text__p">Новости </p>
       </div>
       <div className="block-search-articles__div_right">
-        <input type="text" placeholder="Поиск по статьям" />
+        <input type="text" placeholder="Поиск по статьям"/>
         <button>
           <img src={loup} alt="Изображение лупы" />
         </button>
       </div>
-      <div className="block-articles__div_center">
+      {<div className="block-articles__div_center">
       {[...Array(9)].map((item, index)=>
        <CardInfoNews key={index}
        altDescript={"Фото комнаты"}
@@ -35,6 +36,8 @@ function PageNewsList() {
      />
       )}
       </div>
+      
+}
       <ul className="namber-page__ul_bottom">
         <li><a href="#">1</a></li>
         <li><a href="#">2</a></li>

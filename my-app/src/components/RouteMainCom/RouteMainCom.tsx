@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import Header from './Header';
-import Footer from './Footer';
-import NavigationSectionProducts from './NavigationSectionProducts';
+import Header from '../Header';
+import Footer from '../Footer';
+import NavigationSectionProducts from '../NavigationSectionProducts';
 const  RouteMainCom =()=>{
     return (
 <>

@@ -1,0 +1,114 @@
+.form{
+    display: flex;
+    width: 625px;
+height: 516px;
+border-radius: 10px;
+background-color: #FFFEFE;
+box-shadow: 0px 20px 40px rgba(39, 95, 158, 0.2);
+}
+.form__div{
+    width: 548px;
+    height: 48px+40px+200px+127px+17px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 38px;
+    margin-top: 40px;
+}
+.group__div{
+    display: flex;
+    height: 17px+15px+50px;
+    width: 260px*2+30px;
+    margin: 0px;
+    justify-content: space-between;
+}
+
+.formgroup1__div{
+    display: flex;
+    flex-direction: column;
+    width: 260px;
+    height: 17px+15px+50px;
+    justify-content: space-between;
+    label{
+        width: 68px;
+        height: 17px;
+    }
+    input{
+    
+        background-color: #FFFEFE;
+        font-family: 'Inter Medium';
+        font-size: 14px;
+line-height: 17px;
+color: #1E2123;
+box-sizing: border-box;
+padding: 0px 0px 0px 55px;
+    &:hover{
+        border: 2px solid rgba(102, 78, 249, 0.8);
+    }
+}
+
+}
+
+.user__div{
+    display: flex;
+    width: 20px+15px+59px;
+    height: 20px;
+    align-items: center;
+    position: relative;
+    right:  240px;
+    top: 45px;
+    .user__img{
+        width: 20px;
+        height: 20px;
+    }
+    .cursor__img{
+        width: 11.63px;
+        height: 17px;
+    }
+    p{
+        width: 59px;
+height: 17px;
+margin: 0px 114.37px 0px 15px;
+display: flex;
+font-family: 'Inter Medium';
+font-size: 14px;
+line-height: 17px;
+    }
+}
+.formgroup2__div{
+    display: flex;
+    flex-direction: column;
+    width: 260px;
+    height: 17px+15px+47.5px;
+    justify-content: space-between;
+    label{
+        width: 173px;
+        height: 17px;
+    }
+    input{
+        background-color: #F8F8F8;
+        border-color:#FFFEFE;
+    }
+}
+.mail__div{
+    display: flex;
+    width: 17.5px+15px+58px;
+    height: 17.5px;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    left: 1080px;
+    bottom: 670px;
+    img{
+        width: 17.5px;
+        height: 17.5px;
+    }
+    p{
+        width: 58px;
+        height: 17px;
+        font-family: 'Inter Medium';
+        font-size: 14px;
+line-height: 17px;
+color: #686868;
+    }
+}

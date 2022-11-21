@@ -20,13 +20,13 @@ export default function Header() {
               <a href="#">Размещение и тарифы</a>
             </li>
             <li>
-              <a href="#" className="link__a_underline">
+              <a href="#">
                 <img src={Group5} alt="Векторное изображение карты" />
                 Объявления на карте
               </a>
             </li>
             <li>
-              <a href="#">Контакты</a>
+            <Link to="Контактная">Контакты</Link>
             </li>
           </ul>
         </nav>
