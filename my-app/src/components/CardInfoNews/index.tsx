@@ -1,13 +1,13 @@
 import React from "react";
-import room from "../../image/room.png";
 import "./index.scss";
+import room from "../../image/room.png";
 import {Link} from 'react-router-dom';
 interface CardInfoNewsProps {
-  altDescript: string;
   textTitle: string;
   textInfo: string;
   textDataCard: string;
   ReadText: string;
+  altDescript:string;
 }
 function CardInfoNews({
   altDescript,
@@ -21,7 +21,7 @@ function CardInfoNews({
   }
   return (
     <div className="card__div_common">
-      <img src={room} alt={altDescript} />
+  <img src={room} alt={altDescript} />
       <p className="card-title__p_center">{textTitle}</p>
       <p className="card-text-info__p">{textInfo}</p>
       <div className="card__div_bottom">
@@ -29,9 +29,7 @@ function CardInfoNews({
           <p>{textDataCard}</p>
         </div>
         <div className="card__div_right">
-          <Link to='/Новость'>
-          <button className="card__button_right" onClick={ClickNewsRead}>{ReadText}</button>
-          </Link>
+          <Link to='/Новость'>{ReadText}</Link>
         </div>
       </div>
     </div>

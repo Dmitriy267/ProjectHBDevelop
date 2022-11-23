@@ -1,13 +1,21 @@
-import React from "react";
+import React, {useState} from "react";
 import "./index.scss";
 import home from "../../image/home.svg";
 import loup from "../../image/loup.svg";
 import circle from "../../image/circle.svg";
 import CardInfoNews from '../CardInfoNews';
-
+import Bathhouse from '../Bathhouse';
 
 function PageNewsList() {
- 
+  const [article, setArticle]=useState<string>('');
+  const  handeClickArticles = ()=>{
+    return function ShowArticles({article}:{article:string}){
+switch(article){
+case 'Баня':
+  return <Bathhouse />
+}
+    }
+  }
   return (
     <section className="page-news__section">
       <div className="block-page-news__div">
@@ -21,8 +29,8 @@ function PageNewsList() {
         <p className="title-news-text__p">Новости </p>
       </div>
       <div className="block-search-articles__div_right">
-        <input type="text" placeholder="Поиск по статьям"/>
-        <button>
+        <input type="text" placeholder="Поиск по статьям" value={article} onChange={event=>setArticle(event.target.value)}/>
+        <button onClick={handeClickArticles}>
           <img src={loup} alt="Изображение лупы" />
         </button>
       </div>
@@ -30,7 +38,7 @@ function PageNewsList() {
         <div className="block-articles__div_center">
       {[...Array(9)].map((item, index)=>
        <CardInfoNews key={index}
-       altDescript={"Фото комнаты"}
+altDescript="Фото комнаты"
        textTitle="Линия Сталина: суровый отдых в усадьбах на сутки"
        textInfo="Чем заняться в выходные? Когда нет безотлагательных домашних дел, а на улице 
        хорошая погода, хочется уехать из города, чтобы сменить обстановку. Например, снять коттедж на сутки для семьи или большой компании друзей. А..."

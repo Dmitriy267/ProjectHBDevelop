@@ -71,16 +71,20 @@ text-align: center;
 }
 .card__div_right{
   margin-top: 20px;
-  .card__button_right{
   width: 81px;
   height: 37px;
   background-color:rgba(102, 78, 249, 0.1);
   border-radius: 17px;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+  a{
 font-family: 'Inter Bold';
 font-size: 14px;
 line-height: 17px;
 color: #664EF9;
 text-align:center;
-border: 0px;
-}
+width: 51px;
+height: 17px;
+  }
 }
