@@ -1,11 +1,4 @@
-.card__div_common{
-  display:flex;
-  width: 406px;
-  height: 500px;
-  border-radius: 10px;
-  background: #FFFEFE;
-  flex-direction:column;
-  align-items: center;
+
   img{
     width: 440px;
     height: 226.46px;
@@ -20,7 +13,7 @@ font-size: 16px;
 line-height: 19px;
 margin: 0px;
   }
-}
+
 .card-text__div_bottom {
   margin-top:25px;//Проверить
   height: 273.54px;
@@ -41,46 +34,5 @@ line-height: 17px;
 color: #8291A3;
   }
 
-.card__div_bottom{
-  margin-top:25px;
-  display: flex;
-  justify-content: space-between;
-  width: 367.25px;
-  height: 20px+37px;
-  border-top: 2px solid #F8F8F8;
-  
-}
-.card__div_left{
-  width: 125px;
-height: 37px;
-margin-top: 20px;
-background-color: #F8F8F8;
-border-radius: 18px;
-p{
-  width: 109px;
-height: 17px;
-font-family: 'Inter Medium';
-font-style: normal;
-font-weight: 500;
-font-size: 14px;
-line-height: 17px;
-color: #8291A3;
-margin: 10px 8px 10px 8px;
-text-align: center;
-}
-}
-.card__div_right{
-  margin-top: 20px;
-  .card__button_right{
-  width: 81px;
-  height: 37px;
-  background-color:rgba(102, 78, 249, 0.1);
-  border-radius: 17px;
-font-family: 'Inter Bold';
-font-size: 14px;
-line-height: 17px;
-color: #664EF9;
-text-align:center;
-border: 0px;
-}
-}
+
+

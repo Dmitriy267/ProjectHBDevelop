@@ -1,0 +1,23 @@
+.card__div_common{
+    display:flex;
+    width: 406px;
+    height: 500px;
+    border-radius: 10px;
+    background: #FFFEFE;
+    flex-direction:column;
+    align-items: center;
+    img{
+      width: 440px;
+      height: 226.46px;
+    }
+    .card-title__p_center{
+      width:357.54px;
+      height: 38px;
+      font-family: 'Inter Bold';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  margin: 0px;
+    }
+  }
