@@ -4,8 +4,10 @@ import home from "../../image/home.svg";
 import loup from "../../image/loup.svg";
 import circle from "../../image/circle.svg";
 import CardInfoNews from '../CardInfoNews';
-function PageNewsList() {
 
+
+function PageNewsList() {
+ 
   return (
     <section className="page-news__section">
       <div className="block-page-news__div">
@@ -24,7 +26,8 @@ function PageNewsList() {
           <img src={loup} alt="Изображение лупы" />
         </button>
       </div>
-      {<div className="block-articles__div_center">
+      {
+        <div className="block-articles__div_center">
       {[...Array(9)].map((item, index)=>
        <CardInfoNews key={index}
        altDescript={"Фото комнаты"}
@@ -35,7 +38,9 @@ function PageNewsList() {
        ReadText="Читать"
      />
       )}
+
       </div>
+      
       
 }
       <ul className="namber-page__ul_bottom">
