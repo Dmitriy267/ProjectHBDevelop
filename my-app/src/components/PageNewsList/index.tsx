@@ -9,12 +9,14 @@ import Bathhouse from '../Bathhouse';
 function PageNewsList() {
   const [article, setArticle]=useState<string>('');
   const  handeClickArticles = ()=>{
-    return function ShowArticles({article}:{article:string}){
-switch(article){
-case 'Баня':
-  return <Bathhouse />
-}
-    }
+    console.log(article)
+ switch (article){
+  case 'Баня':
+    return <Bathhouse altDescript="Фото бани" textTitle="История и традиции русской бани: краткий очерк" textInfo="Баня всегда была и есть для русского человека не просто местом, где можно принять гигиенические процедуры и очистить свое тело от загрязнений, 
+    а особым, почти сакральным сооружением, где очищение происходит не только на физическом, но и на духовном уровне."/>
+    console.log(article)
+ }
+    
   }
   return (
     <section className="page-news__section">
@@ -42,9 +44,7 @@ altDescript="Фото комнаты"
        textTitle="Линия Сталина: суровый отдых в усадьбах на сутки"
        textInfo="Чем заняться в выходные? Когда нет безотлагательных домашних дел, а на улице 
        хорошая погода, хочется уехать из города, чтобы сменить обстановку. Например, снять коттедж на сутки для семьи или большой компании друзей. А..."
-       textDataCard="14 Января 2008"
-       ReadText="Читать"
-     />
+       />
       )}
 
       </div>
