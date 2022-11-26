@@ -3,8 +3,11 @@ import InfoContacts from '../InfoContacts';
 import styles from './ContactsPage.module.scss';
 import InfoAdminRoom from '../InfoAdminRoom';
 import InfoBlockContacts from '../InfoBlockContacts';
-import FormsContacts from '../FormsContacts'
+import FormsContacts from '../FormsContacts';
+import  IconsMessageFormRight from '../IconsMessageFormRight';
+
 function ContactsPage(){
+
 return(
 <section className={styles.contacts__section}>
     <div className={styles.contacts__div}>
@@ -20,8 +23,9 @@ return(
 <InfoAdminRoom/>
 </div>
 <FormsContacts/>
+<IconsMessageFormRight/>
     </div>
-   
+  
 </section>
 )
 }

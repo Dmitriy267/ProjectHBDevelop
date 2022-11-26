@@ -36,7 +36,7 @@ export default function Header() {
             <img src={heart} alt="Векторное изображение закладки" />
           </div>
           <div className="block-header__div_right">
-            <a href="#">Вход и регистрация</a>
+            <Link to="/Вход и регистрация">Вход и регистрация</Link>
           </div>
         </div>
       </header>

@@ -11,7 +11,8 @@ import PageNewsList from './components/PageNewsList';
 import { RouteMainCom } from './components/RouteMainCom/RouteMainCom';
 import NotfoundPage from './components/NotfoundPage';
 import ContactsPage from './components/ContactsPage';
-
+import {RouteMainAvtorization} from './components/RouteMainAvtorization/RouteMainAvtorization';
+//import PageAvtorization from './components/PageAvtorization';
 function App() {
   return (
     <div className="App">
@@ -22,7 +23,9 @@ function App() {
           <Route path='/Новости' element={<PageNewsList />} />
           <Route path='/Контактная' element={<ContactsPage />} />
           <Route path='*' element={<NotfoundPage/>} />
-
+          </Route>
+          <Route path='/Вход и регистрация' element={<RouteMainAvtorization/>}>
+          
           </Route>
       </Routes>
   
