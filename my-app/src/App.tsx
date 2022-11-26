@@ -24,9 +24,8 @@ function App() {
           <Route path='/Контактная' element={<ContactsPage />} />
           <Route path='*' element={<NotfoundPage/>} />
           </Route>
-          <Route path='/Вход и регистрация' element={<RouteMainAvtorization/>}>
+          <Route path='/Вход и регистрация' element={<RouteMainAvtorization/>}/>
           
-          </Route>
       </Routes>
   
       
