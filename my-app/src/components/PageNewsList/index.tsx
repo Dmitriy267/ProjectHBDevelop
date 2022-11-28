@@ -4,11 +4,16 @@ import home from "../../image/home.svg";
 import loup from "../../image/loup.svg";
 import circle from "../../image/circle.svg";
 import CardInfoNews from '../CardInfoNews';
-
+import Header from "../Header";
+import Footer from "../Footer";
+import NavigationSectionProducts from '../NavigationSectionProducts';
 
 function PageNewsList() {
  
   return (
+    <>
+    <Header/>
+    <NavigationSectionProducts />
     <section className="page-news__section">
       <div className="block-page-news__div">
         <div className="link-news__div_left">
@@ -53,6 +58,8 @@ function PageNewsList() {
         <li><a href="#">11</a></li>
       </ul>
     </section>
+    <Footer/>
+    </>
   );
 }
 export default PageNewsList;

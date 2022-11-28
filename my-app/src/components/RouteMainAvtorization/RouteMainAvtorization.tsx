@@ -1,12 +1,12 @@
 import React from "react";
 import styles from './RouteMainAvtorization.module.scss';
-import {EnterMainSection} from '../common/EnterMainSection';
 import {ModuleRegistration} from '../common/ModuleRegistration';
 import {ButtonModule} from '../common/ButtonModule';
 import User from '../../image/contacts/user.svg';
 import password from '../../image/avtorization/password 1.svg';
 import FormPasswordDiv from '../FormPasswordDiv';
 import {Link} from 'react-router-dom';
+import { EnterMainSection } from "../common/EnterMainSection";
 const  RouteMainAvtorization =()=>{
     return (
         <EnterMainSection>
@@ -23,7 +23,7 @@ const  RouteMainAvtorization =()=>{
 <ButtonModule>
 Войти
 </ButtonModule>
-<p className={styles.text__p}>Еще нет аккаунта? <Link to="Регистрация">Создайте акканут</Link></p>
+<p className={styles.text__p}>Еще нет аккаунта? <Link to="/Регистрация">Создайте акканут</Link></p>
 </form>
 </ModuleRegistration>
 </div>

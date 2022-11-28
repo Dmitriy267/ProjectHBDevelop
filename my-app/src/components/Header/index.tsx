@@ -13,7 +13,7 @@ export default function Header() {
               <a href="#">Главная</a>
             </li>
             <li>
-              <Link to="Новости">Новости</Link>
+              <Link to="/Новости">Новости</Link>
             </li>
 
             <li>
@@ -26,7 +26,7 @@ export default function Header() {
               </a>
             </li>
             <li>
-            <Link to="Контактная">Контакты</Link>
+            <Link to="/Контактная">Контакты</Link>
             </li>
           </ul>
         </nav>
@@ -36,7 +36,7 @@ export default function Header() {
             <img src={heart} alt="Векторное изображение закладки" />
           </div>
           <div className="block-header__div_right">
-            <Link to="Вход и регистрация">Вход и регистрация</Link>
+            <Link to="/Вход и регистрация">Вход и регистрация</Link>
           </div>
         </div>
       </header>

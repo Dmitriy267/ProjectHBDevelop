@@ -14,6 +14,7 @@ import ContactsPage from './components/ContactsPage';
 import {RouteMainAvtorization} from './components/RouteMainAvtorization/RouteMainAvtorization';
 import PageRegistration from './components/PageRegistration';
 //import PageAvtorization from './components/PageAvtorization';
+//import { RouteEnterCom } from './components/RouteEnterCom/RouteEnterCom';
 function App() {
   return (
     <div className="App">
@@ -23,11 +24,10 @@ function App() {
           <Route path='/Новость' element={<PageNewsMain />} />
           <Route path='/Новости' element={<PageNewsList />} />
           <Route path='/Контактная' element={<ContactsPage />} />
+          <Route path='/Вход и регистрация' element={<RouteMainAvtorization/>}/>
+          <Route path='/Регистрация' element={<PageRegistration/>}/>
           <Route path='*' element={<NotfoundPage/>} />
           </Route>
-          <Route path='/Вход и регистрация' element={<RouteMainAvtorization/>}/>
-          <Route path='/Pегистрация' element={<PageRegistration/>}/>
-          
       </Routes>
   
       
