@@ -1,30 +1,33 @@
 import React from "react";
 import styles from './RouteMainAvtorization.module.scss';
-import {AvtorizationMainSection} from '../common/AvtorizationMainSection';
+import {EnterMainSection} from '../common/EnterMainSection';
 import {ModuleRegistration} from '../common/ModuleRegistration';
 import {ButtonModule} from '../common/ButtonModule';
-import User from '../../image/contacts/user.svg'
+import User from '../../image/contacts/user.svg';
+import password from '../../image/avtorization/password 1.svg';
+import FormPasswordDiv from '../FormPasswordDiv';
+import {Link} from 'react-router-dom';
 const  RouteMainAvtorization =()=>{
     return (
-        <AvtorizationMainSection>
+        <EnterMainSection>
             <div className={styles.positionModul__div}>
 <ModuleRegistration width="406px" height="536px" marginTop="182px">
 <form className={styles.avtorization__form}>
-    <p>Авторизация</p>
-    <p>Авторизируйтесь, чтобы начать публиковать свои объявления</p>
-    <input type="text" className={styles.avtorization__input}/>
-    <img src={User} alt="Иконка пользователя"/>
-    <input type="password" className={styles.password__input}/>
-    <p>Запомнить меня</p>
-    <a href="#">Забыли пароль?</a>
+    <p className={styles.form__p_bold}>Авторизация</p>
+    <p className={styles.form__p}>Авторизируйтесь, чтобы начать <br/>публиковать свои объявления</p>
+    <input type="text" className={styles.avtorization__input} placeholder="Логин"  required/>
+    <img src={User} alt="Иконка пользователя" className={styles.avtorization__img} />
+    <input type="password" className={styles.password__input} placeholder="Пароль" required/>
+    <img src={password} alt="Иконка пароля" className={styles.password__img}/>
+    <FormPasswordDiv/>
 <ButtonModule>
 Войти
 </ButtonModule>
-<p>Еще нет аккаунта? <a href="#">Создайте акканут</a></p>
+<p className={styles.text__p}>Еще нет аккаунта? <Link to="Регистрация">Создайте акканут</Link></p>
 </form>
 </ModuleRegistration>
 </div>
-</AvtorizationMainSection>
+</EnterMainSection>
     )
 }
 

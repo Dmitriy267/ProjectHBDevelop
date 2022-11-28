@@ -12,6 +12,7 @@ import { RouteMainCom } from './components/RouteMainCom/RouteMainCom';
 import NotfoundPage from './components/NotfoundPage';
 import ContactsPage from './components/ContactsPage';
 import {RouteMainAvtorization} from './components/RouteMainAvtorization/RouteMainAvtorization';
+import PageRegistration from './components/PageRegistration';
 //import PageAvtorization from './components/PageAvtorization';
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path='*' element={<NotfoundPage/>} />
           </Route>
           <Route path='/Вход и регистрация' element={<RouteMainAvtorization/>}/>
+          <Route path='/Pегистрация' element={<PageRegistration/>}/>
           
       </Routes>
   
