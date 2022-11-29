@@ -8,13 +8,14 @@ import  IconsMessageFormRight from '../IconsMessageFormRight';
 import Header from '../Header';
 import Footer from "../Footer";
 import NavigationSectionProducts from '../NavigationSectionProducts';
-
+import {myContext} from '../../context/myContext';
 function ContactsPage(){
 
 return(
     <>
     <Header/>
     <NavigationSectionProducts />
+    <myContext.Provider value="ИП Шушкевич Андрей Викторович">
 <section className={styles.contacts__section}>
     <div className={styles.contacts__div}>
         <div className={styles.left__div}>
@@ -34,6 +35,7 @@ return(
   
 </section>
 <Footer/>
+</myContext.Provider>
 </>
 )
 }

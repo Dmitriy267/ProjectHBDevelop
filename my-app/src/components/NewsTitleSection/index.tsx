@@ -8,8 +8,10 @@ import telegram from "../../image/iconsMessage/bx_bxl-telegram.svg";
 import whatsap from "../../image/iconsMessage/icomoon-free_whatsapp.svg";
 import {DateText} from '../common/DateText/DateText';
 import IconsNewsDivGroup from '../IconsNewsDivGroup';
+import {myContext} from '../../context/myContext';
 function NewsTitleSection() {
   return (
+    
     <React.Fragment>
       <section className="block-news-title__section">
         <MainNewsDiv
@@ -18,10 +20,9 @@ function NewsTitleSection() {
           rubricTitleP=" Линия Сталина: суровый отдых в усадьбах на сутки"
           rubricTextP="Новости"
         />
-
-        <p className="title-main-news__p_center">
-          Линия Сталина: суровый отдых в усадьбах на сутки{" "}
-        </p>
+<myContext.Consumer>
+  {(value)=> <p className="title-main-news__p_center">{value}</p>}
+    </myContext.Consumer>
         <div className="main-news__div_bottom">
           <DateText text='14 Января 2008'/>
           <div className="icons-news__div_right">

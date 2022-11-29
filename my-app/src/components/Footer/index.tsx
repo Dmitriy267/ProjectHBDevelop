@@ -10,6 +10,7 @@ import Verifed from "../../image/footer/banksCards/verified-by-visa 1.png";
 import MCard from "../../image/footer/banksCards/1280px-Mastercard-logo 1.png";
 import MCardSec from "../../image/footer/banksCards/securecode.png";
 import belCard from "../../image/footer/banksCards/logotip-belkart-v-odnom-tsvete.png";
+import {myContext} from '../../context/myContext';
 
 function Footer() {
   return (
@@ -21,7 +22,8 @@ function Footer() {
             <p>СДАЁМ БАЙ</p>
           </div>
           <div className="block-info-ip__div">
-            <p>ИП Шушкевич Андрей Викторович</p>
+            <myContext.Consumer>{(value)=> <p>{value}</p>}
+            </myContext.Consumer>
             <p>УНП 192602485 Минским</p>
             <p>горисполкомом 10.02.2016 220068,</p>
             <p>РБ, г. Минск, ул. Осипенко, 21, кв.23</p>
