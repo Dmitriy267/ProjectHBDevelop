@@ -7,6 +7,7 @@ import viber from "../../image/iconsMessage/simple-icons_viber.svg";
 import telegram from "../../image/iconsMessage/bx_bxl-telegram.svg";
 import whatsap from "../../image/iconsMessage/icomoon-free_whatsapp.svg";
 import {DateText} from '../common/DateText/DateText';
+import IconsNewsDivGroup from '../IconsNewsDivGroup';
 function NewsTitleSection() {
   return (
     <React.Fragment>
@@ -25,23 +26,23 @@ function NewsTitleSection() {
           <DateText text='14 Января 2008'/>
           <div className="icons-news__div_right">
             <p>Поделиться</p>
-            <div className="icons-news__div_group">
+            <IconsNewsDivGroup>
               <div className="icons-background__div">
-                <img src={vk} alt="Изображение иконки вконтакте" />
+                <img src={vk} alt="Изображение иконки вконтакте" className="iconsbackground__img"/>
               </div>
               <div className="icons-background__div">
-                <img src={fb} alt="Изображение иконки фейсбук" />
+                <img src={fb} alt="Изображение иконки фейсбук" className="iconsbackground__img"/>
               </div>
               <div className="icons-background__div">
-                <img src={viber} alt="Изображение иконки вайбер" />
+                <img src={viber} alt="Изображение иконки вайбер" className="iconsbackground__img_other"/>
               </div>
               <div className="icons-background__div">
-                <img src={telegram} alt="Изображение иконки телеграмм" />
+                <img src={telegram} alt="Изображение иконки телеграмм" className="iconsbackground__img_other"/>
               </div>
               <div className="icons-background__div">
-                <img src={whatsap} alt="Изображение иконки ватсап" />
+                <img src={whatsap} alt="Изображение иконки ватсап" className="iconsbackground__img_other"/>
               </div>
-            </div>
+            </IconsNewsDivGroup>
           </div>
         </div>
       </section>

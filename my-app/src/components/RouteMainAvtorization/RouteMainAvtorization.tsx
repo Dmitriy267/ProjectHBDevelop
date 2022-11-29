@@ -7,10 +7,11 @@ import password from '../../image/avtorization/password 1.svg';
 import FormPasswordDiv from '../FormPasswordDiv';
 import {Link} from 'react-router-dom';
 import { EnterMainSection } from "../common/EnterMainSection";
+import {PositionModulDiv} from "../common/PositionModulDiv";
 const  RouteMainAvtorization =()=>{
     return (
         <EnterMainSection>
-            <div className={styles.positionModul__div}>
+             <PositionModulDiv>  
 <ModuleRegistration width="406px" height="536px" marginTop="182px">
 <form className={styles.avtorization__form}>
     <p className={styles.form__p_bold}>Авторизация</p>
@@ -26,7 +27,7 @@ const  RouteMainAvtorization =()=>{
 <p className={styles.text__p}>Еще нет аккаунта? <Link to="/Регистрация">Создайте акканут</Link></p>
 </form>
 </ModuleRegistration>
-</div>
+</PositionModulDiv>
 </EnterMainSection>
     )
 }

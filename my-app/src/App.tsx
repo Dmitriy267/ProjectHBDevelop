@@ -21,11 +21,11 @@ function App() {
    
       <Routes>
         <Route path='/' element={<RouteMainCom/>}>
-          <Route path='/Новость' element={<PageNewsMain />} />
-          <Route path='/Новости' element={<PageNewsList />} />
-          <Route path='/Контактная' element={<ContactsPage />} />
-          <Route path='/Вход и регистрация' element={<RouteMainAvtorization/>}/>
-          <Route path='/Регистрация' element={<PageRegistration/>}/>
+          <Route path='Новость' element={<PageNewsMain />} />
+          <Route path='Новости' element={<PageNewsList />} />
+          <Route path='Контактная' element={<ContactsPage />} />
+          <Route path='Вход и регистрация' element={<RouteMainAvtorization/>}/>
+          <Route path='Регистрация' element={<PageRegistration/>}/>
           <Route path='*' element={<NotfoundPage/>} />
           </Route>
       </Routes>
