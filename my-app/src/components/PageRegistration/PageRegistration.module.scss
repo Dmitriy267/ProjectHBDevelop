@@ -1,0 +1,138 @@
+.registration__form{
+    margin-top: 50px;
+    margin-left: 50px;
+    width: 306px+50px+388px;
+    height: 30px+402.5px+48px;
+
+
+}
+.registration__form>p{
+    font-family: 'Inter Bold';
+    font-size: 25px;
+line-height: 30px;
+color: #000000;
+margin-top: 0px;
+margin-bottom: 0px;
+margin-left: 72px;
+width: 163px;
+height: 30px;
+}
+
+.registrationInputs__div{
+display: flex;
+height: 50px+322.5px+48px;
+width: 306px;
+flex-direction: column;
+justify-content: space-between;
+
+}
+
+.registration__user{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    bottom: 35px;
+    left: 20px;
+}
+.registration__mail{
+    width: 17.5px;
+    height: 17.5px;
+    position: relative;
+    bottom: 33px;
+    left: 20px;
+}
+.registration__password{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    bottom: 33px;
+    left: 20px;
+}
+.registration__passwordtwo{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    bottom: 33px;
+    left: 20px;
+}
+.otherEmail__input{
+    width: 306px;
+    height: 47.5px;
+    border-radius: 30px;
+    background-color:  #F7F7F7;
+    border: 0px;
+    box-sizing: border-box;
+    padding: 0px 0px 0px 52.5px;
+    font-family: 'Inter Medium';
+    font-size: 14px;
+line-height: 17px;
+color: #686868;
+}
+
+.registrationinput__div{
+    width: 306px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+    background-color: #F7F7F7;
+}
+.checkbox__div{
+display: flex;
+
+}
+
+.rules__div{
+    display: flex;
+    flex-direction: column;
+    width: 388px;
+    height: 231px+70px+26px;
+    justify-content: space-between;
+}
+
+.registration__div{
+    display: flex;
+    width: 306px+50px+388px;
+    height: 50px+322.5px+48px;
+    justify-content: space-between;
+    margin:30px 0px 0px 0px;
+}
+.rulesUser__div{
+    display: flex;
+    width: 388px;
+    height: 231px;
+    flex-direction: column;
+}
+
+.rulesUser__p{
+    font-family: 'Inter SemiBold';
+    font-size: 14px;
+line-height: 150%;
+color: #686868;
+font-weight: bold;
+margin: 0px;
+}
+.rules__p{
+    font-family: 'Inter SemiBold';
+    font-size: 14px;
+line-height: 150%;
+color: #686868;
+margin: 0px;
+}
+.ruleslink__p{
+    font-family: 'Inter Regular';
+    font-size: 14px;
+line-height: 20px;
+color: #686868;
+}
+.rules__p::before{
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    display: inline-block;
+    background: #686868;
+   content: '';
+   margin-right: 5px;
+   margin-bottom: 2px;
+ 
+}
