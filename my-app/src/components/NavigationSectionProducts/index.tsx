@@ -2,6 +2,7 @@ import React from "react";
 import Logo from "../../image/logo 1.png";
 import "./index.scss";
 import {Button} from "../common/Button/Button";
+import { Link } from "react-router-dom";
 export default function NavigationSectionProducts() {
   return (
     <section className="block-navigation__section">
@@ -12,8 +13,7 @@ export default function NavigationSectionProducts() {
         <nav>
           <ul>
             <li>
-              <a href="#">
-                Квартиры на сутки
+              <Link to='/Каталог квартир'> Квартиры на сутки
                 <svg
                   fill="none"
                   viewBox="0 0 9 10"
@@ -24,7 +24,7 @@ export default function NavigationSectionProducts() {
                     fill="#1E2123"
                   />
                 </svg>
-              </a>
+                </Link>
             </li>
             <li>
               <a href="#">Коттеджи и усадьбы</a>
