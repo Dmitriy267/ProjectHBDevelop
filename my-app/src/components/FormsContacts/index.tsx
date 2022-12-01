@@ -6,13 +6,16 @@ import Email from '../../image/contacts/mailform.svg';
 import ModalForm from "../ModalForm";
 import {SubmitHandler, useForm} from 'react-hook-form';
 
+
+
 interface IFormInput {
-    name:string;
-    email:string;
-    message:string;
+    Name:string;
+    Email:string;
+    Message:string;
 }
+
 function FormsContacts(){
-    const {register,handleSubmit}=useForm<IFormInput>();
+    const {register,handleSubmit, formState:{errors}}=useForm<IFormInput>();
     const onSubmit:SubmitHandler<IFormInput>=data=>{
             console.log(data);
             setActiveModal(true);  
@@ -24,7 +27,8 @@ function FormsContacts(){
         <div className={styles.group__div}>
      <div className={styles.formgroup1__div}>
      <Label textLabel="Ваше имя"/>     
-   <input type="text" className={styles.form__input} {...register('name',{required:true, maxLength:15})}/>
+   <input type="text" className={styles.form__input} {...register('Name',{required:true, maxLength:15})} title={errors.Name&&'Введите свое имя. Максимальная длина слова должна быть не более 15 символов'}/>
+
     </div>
     <div className={styles.user__div}>
     <img src={User} alt='Иконка пользователя' className={styles.user__img}/>
@@ -33,7 +37,9 @@ function FormsContacts(){
 <div className={styles.formgroup2__div}>   
     <Label textLabel="Ваша электронная почта" htmlForLab="email"/>
     <input type="email" placeholder="Введите" className={styles.form__inputEmail} 
-    {...register('email',{required:true, pattern:/^.+\@.+\..+$/})}/>
+    title={errors.Email&&'Адрес электронной почты должен содержать символ "@"'}
+    {...register('Email',{required:true, pattern:/^.+\@.+\..+$/})}/>
+     
     </div>
     <div className={styles.mail__div}>
     <img src={Email} alt='Иконка письма'/>
@@ -41,7 +47,10 @@ function FormsContacts(){
 </div>
 <div className={styles.message__div}>
     <Label textLabel="Ваше сообщение"/>
-        <textarea placeholder="Сообщение" className={styles.form__textarea} {...register('message', {required:true, minLength:30})}></textarea>
+        <textarea placeholder="Сообщение" className={styles.form__textarea} {...register('Message', {required:true, minLength:30})}
+        title={errors.Message&&'Ваше сообщение должно быть записано не менее, чем в 30 символов'}
+        ></textarea>
+     
 </div>
     <input type='submit' value='Отправить' className={styles.form__button}/>
     <ModalForm showModal={activeModal} onClose={()=>setActiveModal(false)}/>
