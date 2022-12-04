@@ -12,7 +12,7 @@ const  RouteMainAvtorization =()=>{
     return (
         <EnterMainSection>
              <PositionModulDiv>  
-<ModuleRegistration width="406px" height="536px" marginTop="182px">
+<ModuleRegistration width="406px" height="536px">
 <form className={styles.avtorization__form}>
     <p className={styles.form__p_bold}>Авторизация</p>
     <p className={styles.form__p}>Авторизируйтесь, чтобы начать <br/>публиковать свои объявления</p>

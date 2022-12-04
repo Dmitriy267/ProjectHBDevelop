@@ -12,7 +12,7 @@ function PageRegistration (){
     return(
         <EnterMainSection>
             <PositionModulDiv>    
-            <ModuleRegistration  width="844px" height="581px" marginTop="175px">
+            <ModuleRegistration  width="844px" height="581px">
 <form className={styles.registration__form}>
     <p>Регистрация</p>
     <div className={styles.registration__div}>
