@@ -36,7 +36,7 @@ export default function Header() {
             <a href="#">Закладки</a>
             <img src={heart} alt="Векторное изображение закладки" />
           </div>
-          <Greeting isLoggedIn={true}/>
+          <Greeting isLoggedIn={false}/>
       
         </div>
       </header>

@@ -1,5 +1,8 @@
-export const LOGIN_GET = 'LOGIN_GET';
-
-export function LoginCheck(){
-    return {type:LOGIN_GET}
+export const GET_LOGIN = 'GET_LOGIN';
+export function UserActions (text=''){
+   return {
+    type:GET_LOGIN,
+    text
+   }
+    
 }

@@ -7,16 +7,28 @@ import email from '../../image/registration/mail.svg';
 import password from '../../image/registration/password.svg';
 import { ButtonModule } from '../common/ButtonModule';
 import styles from './PageRegistration.module.scss';
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { useForm, SubmitHandler  } from 'react-hook-form';
+import {connect} from 'react-redux';
 
-interface InputsRegistrationProps{
-login:string;
-mail:string;
-password:string;
+interface InputsRegistrationProps {
+    login:string;
+    mail:string;
+    password:string;
 }
+
+interface DispatchProps {
+    onSubmit: () => void
+  }
+  
 function PageRegistration (){
     const { register, handleSubmit } = useForm<InputsRegistrationProps>();
-    const onSubmit: SubmitHandler<InputsRegistrationProps> = data => console.log(data);
+ 
+    const onSubmit: SubmitHandler<InputsRegistrationProps> = data => {
+        console.log(data);
+        console.log(data.login);
+        let UserLogin=data.login;
+        return localStorage.setItem( 'keyLoginUser',JSON.stringify(UserLogin));
+    }
     return(
         <EnterMainSection>
             <PositionModulDiv>    
@@ -57,4 +69,10 @@ function PageRegistration (){
 
     )
 }
-export default PageRegistration
+
+const mapDispatchToProps= {
+    onSubmit:()=>({type:'GET_REGISTRATION'})
+    
+}
+
+export default connect <DispatchProps>(null, mapDispatchToProps) (PageRegistration);
