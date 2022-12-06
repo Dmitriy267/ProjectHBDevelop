@@ -29,17 +29,39 @@ const Articles=[{
   description:'К Вашим услугам представлены: парная с немецкой дровяной печью (топиться дубовыми дровами). Самый большой бассейн (Саратовское водохранилище).',
   altTitle:'Фото бани'
 }
-]
+];
+const ArticleHome=[ 
+  {id:1,
+  imgSrc:'',
+  title:'Коттеджный комплекс «Ручеёк» ',
+  description:'Коттеджный Банный комплекс «Ручеёк» предлагает снять дом/коттедж в Люберцах недорого на сутки. Во дворе мангал, беседка, купель.',
+  altTitle:'Фото коттеджа'
+
+},
+{
+  id:2,
+  imgSrc:'',
+  title:'Прованс',
+  description:'Предлагаем вам отдохнуть в атмосферном загородном доме в стиле французского прованса. В коттедже вы найдете все необходимое, чтобы провести тихий уютный вечер с друзьями или устроить веселую вечеринку ',
+  altTitle:'Фото коттеджа'
+
+},
+{
+  id:3,
+  imgSrc:'',
+  title:'Гостевой дом-вилла',
+  description:'Комфортный, уютный двухэтажный коттедж в стиле Вилла - отдых на природе с городским комфортом.',
+  altTitle:'Фото коттеджа'
+}]
 function PageNewsList() {
 const [inputArticl, setInputArticl]=useState('')
 function onChangeInputArticle (event:ChangeEvent<HTMLInputElement>){
   return setInputArticl(event.target.value)
 }
-useEffect (()=>{
- document.title=`Поиск по статье {inputArticl}`
-})
+
 const onClickArticles:MouseEventHandler=(event)=> {
 console.log('Выбор статьи')
+
     
   }
   
@@ -61,10 +83,16 @@ console.log('Выбор статьи')
           <img src={loup} alt="Изображение лупы" />
         </button>
       </div>
-      <h3>Поиск по статье {inputArticl}</h3>
+
         <div className="block-articles__div_center">
-        {Articles.map((el, id)=><ArticleComponent1 key={id} imgSrc={el.imgSrc} title={el.title} description={el.description} altTitle={el.altTitle}/>)&&
-          [...Array(9)].map((item, index)=>
+        {(()=>{
+switch (inputArticl){
+  case 'Баня':
+    return Articles.map((el, id)=><ArticleComponent1 key={id} imgSrc={el.imgSrc} title={el.title} description={el.description} altTitle={el.altTitle}/>)
+    case 'Коттедж':
+          return ArticleHome.map((el, id)=><ArticleComponent1 key={id} imgSrc={el.imgSrc} title={el.title} description={el.description} altTitle={el.altTitle}/>)
+        default:
+          return   [...Array(9)].map((item, index)=>
           <CardInfoNews key={index}
    altDescript="Фото комнаты"
           textTitle="Линия Сталина: суровый отдых в усадьбах на сутки"
@@ -72,7 +100,10 @@ console.log('Выбор статьи')
           хорошая погода, хочется уехать из города, чтобы сменить обстановку. Например, снять коттедж на сутки для семьи или большой компании друзей. А..."
           />
          )
+}
+        })()
        
+         
          }
         
       </div>

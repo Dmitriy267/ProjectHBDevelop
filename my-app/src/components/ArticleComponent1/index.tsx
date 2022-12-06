@@ -1,4 +1,5 @@
-import React  from "react"
+import React  from "react";
+
 interface ArticleComponent1Props{
     imgSrc:string;
     title:string;
