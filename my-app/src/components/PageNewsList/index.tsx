@@ -9,7 +9,7 @@ import Footer from "../Footer";
 import NavigationSectionProducts from '../NavigationSectionProducts';
 
 function PageNewsList() {
- 
+
   return (
     <>
     <Header/>
@@ -26,7 +26,7 @@ function PageNewsList() {
         <p className="title-news-text__p">Новости </p>
       </div>
       <div className="block-search-articles__div_right">
-        <input type="text" placeholder="Поиск по статьям"/>
+        <input type="text" placeholder="Поиск по статьям" />
         <button>
           <img src={loup} alt="Изображение лупы" />
         </button>

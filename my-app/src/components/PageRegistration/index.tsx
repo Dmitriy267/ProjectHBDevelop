@@ -27,7 +27,8 @@ function PageRegistration (){
         console.log(data);
         console.log(data.login);
         let UserLogin=data.login;
-        return localStorage.setItem( 'keyLoginUser',JSON.stringify(UserLogin));
+        let loginLocal=localStorage.setItem( 'keyLoginUser',JSON.stringify(UserLogin));
+        return loginLocal;
     }
     return(
         <EnterMainSection>
