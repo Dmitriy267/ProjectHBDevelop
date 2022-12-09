@@ -1,9 +1,12 @@
-import React, {useState, ChangeEvent, useEffect, MouseEvent, MouseEventHandler } from "react";
+import React, {useState, ChangeEvent, MouseEventHandler } from "react";
 import "./index.scss";
 import home from "../../image/home.svg";
 import loup from "../../image/loup.svg";
 import circle from "../../image/circle.svg";
 import CardInfoNews from '../CardInfoNews';
+import Header from "../Header";
+import Footer from "../Footer";
+import NavigationSectionProducts from '../NavigationSectionProducts';
 import ArticleComponent1 from '../ArticleComponent1';
 
 const Articles=[{
@@ -66,6 +69,9 @@ console.log('Выбор статьи')
   }
   
   return (
+    <>
+    <Header/>
+    <NavigationSectionProducts />
     <section className="page-news__section">
       <div className="block-page-news__div">
         <div className="link-news__div_left">
@@ -120,6 +126,8 @@ switch (inputArticl){
         <li><a href="#">11</a></li>
       </ul>
     </section>
+    <Footer/>
+    </>
   );
 }
 export default PageNewsList;

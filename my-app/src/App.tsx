@@ -11,18 +11,26 @@ import PageNewsList from './components/PageNewsList';
 import { RouteMainCom } from './components/RouteMainCom/RouteMainCom';
 import NotfoundPage from './components/NotfoundPage';
 import ContactsPage from './components/ContactsPage';
-
+import {RouteMainAvtorization} from './components/RouteMainAvtorization/RouteMainAvtorization';
+import PageRegistration from './components/PageRegistration';
+import PageCatalogRooms from './components/PageCatalogRooms';
+import PageEndRegistration from './components/PageEndRegistration';
+//import PageAvtorization from './components/PageAvtorization';
+//import { RouteEnterCom } from './components/RouteEnterCom/RouteEnterCom';
 function App() {
   return (
     <div className="App">
    
       <Routes>
         <Route path='/' element={<RouteMainCom/>}>
-          <Route path='/Новость' element={<PageNewsMain />} />
-          <Route path='/Новости' element={<PageNewsList />} />
-          <Route path='/Контактная' element={<ContactsPage />} />
+          <Route path='Новость' element={<PageNewsMain />} />
+          <Route path='Новости' element={<PageNewsList />} />
+          <Route path='Контактная' element={<ContactsPage />} />
+          <Route path='Вход и регистрация' element={<RouteMainAvtorization/>}/>
+          <Route path='Регистрация' element={<PageRegistration/>}/>
+          <Route path='Каталог квартир' element={<PageCatalogRooms/>}/>
+          <Route path='Завершение регистрации' element={<PageEndRegistration/>}/>
           <Route path='*' element={<NotfoundPage/>} />
-
           </Route>
       </Routes>
   

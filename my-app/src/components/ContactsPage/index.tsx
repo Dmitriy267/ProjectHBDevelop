@@ -3,9 +3,18 @@ import InfoContacts from '../InfoContacts';
 import styles from './ContactsPage.module.scss';
 import InfoAdminRoom from '../InfoAdminRoom';
 import InfoBlockContacts from '../InfoBlockContacts';
-import FormsContacts from '../FormsContacts'
+import FormsContacts from '../FormsContacts';
+import  IconsMessageFormRight from '../IconsMessageFormRight';
+import Header from '../Header';
+import Footer from "../Footer";
+import NavigationSectionProducts from '../NavigationSectionProducts';
+
 function ContactsPage(){
+
 return(
+    <>
+    <Header/>
+    <NavigationSectionProducts />
 <section className={styles.contacts__section}>
     <div className={styles.contacts__div}>
         <div className={styles.left__div}>
@@ -20,9 +29,12 @@ return(
 <InfoAdminRoom/>
 </div>
 <FormsContacts/>
+<IconsMessageFormRight/>
     </div>
-   
+  
 </section>
+<Footer/>
+</>
 )
 }
 export default ContactsPage;
