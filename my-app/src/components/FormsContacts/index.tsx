@@ -10,7 +10,7 @@ import {SubmitHandler, useForm} from 'react-hook-form';
 
 interface IFormInput {
     Name:string;
-    Email:string;
+    mail:string;
     Message:string;
 }
 
@@ -37,8 +37,10 @@ function FormsContacts(){
 <div className={styles.formgroup2__div}>   
     <Label textLabel="Ваша электронная почта" htmlForLab="email"/>
     <input type="email" placeholder="Введите" className={styles.form__inputEmail} 
-    title={errors.Email&&'Адрес электронной почты должен содержать символ "@"'}
-    {...register('Email',{required:true, pattern:/^.+\@.+\..+$/})}/>
+    title={errors.mail&&'Адрес электронной почты должен содержать символ "@"'}
+    {...register('mail',{required:true, pattern:/^.+\@.+\..+$/})}
+    style={{border:errors.mail&&`1px solid rgba(235, 87, 87, 1)`}}
+    />
      
     </div>
     <div className={styles.mail__div}>
@@ -48,6 +50,7 @@ function FormsContacts(){
 <div className={styles.message__div}>
     <Label textLabel="Ваше сообщение"/>
         <textarea placeholder="Сообщение" className={styles.form__textarea} {...register('Message', {required:true, minLength:30})}
+         style={{border:errors.Message&&`1px solid rgba(235, 87, 87, 1)`}}
         title={errors.Message&&'Ваше сообщение должно быть записано не менее, чем в 30 символов'}
         ></textarea>
      
