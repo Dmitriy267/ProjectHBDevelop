@@ -2,7 +2,7 @@
     margin-top: 50px;
     margin-left: 50px;
     width: 306px+50px+388px;
-    height: 30px+402.5px+48px;
+    height: 30px+474px+48px;
 
 
 }
@@ -19,69 +19,75 @@ height: 30px;
 }
 
 .registrationInputs__div{
-display: flex;
-height: 50px+322.5px+48px;
-width: 306px;
-flex-direction: column;
-justify-content: space-between;
-
-}
-
-.registration__user{
-    width: 20px;
-    height: 20px;
-    position: relative;
-    bottom: 35px;
-    left: 20px;
-}
-.registration__mail{
-    width: 17.5px;
-    height: 17.5px;
-    position: relative;
-    bottom: 33px;
-    left: 20px;
-}
-.registration__password{
-    width: 20px;
-    height: 20px;
-    position: relative;
-    bottom: 33px;
-    left: 20px;
-}
-.registration__passwordtwo{
-    width: 20px;
-    height: 20px;
-    position: relative;
-    bottom: 33px;
-    left: 20px;
-}
-.otherEmail__input{
-    width: 306px;
-    height: 47.5px;
-    border-radius: 30px;
-    background-color:  #F7F7F7;
-    border: 0px;
-    box-sizing: border-box;
-    padding: 0px 0px 0px 52.5px;
-    font-family: 'Inter Medium';
-    font-size: 14px;
-line-height: 17px;
-color: #686868;
-}
-
-.registrationinput__div{
-    width: 306px;
-    height: 75px;
     display: flex;
-    align-items: center;
-    border-radius: 3px;
-    background-color: #F7F7F7;
-}
-.checkbox__div{
-display: flex;
+    height: 50px+394px+48px;
+    width: 306px;
+    flex-direction: column;
+    justify-content: space-between;
+    input{
+        width: 306px;
+        height: 50px;
+        display: flex;
+        box-sizing: border-box;
+        padding: 0px 0px 0px 55px;
+        background-color: #F7F7F7;
+        border-radius: 30px;
+        border: 0px;
+    }
+    }
+    
+    .registration__user{
+        width: 20px;
+        height: 20px;
+        position: relative;
+        bottom: 35px;
+        left: 20px;
+    }
+    .registration__mail{
+        width: 17.5px;
+        height: 17.5px;
+        position: relative;
+        bottom: 33px;
+        left: 20px;
+    }
+    .registration__password{
+        width: 20px;
+        height: 20px;
+        position: relative;
+        bottom: 33px;
+        left: 20px;
+    }
+    .registration__passwordtwo{
+        width: 20px;
+        height: 20px;
+        position: relative;
+        bottom: 33px;
+        left: 20px;
+    }
 
-}
+    .otherEmail__input{
+        width: 306px;
+        height: 47.5px;
+        border-radius: 30px;
+        background-color:  #F7F7F7;
+        border: 0px;
+        box-sizing: border-box;
+        padding: 0px 0px 0px 52.5px;
+        font-family: 'Inter Medium';
+        font-size: 14px;
+    line-height: 17px;
+    color: #686868;
+    }
+    .registrationinput__div{
+        width: 306px;
+        height: 75px;
+        display: flex;
+        align-items: center;
+        border-radius: 3px;
+        background-color: #F7F7F7;
 
+    }
+  
 .rules__div{
     display: flex;
     flex-direction: column;
@@ -93,7 +99,7 @@ display: flex;
 .registration__div{
     display: flex;
     width: 306px+50px+388px;
-    height: 50px+322.5px+48px;
+    height: 50px+394px+48px;
     justify-content: space-between;
     margin:30px 0px 0px 0px;
 }
@@ -136,3 +142,26 @@ color: #686868;
    margin-bottom: 2px;
  
 }
+
+.errorZnasck1{
+width: 20px;
+height: 20px;
+position: absolute;
+    top: 375px;
+    left: 600px;
+
+}
+
+.errorZnasck2{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    position: absolute;
+    top: 520px;
+    left: 600px;
+}
+    
+ .userRoboto{
+    width: 306px;
+    height: 75px;
+ }   

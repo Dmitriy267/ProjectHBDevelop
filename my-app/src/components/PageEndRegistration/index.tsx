@@ -10,6 +10,7 @@ function PageEndRegistration (){
     function ClickEndRegist(){
 console.log('Регистрация завершена')
     }
+<<<<<<< HEAD
 useEffect(()=>{
     if(data){
 navigate('*')
@@ -19,6 +20,13 @@ navigate('*')
         <EnterMainSection>
                <PositionModulDiv>
                <ModuleRegistration width="406px" height="330px">
+=======
+
+    return(
+        <EnterMainSection>
+               <PositionModulDiv>
+               <ModuleRegistration width="406px" height="330px" marginTop="285px">
+>>>>>>> formickbranch
                 <div className={styles.endRegist__div}>
                 <p>Подтвердите регистрацию</p>
                 <p className={styles.endRegist__p}>Письмо для подтверждения аккаунта отправлено почту. Перейдите по ссылке, указанной в письме. Если письма нет, то проверьте спам.</p>
