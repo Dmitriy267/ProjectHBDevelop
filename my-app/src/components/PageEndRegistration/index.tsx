@@ -1,32 +1,24 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { EnterMainSection } from "../common/EnterMainSection";
 import {PositionModulDiv} from "../common/PositionModulDiv";
 import {ModuleRegistration} from '../common/ModuleRegistration';
 import styles from './PageEndRegistration.module.scss';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+
 function PageEndRegistration (){
     const data=true;
     const navigate=useNavigate();
+
     function ClickEndRegist(){
 console.log('Регистрация завершена')
+    return navigate('*')
+
     }
-<<<<<<< HEAD
-useEffect(()=>{
-    if(data){
-navigate('*')
-    } 
-})
+    
     return(
         <EnterMainSection>
                <PositionModulDiv>
                <ModuleRegistration width="406px" height="330px">
-=======
-
-    return(
-        <EnterMainSection>
-               <PositionModulDiv>
-               <ModuleRegistration width="406px" height="330px" marginTop="285px">
->>>>>>> formickbranch
                 <div className={styles.endRegist__div}>
                 <p>Подтвердите регистрацию</p>
                 <p className={styles.endRegist__p}>Письмо для подтверждения аккаунта отправлено почту. Перейдите по ссылке, указанной в письме. Если письма нет, то проверьте спам.</p>

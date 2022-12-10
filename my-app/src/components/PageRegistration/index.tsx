@@ -8,7 +8,7 @@ import password from '../../image/registration/password.svg';
 import { ButtonModule } from '../common/ButtonModule';
 import styles from './PageRegistration.module.scss';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import errorZnack from '../../image/avtorization/errorZnack.svg';
+import errorZnack from '../../image/avtorization/alert 1.svg';
 import * as yup from "yup";
 import { yupResolver } from '@hookform/resolvers/yup';
 import userRoboto from '../../image/avtorization/userRoboto.png';
@@ -21,7 +21,7 @@ password:string;
 confirmPassword:string;
 }
 const schema = yup.object({
-    password: yup.string().required(),
+    password: yup.string().required().min(6,''),
     confirmPassword: yup.string().required().oneOf([yup.ref('password')], 'Пароли не совпадают'),
 mail:yup.string().required().email()
   }).required();
@@ -32,6 +32,7 @@ function PageRegistration (){
    
     const onSubmit: SubmitHandler<InputsRegistrationProps> = data =>{
         console.log(data);
+        
         setData(data=>!data)
        
          
@@ -55,6 +56,7 @@ function PageRegistration (){
       <img src={email} alt='Иконка почты' className={styles.registration__mail}/>
       <input type='password' placeholder='Пароль' {...register('password',{required:true, minLength:6})} />
       <img src={password} alt='Иконка пароля' className={styles.registration__password}/>
+     
       <input type='password' placeholder='Повторите пароль' {...register('confirmPassword',{required:true, minLength:6})}
       style={{border:errors.confirmPassword&&`1px solid #EB5757`}} />
        {errors.confirmPassword&&<img src={errorZnack} alt='Иконка ошибки' className={styles.errorZnasck2}/>}
@@ -76,7 +78,7 @@ function PageRegistration (){
     <p className={styles.ruleslink__p}>Уже есть аккаунта? <a href='#'>Войдите</a></p>
    </div>
     </div>
-    {data&& <Navigate replace to="/Новости" />}
+    {data&& <Navigate replace to="/Завершение регистрации" />}
 </form>
             </ModuleRegistration>
 </PositionModulDiv>
