@@ -1,0 +1,23 @@
+.newsLink__p{
+    
+        font-family: 'Inter Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: #686868;
+  display: inline-block;
+  margin: 0px 0px 0px 7px;
+      
+}
+
+.newsLink__p::before{
+    content: '';
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #4E64F9;
+    margin-right: 7px;
+    margin-bottom: 2.5px;
+}

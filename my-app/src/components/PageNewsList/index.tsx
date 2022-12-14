@@ -8,6 +8,8 @@ import Header from "../Header";
 import Footer from "../Footer";
 import NavigationSectionProducts from '../NavigationSectionProducts';
 import ArticleComponent1 from '../ArticleComponent1';
+import {LinkDivTitle} from '../common/LinkDivTitle'
+import styles from './PageNewsList.module.scss';
 
 const Articles=[{
   id:1,
@@ -74,13 +76,11 @@ console.log('Выбор статьи')
     <NavigationSectionProducts />
     <section className="page-news__section">
       <div className="block-page-news__div">
-        <div className="link-news__div_left">
-          <img src={home} alt="Изображение дома" />
-          <img src={circle} alt="Изображение точки" />
-          <p className="news-link__p">
+        <LinkDivTitle>
+          <p className={styles.newsLink__p}>
             <a href="#">Новости</a>
           </p>
-        </div>
+        </LinkDivTitle>
         <p className="title-news-text__p">Новости </p>
       </div>
       <div className="block-search-articles__div_right">
