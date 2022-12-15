@@ -1,15 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from './PanelNavigationOptions.module.scss';
 import { useForm, SubmitHandler } from "react-hook-form";
 import setup from '../../image/panelNavigation/setup 1.svg'
 import  chevron from './../../image/panelNavigation/chevron-down.svg';
 import  chevronRight from './../../image/panelNavigation/chevron-down-right.svg';
+import axios from 'axios';
 interface IFormInput {
 rooms:string;
 }
 function PanelNavigationOptions (){
     const { register, handleSubmit } = useForm<IFormInput>();
+  const [data, setData]=useState([])
+  useEffect(()=>{
+    const fetchData = async () => {
+        const result = await axios(
+          'http://localhost:5000/',
+        );
   
+        setData(result.data);
+        console.log(result.data)
+      };
+  
+      fetchData();
+  }, [])
     const onSubmit: SubmitHandler<IFormInput> = data => console.log(data);
     
     return(
@@ -50,7 +63,7 @@ function PanelNavigationOptions (){
     </div>
     </div>
     </form>
-   
+
 </div>
     )
 }

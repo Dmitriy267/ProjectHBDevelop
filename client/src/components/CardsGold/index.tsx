@@ -1,17 +1,21 @@
 import React from 'react';
 import styles from './CardsGold.module.scss';
+import  {PlaceholderCardsGold} from '../common/PlaceholderCardsGold';
 
 interface CardsGoldProps {
     price:string;
+    atlDesript:string;
     imgSrc:string;
-    altDescript:string;
+  
 }
-function CardsGold ({price, imgSrc, altDescript}:CardsGoldProps){
+function CardsGold ({price , atlDesript, imgSrc}:CardsGoldProps){
 return (
     <div className={styles.wrapper__div}>
-        <img src={imgSrc} alt={altDescript}/>
+        <img src={imgSrc} alt={atlDesript}/>
         <p>{price}</p>
         <p>за сутки</p>
+       <PlaceholderCardsGold>
+       </PlaceholderCardsGold>
     </div>
 )
 }

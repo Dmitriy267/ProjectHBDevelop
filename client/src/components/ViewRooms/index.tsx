@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import styles from './ViewRooms.module.scss';
 import  chevron from './../../image/viewRooms/chevron-down.svg';
 import  sort from './../../image/viewRooms/sort.svg';
@@ -6,15 +6,37 @@ import  rowRooms from './../../image/viewRooms/Group 279.svg';
 import  columRooms  from './../../image/viewRooms/Group 278.svg';
 import  mapsRooms  from './../../image/viewRooms/Vector.svg';
 import CardsGold from '../CardsGold';
+import axios from 'axios';
 function ViewRooms (){
+    const [selectValue, setSelectValue]=useState('defolt');
+    const [data, setData]=useState<any[]>([])
+    const handleRoomsSubmit=(event:FormEvent)=>{
+        console.log('Выбрана форма')
+    }
+function handleSelectRoom(event:ChangeEvent<HTMLSelectElement>){
+    setSelectValue(event.target.value);
+    console.log(event.target.value)
+}
+useEffect(()=>{
+    const fetchData = async () => {
+        const result = await axios(
+          'http://localhost:5000/',
+        );
+  
+        setData(result.data);
+        console.log(result.data)
+      };
+  
+      fetchData();
+}, [])
     return (
     
     <div className={styles.wrapper__div}>
-        <div className={styles.view__div}>
+        <form className={styles.view__form} onSubmit={handleRoomsSubmit}>
             <div className={styles.viewSelect__div}>
                 <img src={sort} alt='Векторное изображение сортировки'/>
-<select className={styles.view__select}>
-    <option>Выберите</option>
+<select className={styles.view__select} value={selectValue} onChange={handleSelectRoom}>
+    <option value='defolt'>По умолчанию</option>
         <option value='room1'>1 комн.</option>
         <option value='room2'>2 комн.</option>
         <option value='room3'>3 комн.</option>
@@ -28,9 +50,15 @@ function ViewRooms (){
     <button className={styles.colum__button}><img src={columRooms} alt='Изображение плиткой' className={styles.columRooms}/>Плитки</button>
     <button className={styles.maps__button}><img src={mapsRooms} alt='Изображение карты' className={styles.mapsRooms}/>Показать на карте</button>
     </div>
-        </div>
+        </form>
         <p>Найдено 234 результата</p>
-    <CardsGold price="" imgSrc="" altDescript=""/>
+        {
+           !data? 'Loading...': data.map((el, id)=>{
+return(
+    <CardsGold price={el.price}  key={id} atlDesript={el.atlDesript} imgSrc={el.imgSrc}/>
+)
+           })
+        }
       </div>
       
     )
