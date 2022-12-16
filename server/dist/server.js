@@ -12,9 +12,13 @@ app.use('/static', express_1.default.static('public'));
 app.get('/', (req, res) => {
     res.json([{
             id: 1,
-            imgSrc: 'http://localhost:5000/static/image/userRoboto.png',
+            imgSrc: 'http://localhost:5000/static/image/room.png',
             altDescript: 'Изображение квартиры',
-            price: '65.00 BYN'
+            price: '65.00 BYN',
+            text1: 'Минск, б-р Мулявина, д. 10',
+            text2: 'Грушевка',
+            text3: 'Шабаны',
+            descript: 'Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...'
         }]);
 });
 app.listen(PORT, () => { console.log(`server is listening on port ${PORT}`); });
