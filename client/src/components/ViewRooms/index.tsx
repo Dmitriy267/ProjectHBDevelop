@@ -6,8 +6,11 @@ import  rowRooms from './../../image/viewRooms/Group 279.svg';
 import  columRooms  from './../../image/viewRooms/Group 278.svg';
 import  mapsRooms  from './../../image/viewRooms/Vector.svg';
 import CardsGold from '../CardsGold';
+import TableViewCardsGold from '../TableViewCardsGold';
 import axios from 'axios';
+
 function ViewRooms (){
+  
     const [selectValue, setSelectValue]=useState('defolt');
     const [data, setData]=useState<any[]>([])
     const handleRoomsSubmit=(event:FormEvent)=>{
@@ -51,11 +54,14 @@ useEffect(()=>{
     <button className={styles.maps__button}><img src={mapsRooms} alt='Изображение карты' className={styles.mapsRooms}/>Показать на карте</button>
     </div>
         </form>
-        <p>Найдено 234 результата</p>
+        <p className={styles.resultText__p}>Найдено 234 результата</p>
         {
            !data? 'Loading...': data.map((el, id)=>{
+
 return(
-    <CardsGold price={el.price}  key={id} atlDesript={el.atlDesript} imgSrc={el.imgSrc}/>
+    <TableViewCardsGold>
+    <CardsGold  key={id} price={el.price} imgSrc={el.imgSrc} atlDesript={el.atlDesript} text1={el.text1} text2={el.text2} text3={el.text3} descript={el.descript}/>
+    </TableViewCardsGold>
 )
            })
         }
