@@ -4,6 +4,7 @@ import  {PlaceholderCardsGold} from '../common/PlaceholderCardsGold';
 import user from '../../image/cardsGold/user.svg';
 import PanelCardsGoldBottom from '../PanelCardsGoldBottom';
 import LabelGold from '../LabelGold';
+
 interface CardsGoldProps {
     price:string;
     atlDesript:string;

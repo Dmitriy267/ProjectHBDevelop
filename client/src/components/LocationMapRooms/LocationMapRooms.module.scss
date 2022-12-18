@@ -1,0 +1,60 @@
+.locat__section{
+    width: 1440px;
+    height: 310px;
+    background-image: linear-gradient(0deg, rgba(126, 106, 243, 0.7) 0.06%, rgba(101, 64, 205, 0.7)  100.06%), url('../../image/viewRooms/Mask\ Group.png');
+    align-items: center;
+    justify-content: center;
+}
+
+.locat__div{
+    width: 511px;
+    height: 30px+81px+37px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.locat__div p:first-of-type{
+font-family: 'Inter Bold';
+font-size: 25px;
+line-height: 30px;
+margin: 0px;
+text-align: center;
+color: #FFFFFF;
+width: 511px;
+height: 30px;
+
+}
+
+.locat__div p:last-of-type{
+font-family: 'Inter Medium';
+font-size: 16px;
+line-height: 19px;
+text-align: center;
+color: #FFFFFF;
+width: 319px;
+height: 38px;
+margin: 0px;
+}
+
+.locat__button{
+    background-color: #FFFFFF;
+border-radius: 19px;
+width: 167px;
+height: 37px;
+display: flex;
+align-items: center;
+justify-content: center;
+border:0px;
+font-family: 'Inter SemiBold';
+font-size: 14px;
+line-height: 17px;
+color:#1E2123;
+}
+
+.locat__button img{
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+}

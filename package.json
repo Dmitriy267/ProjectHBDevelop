@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-server":"cd server && npm run start",
-    "start-client":"cd client && npm run start"
+    "start-server": "cd server && npm run start",
+    "start-client": "cd client && npm run start",
+    "start": "concurrently \"npm run start-server\" \"npm run start-client\""
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Dmitriy267/ProjectHBDevelop/issues"
   },
-  "homepage": "https://github.com/Dmitriy267/ProjectHBDevelop#readme"
+  "homepage": "https://github.com/Dmitriy267/ProjectHBDevelop#readme",
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  }
 }

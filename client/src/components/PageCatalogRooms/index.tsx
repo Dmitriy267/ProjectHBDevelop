@@ -5,6 +5,7 @@ import NavigationSectionProducts from "../NavigationSectionProducts";
 import PanelNavigationOptions from '../PanelNavigationOptions';
 import SectionRoomsList from '../SectionRoomsList';
 import ResultRoomsSection from '../ResultRoomsSection';
+import LocationMapRooms from '../LocationMapRooms';
 function PageCatalogRooms (){
     return (
         <>
@@ -13,6 +14,7 @@ function PageCatalogRooms (){
         <SectionRoomsList/>
         <PanelNavigationOptions/>
         <ResultRoomsSection/>
+        <LocationMapRooms/>
         <Footer/>
         </>
     )

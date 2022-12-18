@@ -10,6 +10,7 @@ import NavigationSectionProducts from '../NavigationSectionProducts';
 import ArticleComponent1 from '../ArticleComponent1';
 import {LinkDivTitle} from '../common/LinkDivTitle'
 import styles from './PageNewsList.module.scss';
+import {UlListComponent} from '../common/UlListComponent';
 
 const Articles=[{
   id:1,
@@ -114,17 +115,7 @@ switch (inputArticl){
         
       </div>
       
-      <ul className="namber-page__ul_bottom">
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li><a href="#">6</a></li>
-        <li><a href="#">7</a></li>
-        <li><a href="#">...</a></li>
-        <li><a href="#">11</a></li>
-      </ul>
+      <UlListComponent/>
     </section>
     <Footer/>
     </>

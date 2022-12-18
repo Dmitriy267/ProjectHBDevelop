@@ -8,6 +8,12 @@ import  mapsRooms  from './../../image/viewRooms/Vector.svg';
 import CardsGold from '../CardsGold';
 import TableViewCardsGold from '../TableViewCardsGold';
 import axios from 'axios';
+import { UlListComponent } from "../common/UlListComponent";
+import vk from '../../image/viewRooms/vk 1.svg';
+import fb from '../../image/viewRooms/facebook 1.svg';
+import vb from '../../image/viewRooms/simple-icons_viber (1).svg';
+import tg from '../../image/viewRooms/bx_bxl-telegram (1).svg';
+import wp from '../../image/viewRooms/icomoon-free_whatsapp (1).svg';
 
 function ViewRooms (){
   
@@ -55,16 +61,40 @@ useEffect(()=>{
     </div>
         </form>
         <p className={styles.resultText__p}>Найдено 234 результата</p>
+        <TableViewCardsGold>
         {
-           !data? 'Loading...': data.map((el, id)=>{
-
-return(
-    <TableViewCardsGold>
+          
+           !data? '...Загрузка с сервера':data.map((el, id)=>{ 
+            return( 
+                
     <CardsGold  key={id} price={el.price} imgSrc={el.imgSrc} atlDesript={el.atlDesript} text1={el.text1} text2={el.text2} text3={el.text3} descript={el.descript}/>
-    </TableViewCardsGold>
-)
-           })
+            )
+})
+           
         }
+       
+        </TableViewCardsGold>
+        <div className={styles.page__div}>
+        <UlListComponent/>
+        <div className={styles.rowLink__div}>
+            <p>Поделиться</p>
+            <div className={styles.rowLinkMes__div}>
+                <img src={vk} alt='Иконка соцсетей'/>
+            </div>
+            <div className={styles.rowLinkMes__div}>
+                <img src={fb} alt='Иконка соцсетей'/>
+            </div>
+            <div className={styles.rowLinkMes__div}>
+                <img src={vb} alt='Иконка соцсетей'/>
+            </div>
+            <div className={styles.rowLinkMes__div}>
+                <img src={tg} alt='Иконка соцсетей'/>
+            </div>
+            <div className={styles.rowLinkMes__div}>
+                <img src={wp} alt='Иконка соцсетей'/>
+            </div>
+        </div>
+        </div>
       </div>
       
     )
