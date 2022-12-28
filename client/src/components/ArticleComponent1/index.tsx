@@ -1,5 +1,8 @@
 import React  from "react";
-
+import {CardDivRight} from '../common/CardDivRight';
+import {CardDivLeft} from '../common/CardDivLeft';
+import {CardDivBottom} from '../common/CardDivBottom';
+import {CardDivCommon} from '../common/CardDivCommon';
 interface ArticleComponent1Props{
     imgSrc:string;
     title:string;
@@ -9,11 +12,15 @@ interface ArticleComponent1Props{
 const ArticleComponent1 =({imgSrc, title, description, altTitle}:ArticleComponent1Props)=>{
     return(
         <>
-<div>
-<img src={imgSrc} alt={altTitle}/>
-<h3>{title}</h3>
-<p>{description}</p>
-</div>
+  <CardDivCommon>
+     <img src={imgSrc} alt={altTitle} />
+      <p className="card-title__p_center">{title}</p>
+      <p className="card-text-info__p">{description}</p>
+      <CardDivBottom>
+        <CardDivLeft textDataCard="14 Января 2008"/>
+        <CardDivRight ReadText="Читать" />
+      </CardDivBottom>
+      </CardDivCommon>
 </>
     )
 }

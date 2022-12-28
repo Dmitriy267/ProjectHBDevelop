@@ -1,4 +1,4 @@
-import React, {useState, ChangeEvent, MouseEventHandler } from "react";
+import React, {useState, ChangeEvent, MouseEventHandler, useReducer, useEffect } from "react";
 import "./index.scss";
 import home from "../../image/home.svg";
 import loup from "../../image/loup.svg";
@@ -11,66 +11,54 @@ import ArticleComponent1 from '../ArticleComponent1';
 import {LinkDivTitle} from '../common/LinkDivTitle'
 import styles from './PageNewsList.module.scss';
 import {UlListComponent} from '../common/UlListComponent';
+import { useForm , SubmitHandler } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { fetchPosts1} from '../../redux/features/Post/postsSlice';
+import type { AppDispatch } from '../../redux/store';
+import { useSelector } from "react-redux";
+import {postSelector} from '../../redux/features/Post/postsSlice';
+import {post2Selector} from '../../redux/features/Post2/posts2Slice';
+import {post3Selector} from '../../redux/features/Post3/posts3Slice';
+import {post4Selector} from '../../redux/features/Post4/posts4Slice';
+import { fetchPosts2} from '../../redux/features/Post2/posts2Slice';
+import { fetchPosts3} from '../../redux/features/Post3/posts3Slice';
+import { fetchPosts4} from '../../redux/features/Post4/posts4Slice';
 
-const Articles=[{
-  id:1,
-  imgSrc:'',
-  title:'Баня Русская С душой',
-  description:'В Бане С душой вы можете посетить традиционную баню на дровах - проверенную веками и особенно любимую жителями больших городов. Уютный звук сгорающих в печи дров, запах натурального дерева рождают у нас добрые чувства.',
-  altTitle:'Фото бани'
 
-},
-{
-  id:2,
-  imgSrc:'',
-  title:' Банька с веничком на двоих',
-  description:'В сауну Банька с веничком на двоих вы можете прийти веселой компанией, арендовать парную на всех, пообщаться и отдохнуть. У нас вы сможете найти : бодрящую купель, пахучие веники, бильярд, уютную комнату отдыха ',
-  altTitle:'Фото бани'
-
-},
-{
-  id:3,
-  imgSrc:'',
-  title:'Баня На Волге',
-  description:'К Вашим услугам представлены: парная с немецкой дровяной печью (топиться дубовыми дровами). Самый большой бассейн (Саратовское водохранилище).',
-  altTitle:'Фото бани'
+interface PageNewsListProps {
+  searchArticles: string;
 }
-];
-const ArticleHome=[ 
-  {id:1,
-  imgSrc:'',
-  title:'Коттеджный комплекс «Ручеёк» ',
-  description:'Коттеджный Банный комплекс «Ручеёк» предлагает снять дом/коттедж в Люберцах недорого на сутки. Во дворе мангал, беседка, купель.',
-  altTitle:'Фото коттеджа'
-
-},
-{
-  id:2,
-  imgSrc:'',
-  title:'Прованс',
-  description:'Предлагаем вам отдохнуть в атмосферном загородном доме в стиле французского прованса. В коттедже вы найдете все необходимое, чтобы провести тихий уютный вечер с друзьями или устроить веселую вечеринку ',
-  altTitle:'Фото коттеджа'
-
-},
-{
-  id:3,
-  imgSrc:'',
-  title:'Гостевой дом-вилла',
-  description:'Комфортный, уютный двухэтажный коттедж в стиле Вилла - отдых на природе с городским комфортом.',
-  altTitle:'Фото коттеджа'
-}]
 function PageNewsList() {
-const [inputArticl, setInputArticl]=useState('')
-function onChangeInputArticle (event:ChangeEvent<HTMLInputElement>){
-  return setInputArticl(event.target.value)
+const [data, setData]=useState(false);
+const dispatch=useDispatch<AppDispatch>();
+const postsGet=useSelector(postSelector);
+const postsGet2=useSelector(post2Selector);
+const postsGet3=useSelector(post3Selector);
+const postsGet4=useSelector(post4Selector);
+console.log(postsGet)
+console.log(postsGet2)
+
+const { register, handleSubmit } = useForm<PageNewsListProps>();
+const onSubmit: SubmitHandler<PageNewsListProps> = data => {
+  console.log(data);
+  setData(data=>!data);
+  const {searchArticles}=data;
+  console.log(searchArticles)
+  switch(searchArticles){
+case 'Баня':
+return dispatch((fetchPosts1()))
+case 'Коттедж':
+return dispatch((fetchPosts2()))
+case 'Усадьбы':
+  return dispatch((fetchPosts3()))
+case '':
+  return dispatch((fetchPosts4()))
+  default:
+    return null
+  }
 }
 
-const onClickArticles:MouseEventHandler=(event)=> {
-console.log('Выбор статьи')
 
-    
-  }
-  
   return (
     <>
     <Header/>
@@ -85,36 +73,42 @@ console.log('Выбор статьи')
         <p className="title-news-text__p">Новости </p>
       </div>
       <div className="block-search-articles__div_right">
-        <input type="text" placeholder="Поиск по статьям" value={inputArticl} onChange={onChangeInputArticle} />
-        <button onClick={onClickArticles}>
+        <form onSubmit={handleSubmit(onSubmit)}>
+        <input {...register("searchArticles", { required: false, maxLength: 20 })}placeholder="Поиск по статьям" />
+        <button type="submit">
           <img src={loup} alt="Изображение лупы" />
         </button>
+        </form>
       </div>
 
         <div className="block-articles__div_center">
-        {(()=>{
-switch (inputArticl){
-  case 'Баня':
-    return Articles.map((el, id)=><ArticleComponent1 key={id} imgSrc={el.imgSrc} title={el.title} description={el.description} altTitle={el.altTitle}/>)
-    case 'Коттедж':
-          return ArticleHome.map((el, id)=><ArticleComponent1 key={id} imgSrc={el.imgSrc} title={el.title} description={el.description} altTitle={el.altTitle}/>)
-        default:
-          return   [...Array(9)].map((item, index)=>
-          <CardInfoNews key={index}
-   altDescript="Фото комнаты"
-          textTitle="Линия Сталина: суровый отдых в усадьбах на сутки"
-          textInfo="Чем заняться в выходные? Когда нет безотлагательных домашних дел, а на улице 
-          хорошая погода, хочется уехать из города, чтобы сменить обстановку. Например, снять коттедж на сутки для семьи или большой компании друзей. А..."
-          />
-         )
-}
-        })()
-       
-         
-         }
+     
+        {
+   postsGet? postsGet.map((el, id)=><ArticleComponent1 key={id} imgSrc={el.imgSrc} title={el.title} description={el.description} altTitle={el.altTitle}/>):
+   <p>Статья не найдена</p>}
+   {postsGet2? postsGet2.map((el, id)=><ArticleComponent1 key={id} imgSrc={el.imgSrc} title={el.title} description={el.description} altTitle={el.altTitle}/>):
+   <p>Статья не найдена</p>
+   }
+    {
+    postsGet3? postsGet3.map((el, id)=><ArticleComponent1 key={id} imgSrc={el.imgSrc} title={el.title} description={el.description} altTitle={el.altTitle}/>):
+   <p>Статья не найдена</p>
+   }
+
+{
+    postsGet4? [...Array(9)].map(( index)=>
+    <CardInfoNews key={index}
+    altDescript={"Фото комнаты"}
+    textTitle="Линия Сталина: суровый отдых в усадьбах на сутки"
+    textInfo="Чем заняться в выходные? Когда нет безотлагательных домашних дел, а на улице 
+    хорошая погода, хочется уехать из города, чтобы сменить обстановку. Например, снять коттедж на сутки для семьи или большой компании друзей. А..."
+  />
+   ):
+   <p>Статья не найдена</p>
+   }  
         
       </div>
-      
+    
+
       <UlListComponent/>
     </section>
     <Footer/>

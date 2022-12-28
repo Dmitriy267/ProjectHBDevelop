@@ -14,6 +14,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import userRoboto from '../../image/avtorization/userRoboto.png';
 import {ButtonErrMessage} from '../common/ButtonErrMessage';
  import { Navigate } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import {userLogin } from '../../redux/features/User/userSlice';
 interface InputsRegistrationProps{
 login:string;
 mail:string;
@@ -28,16 +30,28 @@ mail:yup.string().required().email()
 
 function PageRegistration (){
    
+    const dispatch=useDispatch();
     const { register, formState:{errors}, handleSubmit } = useForm<InputsRegistrationProps>({resolver: yupResolver(schema)});
    
     const onSubmit: SubmitHandler<InputsRegistrationProps> = data =>{
         console.log(data);
         
-        setData(data=>!data)
+        setData(data=>!data);
+        const {login, mail, password, confirmPassword}=data;
+      
+dispatch(userLogin({
+login:login,
+mail:mail,
+password:password,
+confirmPassword:confirmPassword,
+}))
+
+
        
          
     }
-   const [data, setData]=useState(false)
+   const [data, setData]=useState(false);
+ 
       
     return(
         <EnterMainSection>

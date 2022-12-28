@@ -3,7 +3,13 @@ import "./index.scss";
 import heart from "../../image/header/heart.svg";
 import Group5 from "../../image/header/Group5.svg";
 import { Link } from "react-router-dom";
+import LinkRegistration from '../LinkRegistration';
+import { useSelector } from "react-redux";
+import { selectUser } from "../../redux/features/User/userSlice";
+import Login from '../Login';
+
 export default function Header() {
+  const user=useSelector(selectUser)
   return (
    
       <header className="header">
@@ -35,9 +41,7 @@ export default function Header() {
             <a href="#">Закладки</a>
             <img src={heart} alt="Векторное изображение закладки" />
           </div>
-          <div className="block-header__div_right">
-            <Link to="/Вход и регистрация">Вход и регистрация</Link>
-          </div>
+          {user?<Login/>:<LinkRegistration/>}
         </div>
       </header>
    
