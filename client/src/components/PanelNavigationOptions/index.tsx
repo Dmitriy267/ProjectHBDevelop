@@ -5,6 +5,7 @@ import setup from '../../image/panelNavigation/setup 1.svg'
 import  chevron from './../../image/panelNavigation/chevron-down.svg';
 import  chevronRight from './../../image/panelNavigation/chevron-down-right.svg';
 import axios from 'axios';
+import ManyOptions from '../ManyOptions';
 interface IFormInput {
 rooms:string;
 }
@@ -23,11 +24,17 @@ function PanelNavigationOptions (){
   
       fetchData();
   }, [])
+
+  const [manyOption, setManyOption]=useState(false)
+  const OptionsAllShow=()=>{
+    setManyOption(manyOption=>!manyOption)
+  }
     const onSubmit: SubmitHandler<IFormInput> = data => console.log(data);
     
     return(
 <div className={styles.options__div}>
     <form onSubmit={handleSubmit(onSubmit)}>
+        <div className={styles.form__top}>
         <div className={styles.panel1__div}>
             <div className={styles.rowPanel1__div}>
         <p className={styles.panel1__p}>Комнаты</p>
@@ -53,7 +60,7 @@ function PanelNavigationOptions (){
     <div className={styles.panel3__div}>
         <div className={styles.rowPanel3__div}>
         <p>Больше опций </p>
-       <button><img src={setup} alt='Ползунок опций'/></button>
+       <button onClick={OptionsAllShow}><img src={setup} alt='Ползунок опций'/></button>
        </div>
     </div>
     <div className={styles.panel4__div}>
@@ -62,8 +69,12 @@ function PanelNavigationOptions (){
     <button type='submit' className={styles.showObj__button}>Показать объекты<img src={chevronRight} alt='Стрелка кнопки' className={styles.chevronRight__img}/></button>
     </div>
     </div>
+    </div>
+    <div className={styles.form__bottom}>
+    {manyOption?<ManyOptions/>:null}
+    </div>
     </form>
-
+   
 </div>
     )
 }

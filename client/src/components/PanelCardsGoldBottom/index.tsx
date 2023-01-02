@@ -3,6 +3,7 @@ import styles from './PanelCardsGoldBottom.module.scss';
 import heart from '../../image/cardsGold/heart.svg';
 import cellphone from '../../image/cardsGold/cellphone.svg';
 import {ContactsCardGold} from '../common/ContactsCardGold';
+
 function PanelCardsGoldBottom (){
     return(
 <div className={styles.cardsBottom__div}>

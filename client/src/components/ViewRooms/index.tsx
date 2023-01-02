@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import React, { ChangeEvent, FormEvent, useEffect, useState , MouseEvent} from "react";
 import styles from './ViewRooms.module.scss';
 import  chevron from './../../image/viewRooms/chevron-down.svg';
 import  sort from './../../image/viewRooms/sort.svg';
@@ -14,13 +14,15 @@ import fb from '../../image/viewRooms/facebook 1.svg';
 import vb from '../../image/viewRooms/simple-icons_viber (1).svg';
 import tg from '../../image/viewRooms/bx_bxl-telegram (1).svg';
 import wp from '../../image/viewRooms/icomoon-free_whatsapp (1).svg';
+import RowsCardsGold from '../RowsCardsGold';
+import CardsGoldViewRow from '../CardsGoldViewRow';
 
 function ViewRooms (){
   
     const [selectValue, setSelectValue]=useState('defolt');
     const [data, setData]=useState<any[]>([])
-    const handleRoomsSubmit=(event:FormEvent)=>{
-        console.log('Выбрана форма')
+    const handleRoomsSubmit=()=>{
+       console.log(setData)
     }
 function handleSelectRoom(event:ChangeEvent<HTMLSelectElement>){
     setSelectValue(event.target.value);
@@ -38,6 +40,20 @@ useEffect(()=>{
   
       fetchData();
 }, [])
+
+const [columToggle, setColumToggle]=useState(false);
+const [rowToggle, setRowToggle]=useState(false)
+const ClickColumRooms=(e:MouseEvent)=>{
+    e.preventDefault();
+    setColumToggle(columToggle=>!columToggle)
+    console.log(  columToggle)
+
+}
+const ClickRowRooms=(e:MouseEvent)=>{
+    e.preventDefault();
+    setRowToggle(rowToggle=>!rowToggle)
+
+}
     return (
     
     <div className={styles.wrapper__div}>
@@ -55,25 +71,39 @@ useEffect(()=>{
     <img src={chevron} alt='Стрелка на кнопке'/>
     </div>
     <div className={styles.viewButtons__div}>
-    <button className={styles.row__button}><img src={rowRooms} alt='Изображение списком' className={styles.rowRooms}/>Список</button>
-    <button className={styles.colum__button}><img src={columRooms} alt='Изображение плиткой' className={styles.columRooms}/>Плитки</button>
-    <button className={styles.maps__button}><img src={mapsRooms} alt='Изображение карты' className={styles.mapsRooms}/>Показать на карте</button>
+    <button className={styles.row__button} onClick={ClickRowRooms}><img src={rowRooms} alt='Изображение списком' className={styles.rowRooms}/>Список</button>
+    <button className={styles.colum__button} onClick={ClickColumRooms}><img src={columRooms} alt='Изображение плиткой' className={styles.columRooms}/>Плитки</button>
+    <button className={styles.maps__button} ><img src={mapsRooms} alt='Изображение карты' className={styles.mapsRooms}/>Показать на карте</button>
     </div>
         </form>
         <p className={styles.resultText__p}>Найдено 234 результата</p>
-        <TableViewCardsGold>
+        {columToggle? <TableViewCardsGold>
         {
           
-           !data? '...Загрузка с сервера':data.map((el, id)=>{ 
+           data.map((el, id)=>{ 
             return( 
                 
     <CardsGold  key={id} price={el.price} imgSrc={el.imgSrc} atlDesript={el.atlDesript} text1={el.text1} text2={el.text2} text3={el.text3} descript={el.descript}/>
             )
 })
            
-        }
-       
-        </TableViewCardsGold>
+        
+}
+        </TableViewCardsGold>:null
+    }
+    {
+        rowToggle?<RowsCardsGold>
+
+{
+       data.map((el, id)=>{ 
+        return( 
+            
+<CardsGoldViewRow  key={id} price={el.price} imgSrc={el.imgSrc} atlDesript={el.atlDesript} text1={el.text1}  text2={el.text2}  text3={el.text3} descriptOther={el.descriptOther} textTitle={el.textTitle}/>
+        )
+}).slice(0,3)
+}
+        </RowsCardsGold>:null
+    }
         <div className={styles.page__div}>
         <UlListComponent/>
         <div className={styles.rowLink__div}>
