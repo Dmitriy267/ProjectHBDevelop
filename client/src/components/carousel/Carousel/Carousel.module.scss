@@ -1,0 +1,59 @@
+.main__div{
+    width: 537.84px;
+    height: 300px;
+}
+
+.window{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.pagesContainer__div{
+    height: 100%;
+    display: flex;
+    transition: translate;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.arrow__div{
+    display: flex;
+    justify-content: space-between;
+    width:29px+473px+29px;
+    height: 28px;
+    top:136px;
+ position: absolute;;
+    left:4px;
+    z-index: 2;
+}
+.left__button {
+    display: flex;
+    cursor: pointer;
+    width: 29px;
+    height: 28px;
+    align-items: center;
+    justify-content: center;
+    border:0px;
+    border-radius: 50%;
+}
+.right__button {
+    display: flex;
+    cursor: pointer;
+    width: 29px;
+    height: 28px;
+    align-items: center;
+    justify-content: center;
+    border:0px;
+    border-radius: 50%;
+}
+.left__button img{
+    width: 29px;
+    height: 28px;
+}
+
+.right__button img{
+    width: 29px;
+    height: 28px;
+}

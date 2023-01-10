@@ -9,10 +9,16 @@ import {ContactsCardGold} from '../common/ContactsCardGold';
 import cellphone from '../../image/cardsGold/cellphone.svg';
 import ButtonMark from '../ButtonMark';
 import {ContactsCardGoldAddit} from '../common/ContactsCardGoldAddit';
-interface CardsGoldViewRowProps {
+import SliderComponent from '../SliderComponent';
+  interface CardsGoldViewRowProps {
     price:string;
     atlDesript:string;
-    imgSrc:string;
+    imgSrc1?:string;
+    imgSrc2?:string;
+    imgSrc3?:string;
+    imgSrc4?:string;
+    imgSrc5?:string;
+    imgSrc6?:string;
     text1:string;
     text2:string;
     text3:string;
@@ -21,11 +27,15 @@ interface CardsGoldViewRowProps {
   
 }
 const CardsGoldViewRow:React.FC<CardsGoldViewRowProps> =(props) =>{
-    const {imgSrc, atlDesript, textTitle, price,  text1, text2, text3, descriptOther}=props;
+    const {  atlDesript, textTitle, price,  text1, text2, text3, descriptOther, imgSrc1, imgSrc2, imgSrc3, imgSrc4, imgSrc5, imgSrc6}=props;
     return (
 <div className={styles.cards__div}>
     <div className={styles.blockSlid__div}>
-        <img src={imgSrc} alt={atlDesript} className={styles.wrapper__img}/>
+        {/*Создаем слайд*/}
+
+{<SliderComponent atlDesript={atlDesript} imgSrc1={imgSrc1} imgSrc2={imgSrc2} imgSrc3={imgSrc3} imgSrc4={imgSrc4} imgSrc5={imgSrc5} imgSrc6={imgSrc6}  />}
+
+        {/*Конец слайда*/}
         <LabelGoldRow/>
     </div>
     <div className={styles.right__div}>

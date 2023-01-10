@@ -1,10 +1,6 @@
 import React from 'react';
 import './styles.css';
 import "./styles.scss";
-//import './App.css';
-//import Header from "./components/Header";
-//import NavigationSectionProducts from "./components/NavigationSectionProducts";
-//import Footer from "./components/Footer";
 import {Routes, Route} from 'react-router-dom';
 import PageNewsMain from './components/PageNewsMain';
 import PageNewsList from './components/PageNewsList';
@@ -15,8 +11,8 @@ import {RouteMainAvtorization} from './components/RouteMainAvtorization/RouteMai
 import PageRegistration from './components/PageRegistration';
 import PageCatalogRooms from './components/PageCatalogRooms';
 import PageEndRegistration from './components/PageEndRegistration';
-//import PageAvtorization from './components/PageAvtorization';
-//import { RouteEnterCom } from './components/RouteEnterCom/RouteEnterCom';
+import MainPage from './components/MainPage';
+
 function App() {
   return (
     <div className="App">
@@ -31,6 +27,7 @@ function App() {
           <Route path='Каталог квартир' element={<PageCatalogRooms/>}/>
           <Route path='Завершение регистрации' element={<PageEndRegistration/>}/>
           <Route path='*' element={<NotfoundPage/>} />
+          <Route path='Главная' element={<MainPage/>} />
           </Route>
       </Routes>
   

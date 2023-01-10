@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { ChangeEventHandler, useEffect, useRef, useState } from "react";
 import styles from './PanelNavigationOptions.module.scss';
 import { useForm, SubmitHandler } from "react-hook-form";
 import setup from '../../image/panelNavigation/setup 1.svg'
@@ -6,12 +6,17 @@ import  chevron from './../../image/panelNavigation/chevron-down.svg';
 import  chevronRight from './../../image/panelNavigation/chevron-down-right.svg';
 import axios from 'axios';
 import ManyOptions from '../ManyOptions';
+import {SelectRooms} from '../common/SelectRooms';
 interface IFormInput {
 rooms:string;
 }
 function PanelNavigationOptions (){
     const { register, handleSubmit } = useForm<IFormInput>();
-  const [data, setData]=useState([])
+  const [data, setData]=useState([]);
+  const selectRef=useRef<HTMLSelectElement>(null!);
+const selectFocus=()=>{
+    selectRef.current.focus();
+}
   useEffect(()=>{
     const fetchData = async () => {
         const result = await axios(
@@ -38,7 +43,8 @@ function PanelNavigationOptions (){
         <div className={styles.panel1__div}>
             <div className={styles.rowPanel1__div}>
         <p className={styles.panel1__p}>Комнаты</p>
-    <select {...register('rooms')} className={styles.panel1__select}>
+    <select {...register('rooms')} className={styles.panel1__select} ref={selectRef} onChange={selectFocus}>
+      
     <option>Выберите</option>
         <option value='room1'>1 комн.</option>
         <option value='room2'>2 комн.</option>

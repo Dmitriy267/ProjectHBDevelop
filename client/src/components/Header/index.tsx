@@ -10,7 +10,7 @@ export default function Header() {
         <nav>
           <ul>
             <li>
-              <a href="#">Главная</a>
+              <Link to="/Главная">Главная</Link>
             </li>
             <li>
               <Link to="/Новости">Новости</Link>

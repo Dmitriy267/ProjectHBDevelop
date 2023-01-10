@@ -17,6 +17,7 @@ import wp from '../../image/viewRooms/icomoon-free_whatsapp (1).svg';
 import RowsCardsGold from '../RowsCardsGold';
 import CardsGoldViewRow from '../CardsGoldViewRow';
 
+
 function ViewRooms (){
   
     const [selectValue, setSelectValue]=useState('defolt');
@@ -78,6 +79,7 @@ const ClickRowRooms=(e:MouseEvent)=>{
         </form>
         <p className={styles.resultText__p}>Найдено 234 результата</p>
         {columToggle? <TableViewCardsGold>
+            <p>Слайд</p>
         {
           
            data.map((el, id)=>{ 
@@ -85,7 +87,7 @@ const ClickRowRooms=(e:MouseEvent)=>{
                 
     <CardsGold  key={id} price={el.price} imgSrc={el.imgSrc} atlDesript={el.atlDesript} text1={el.text1} text2={el.text2} text3={el.text3} descript={el.descript}/>
             )
-})
+}).slice(1,7)
            
         
 }
@@ -97,9 +99,12 @@ const ClickRowRooms=(e:MouseEvent)=>{
 {
        data.map((el, id)=>{ 
         return( 
+           
+<CardsGoldViewRow  key={id} price={el.price}  atlDesript={el.atlDesript} text1={el.text1} text2={el.text2} text3={el.text3} 
+            descriptOther={el.descriptOther} textTitle={el.textTitle} imgSrc1={el.imgSrc1} imgSrc2={el.imgSrc2} imgSrc3={el.imgSrc3} imgSrc4={el.imgSrc4} imgSrc5={el.imgSrc5} imgSrc6={el.imgSrc6}/>
             
-<CardsGoldViewRow  key={id} price={el.price} imgSrc={el.imgSrc} atlDesript={el.atlDesript} text1={el.text1}  text2={el.text2}  text3={el.text3} descriptOther={el.descriptOther} textTitle={el.textTitle}/>
         )
+  
 }).slice(0,3)
 }
         </RowsCardsGold>:null
