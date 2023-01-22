@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk  } from '@reduxjs/toolkit';
-
+import axios from 'axios';
 
 interface postSelectorProps{
     posts:{
@@ -32,7 +32,7 @@ export const postsSlice=createSlice({
             state.posts=action.payload;
         }
     },
-    extraReducers: (builder)=>{
+    extraReducers:(builder)=>{
         builder
         .addCase(fetchPosts1.pending, (state)=>{
 state.status='loading';
@@ -41,7 +41,8 @@ state.ErrorGet=false;
 .addCase(fetchPosts1.fulfilled, (state, action)=>{
     state.status='resolved';
     state.ErrorGet=false;
-    state.posts=action.payload;
+    
+ 
 })
 .addCase(fetchPosts1.rejected, (state)=>{
     state.status='reject';
@@ -49,20 +50,18 @@ state.ErrorGet=false;
    
 })
 
-    },
+    }
     
       
 })
 
 export  const fetchPosts1=createAsyncThunk(
-  'posts/fetchPosts',
-  async function () {
+  'posts/fetchPosts1',
+  async (_, {rejectWithValue, dispatch})=> {
    
-    const response = await fetch('/articles');
-    const articles=await response.json();
-    return articles;
-}
-     
+    const response = await axios.get('/articles');
+   dispatch(createPostArticles(response.data))
+  }
 )
 
 export const {createPostArticles}=postsSlice.actions;

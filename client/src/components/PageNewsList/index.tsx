@@ -49,15 +49,15 @@ case 'Баня':
 return dispatch((fetchPosts1()))
 case 'Коттедж':
 return dispatch((fetchPosts2()))
-case 'Усадьбы':
+case 'Усадьба':
   return dispatch((fetchPosts3()))
 case '':
   return dispatch((fetchPosts4()))
   default:
     return null
   }
-}
 
+}
 
   return (
     <>
@@ -82,9 +82,9 @@ case '':
       </div>
 
         <div className="block-articles__div_center">
-     
+
         {
-   postsGet? postsGet.map((el, id)=><ArticleComponent1 key={id} imgSrc={el.imgSrc} title={el.title} description={el.description} altTitle={el.altTitle}/>):
+    postsGet?postsGet.map((el, id)=><ArticleComponent1 key={id} imgSrc={el.imgSrc} title={el.title} description={el.description} altTitle={el.altTitle}/>):
    <p>Статья не найдена</p>}
    {postsGet2? postsGet2.map((el, id)=><ArticleComponent1 key={id} imgSrc={el.imgSrc} title={el.title} description={el.description} altTitle={el.altTitle}/>):
    <p>Статья не найдена</p>
