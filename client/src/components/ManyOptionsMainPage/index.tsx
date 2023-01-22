@@ -1,9 +1,11 @@
 import React from "react";
 import styles from './ManyOptionsMainPage.module.scss';
 import  chevron from './../../image/panelNavigation/chevron-down.svg';
-import CheckboxComponent from '../CheckboxComponent';
-import { useForm} from "react-hook-form";
-
+import {CheckboxComponent} from '../common/CheckboxComponent';
+//import { useForm} from "react-hook-form";
+//import {UseFormRegister, FieldValues } from 'react-hook-form';
+import { RegisterOptions, UseFormRegisterReturn } from 'react-hook-form';
+import { UseFormReturn } from 'react-hook-form';
 enum PlaceEnum{
     Односпальные='Односпальные',
     Двухместные='Двухместные',
@@ -23,16 +25,18 @@ enum MetroEnum{
     Вокзальная='Вокзальная',
     Октябрьская='Октябрьская'
 }
-interface  TabRoomsProps{
+ interface ManyOptionsMainPageProps {
     place:PlaceEnum;
     area:AreaEnum;
     metro:MetroEnum;
+    register: (name: string, options?: RegisterOptions) => UseFormRegisterReturn;
 }
-function ManyOptionsMainPage (){
-  const {register}=useForm<TabRoomsProps>()
+function ManyOptionsMainPage ({register}:ManyOptionsMainPageProps){
+
     return(
     <div className={styles.block__options}>
     <div className={styles.optoinsFirst__div}>
+        <div className={styles.select__div}>
             <label className={styles.label}>Спальные места</label>
             <select  className={styles.optoinsFirst__select} {...register('place')}>
     <option>Выберите</option>
@@ -41,7 +45,10 @@ function ManyOptionsMainPage (){
         <option value='Полуторные'>Полуторные </option>
     </select>
     <img src={chevron} alt='Стрелка на кнопке' className={styles.select__img}/>
-        <CheckboxComponent/>
+    </div>
+    <CheckboxComponent>
+        
+        </CheckboxComponent>
         </div>
         {/*Второй блок*/}
         <div className={styles.optoinsTwo__div}>
@@ -55,7 +62,9 @@ function ManyOptionsMainPage (){
         <option value='Советский'>Советский </option>
     </select>
     <img src={chevron} alt='Стрелка на кнопке' className={styles.select__img}/>
-        <CheckboxComponent/>
+    <CheckboxComponent>
+        
+        </CheckboxComponent>
         </div>
         {/*Третий блок*/}
         <div className={styles.optoinsThree__div}>
@@ -69,11 +78,15 @@ function ManyOptionsMainPage (){
         <option value='Октябрьская'>Октябрьская </option>
     </select>
     <img src={chevron} alt='Стрелка на кнопке' className={styles.select__img}/>
-        <CheckboxComponent/>
+    <CheckboxComponent>
+        
+        </CheckboxComponent>
         </div>
          {/*Четвертый блок*/}
          <div className={styles.optoinsFour__div}>
-        <CheckboxComponent/>
+         <CheckboxComponent>
+        
+        </CheckboxComponent>
         </div>
 
 

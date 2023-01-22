@@ -1,12 +1,12 @@
 import React from "react";
-import "./index.scss";
+import styles from './Header.module.scss';
 import heart from "../../image/header/heart.svg";
 import Group5 from "../../image/header/Group5.svg";
 import { Link } from "react-router-dom";
 export default function Header() {
   return (
    
-      <header className="header">
+      <header className={styles.header}>
         <nav>
           <ul>
             <li>
@@ -30,14 +30,12 @@ export default function Header() {
             </li>
           </ul>
         </nav>
-        <div className="block-header__div_group">
-          <div className="block-header__div_left">
-            <a href="#">Закладки</a>
+        <div className={styles.group__div}>
+          <div className={styles.blockLeft__div}>
+            <p><a href="#">Закладки</a></p>
             <img src={heart} alt="Векторное изображение закладки" />
           </div>
-          <div className="block-header__div_right">
-            <Link to="/Вход и регистрация">Вход и регистрация</Link>
-          </div>
+            <p className={styles.blockRight__p}><Link to="/Вход и регистрация">Вход и регистрация</Link></p>
         </div>
       </header>
    

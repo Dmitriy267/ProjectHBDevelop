@@ -6,7 +6,12 @@ import setup from '../../image/panelNavigation/setup 1.svg';
 //import ManyOptionsMainPage from "../ManyOptionsMainPage";
 import placeholder from '../../image/mainPage/Group (2).svg';
 import chevron__img from '../../image/mainPage/chevron-down (4).svg';
-import CheckboxComponent from '../CheckboxComponent';
+import {CheckboxComponent} from '../common/CheckboxComponent';
+import SelectPlace from '../SelectPlace';
+import SelectArea from '../SelectArea';
+import SelectMetro from '../SelectMetro';
+import {CheckboxComponentForm} from '../common/CheckboxComponentForm';
+
 enum CityEnum{
 Минск='Минск',
 Витебск='Витебск',
@@ -15,19 +20,19 @@ enum CityEnum{
 Брест='Брест'
 
 }
-enum PlaceEnum{
+ export enum PlaceEnum{
     Односпальные='Односпальные',
     Двухместные='Двухместные',
     Полуторные='Полуторные'
 }
-enum AreaEnum{
+export enum AreaEnum{
     Центральный='Центральный' ,
     Ленинский='Ленинский',
     Заводской='Заводской',
     Первомайский='Первомайский',
     Советский='Советский'
 }
-enum MetroEnum{
+export enum MetroEnum{
     Грушевка='Грушевка',
     Фрунзенская='Фрунзенская',
     Первомайская='Первомайская',
@@ -42,6 +47,12 @@ interface TabRoomsProps{
     place:PlaceEnum;
     area:AreaEnum;
     metro:MetroEnum;
+    gaz:string;
+    stove:string;
+    coffeMashins:string;
+    electOver:string;
+    cook:string;
+    cookMashins:string;
 }
 function TabRooms (){
     const [manyOption, setManyOption]=useState(false)
@@ -51,7 +62,7 @@ function TabRooms (){
   
     const { register, handleSubmit, setFocus  } = useForm<TabRoomsProps>();
   
-    const onSubmit = (data: TabRoomsProps)=> console.log(data);
+    const onSubmit: SubmitHandler<TabRoomsProps> = data => console.log(data);
 
     useEffect(() => {
         setFocus('city');
@@ -97,7 +108,7 @@ function TabRooms (){
                 <div className={styles.groupPrice__div}>
             <label> Цена за сутки (BYN) </label>
             <div className={styles.groupPriceRow__div}>
-            <input type='number' placeholder='От' {...register('MinPrice', {min:1000})}/>
+            <input type='number' placeholder='От' {...register('MinPrice', {min:50})}/>
     <hr/>
         <input type='number' placeholder='До' {...register('MaxPrice', {max:20000})}/>
         </div>
@@ -118,57 +129,59 @@ function TabRooms (){
  
 </div>
     <div className={styles.form__bottom}>
-    {manyOption&& (
-        <div className={styles.block__options}>
-        <div className={styles.optoinsFirst__div}>
-                <label className={styles.label}>Спальные места</label>
-                <select  className={styles.optoinsFirst__select} {...register('place')}>
-        <option>Выберите</option>
-            <option value='Односпальные'>Односпальные</option>
-            <option value='Двухместные'>Двухместные</option>
-            <option value='Полуторные'>Полуторные </option>
-        </select>
-        <img src={chevron} alt='Стрелка на кнопке' className={styles.select__img}/>
-            <CheckboxComponent/>
-            </div>
-            {/*Второй блок*/}
-            <div className={styles.optoinsTwo__div}>
-                <label className={styles.label}>Район</label>
-                <select  className={styles.optoinsFirst__select} {...register('area')}>
-        <option>Выберите</option>
-            <option value='Центральный'>Центральный</option>
-            <option value='Ленинский'>Ленинский</option>
-            <option value='Заводской'>Заводской </option>
-            <option value='Первомайский'>Первомайский </option>
-            <option value='Советский'>Советский </option>
-        </select>
-        <img src={chevron} alt='Стрелка на кнопке' className={styles.select__img}/>
-            <CheckboxComponent/>
-            </div>
-            {/*Третий блок*/}
-            <div className={styles.optoinsThree__div}>
-                <label className={styles.label}>Метро</label>
-                <select  className={styles.optoinsFirst__select} {...register('metro')}>
-        <option>Выберите</option>
-            <option value='Грушевка'>Грушевка</option>
-            <option value='Фрунзенская'>Фрунзенская</option>
-            <option value='Первомайская'>Первомайская </option>
-            <option value='Вокзальная'>Вокзальная </option>
-            <option value='Октябрьская'>Октябрьская </option>
-        </select>
-        <img src={chevron} alt='Стрелка на кнопке' className={styles.select__img}/>
-            <CheckboxComponent/>
-            </div>
-             {/*Четвертый блок*/}
-             <div className={styles.optoinsFour__div}>
-            <CheckboxComponent/>
-            </div>
-    
-    
-    
-    
+    {manyOption&&(<div className={styles.block__options}>
+    <div className={styles.optoinsFirst__div}>
+        <SelectPlace label='Спальные места' {...register('place')}/>
+        <CheckboxComponent>
+        <CheckboxComponentForm label='Газовая плита' {...register('gaz')} value='Газовая плита'/>
+        <CheckboxComponentForm label='Духовка' {...register('stove')} value='Духовка'/>
+        <CheckboxComponentForm label='Кофеварка' {...register('coffeMashins')} value='Кофеварка'/>
+        <CheckboxComponentForm label='Микроволновая печь ' {...register('electOver')} value='Микроволновая печь '/>
+        <CheckboxComponentForm label='Посуда ' {...register('cook')} value='Посуда '/>
+        <CheckboxComponentForm label='Посудомоечная машина  ' {...register('cookMashins')} value='Посудомоечная машина  '/>
+        </CheckboxComponent>
         </div>
-    )}
+        {/*Второй блок*/}
+        <div className={styles.optoinsTwo__div}>
+        <SelectArea label='Район' {...register('area')}/> 
+        <CheckboxComponent>
+        <CheckboxComponentForm label='Газовая плита' {...register('gaz')} value='Газовая плита'/>
+        <CheckboxComponentForm label='Духовка' {...register('stove')} value='Духовка'/>
+        <CheckboxComponentForm label='Кофеварка' {...register('coffeMashins')} value='Кофеварка'/>
+        <CheckboxComponentForm label='Микроволновая печь ' {...register('electOver')} value='Микроволновая печь '/>
+        <CheckboxComponentForm label='Посуда ' {...register('cook')} value='Посуда '/>
+        <CheckboxComponentForm label='Посудомоечная машина  ' {...register('cookMashins')} value='Посудомоечная машина  '/>
+        </CheckboxComponent>
+        </div>
+        {/*Третий блок*/}
+        <div className={styles.optoinsThree__div}>
+        <SelectMetro label='Метро' {...register('metro')}/>
+         <CheckboxComponent>
+        <CheckboxComponentForm label='Газовая плита' {...register('gaz')} value='Газовая плита'/>
+        <CheckboxComponentForm label='Духовка' {...register('stove')} value='Духовка'/>
+        <CheckboxComponentForm label='Кофеварка' {...register('coffeMashins')} value='Кофеварка'/>
+        <CheckboxComponentForm label='Микроволновая печь ' {...register('electOver')} value='Микроволновая печь '/>
+        <CheckboxComponentForm label='Посуда ' {...register('cook')} value='Посуда '/>
+        <CheckboxComponentForm label='Посудомоечная машина  ' {...register('cookMashins')} value='Посудомоечная машина  '/>
+        </CheckboxComponent>
+        </div>
+         {/*Четвертый блок*/}
+         <div className={styles.optoinsFour__div}>
+         <CheckboxComponent>
+        <CheckboxComponentForm label='Газовая плита' {...register('gaz')} value='Газовая плита'/>
+        <CheckboxComponentForm label='Духовка' {...register('stove')} value='Духовка'/>
+        <CheckboxComponentForm label='Кофеварка' {...register('coffeMashins')} value='Кофеварка'/>
+        <CheckboxComponentForm label='Микроволновая печь ' {...register('electOver')} value='Микроволновая печь '/>
+        <CheckboxComponentForm label='Посуда ' {...register('cook')} value='Посуда '/>
+        <CheckboxComponentForm label='Посудомоечная машина  ' {...register('cookMashins')} value='Посудомоечная машина  '/>
+        </CheckboxComponent>
+        </div>
+
+
+
+
+    </div>)
+}
     </div>
 
 

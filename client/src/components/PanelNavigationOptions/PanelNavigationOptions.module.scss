@@ -114,6 +114,7 @@ margin: 0px;
         background-color: rgba(102, 78, 249, 0.05);
 border-radius: 20px;
 border:0px;
+outline: 0;
 box-sizing: border-box;
 width: 100px;
 height: 37px;
@@ -170,6 +171,7 @@ height: 17px;
     height: 18px;
     border:0px;
     background-color: #fff;
+    cursor: pointer;
 }
 .rowPanel3__div img{
     width: 18px;
@@ -219,4 +221,81 @@ display: flex;
 .chevronRight__img{
     width: 19px;
     height: 19px;
+}
+
+
+.wrapper__options{
+    display: flex;
+    width: 20px+1002px+168px;
+    height: 17px+228px+20px;
+    margin-top: 20px;
+    margin-left: 101px;
+    margin-bottom: 29px;
+}
+.optoinsFirst__div{
+    height: 17px+230px+17px;
+    width: 205px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.optoinsFirst__div p, 
+.optoinsTwo__div p,
+.optoinsThree__div p
+{
+    margin: 0px;
+    font-family: 'Inter Medium';
+    font-size: 14px;
+line-height: 17px;
+color: #664EF9;
+}
+
+.optoinsFirst__select{
+        display: block;
+            width: 200px;
+            height: 37px;
+            border-radius: 22px;
+            font-family: 'Inter Medium';
+            font-size: 14px;
+    line-height: 17px;
+    color: #1E2123;
+    box-sizing: border-box;
+    padding-left: 12px;
+    border:0px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #F8F8F8;
+    margin-top: 11px;
+    margin-bottom: 30px;
+    
+}
+
+.select__img{
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 38px;
+    left: 171px;
+}
+
+.optoinsTwo__div,
+.optoinsThree__div
+{
+    height: 17px+230px+17px;
+    width: 205px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-left: 48px;
+}
+.optoinsFour__div,
+.optoinsFive__div
+{
+    height: 20px+130px+20px;
+    width: 205px;
+    display: flex;
+    margin-left: 48px;
+    margin-top: 17px+78px;
 }

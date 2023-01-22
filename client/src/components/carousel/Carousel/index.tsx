@@ -9,10 +9,10 @@ const PAGE_WIDTH:string='537.84px';
 const  Carousel =(props: { children: any; })=>{
     const {children}=props;
     const [pages, setPages]=useState([]);
-    const [offset, setOffset]=useState<any>('0px');
+    const [offset, setOffset]=useState<string|number>('0px');
     const stylesTransform={transform:`translateX(${offset}px)` };
     const handleArrowLeftClick=()=>{
-        setOffset((currentOffSet:any)=>{
+        setOffset((currentOffSet:string|number)=>{
             const newOffset=parseInt(`${currentOffSet}`)+parseInt(`${PAGE_WIDTH}`);
             console.log(newOffset);
             return Math.min(newOffset,0);

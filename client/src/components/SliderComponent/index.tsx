@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {Carousel} from '../carousel/Carousel';
 import styles from './SliderComponent.module.scss';
 

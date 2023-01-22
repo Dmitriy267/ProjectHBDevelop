@@ -1,8 +1,23 @@
 import React from 'react';
 import styles from './ManyOptions.module.scss';
 import  chevron from './../../image/panelNavigation/chevron-down.svg';
-import CheckboxComponent from '../CheckboxComponent';
+import {CheckboxComponent} from '../common/CheckboxComponent';
+import { CheckboxComponentForm } from '../common/CheckboxComponentForm';
+import { useForm } from "react-hook-form";
+ export interface ManyOptionsProps{
+  
+    gaz:string;
+    stove:string;
+    coffeMashins:string;
+    electOver:string;
+    cook:string;
+    cookMashins:string;
+}
 function ManyOptions (){
+    const { register } = useForm<ManyOptionsProps>();
+  
+    
+
     return (
 <div className={styles.wrapper__options}>
         <div className={styles.optoinsFirst__div}>
@@ -14,7 +29,14 @@ function ManyOptions (){
         <option value='bedroom3'>Полуторная кровать</option>
     </select>
     <img src={chevron} alt='Стрелка на кнопке' className={styles.select__img}/>
-        <CheckboxComponent/>
+        <CheckboxComponent>
+        <CheckboxComponentForm label='Газовая плита' {...register('gaz')} value='Газовая плита'/>
+        <CheckboxComponentForm label='Духовка' {...register('stove')} value='Духовка'/>
+        <CheckboxComponentForm label='Кофеварка' {...register('coffeMashins')} value='Кофеварка'/>
+        <CheckboxComponentForm label='Микроволновая печь ' {...register('electOver')} value='Микроволновая печь '/>
+        <CheckboxComponentForm label='Посуда ' {...register('cook')} value='Посуда '/>
+        <CheckboxComponentForm label='Посудомоечная машина  ' {...register('cookMashins')} value='Посудомоечная машина  '/>
+        </CheckboxComponent>
         </div>
         <div className={styles.optoinsTwo__div}>
             <p>Район</p>
@@ -27,7 +49,14 @@ function ManyOptions (){
         <option value='sovetsk'>Советский район</option>
     </select>
     <img src={chevron} alt='Стрелка на кнопке' className={styles.select__img}/>
-        <CheckboxComponent/>
+    <CheckboxComponent>
+    <CheckboxComponentForm label='Газовая плита' {...register('gaz')} value='Газовая плита'/>
+        <CheckboxComponentForm label='Духовка' {...register('stove')} value='Духовка'/>
+        <CheckboxComponentForm label='Кофеварка' {...register('coffeMashins')} value='Кофеварка'/>
+        <CheckboxComponentForm label='Микроволновая печь ' {...register('electOver')} value='Микроволновая печь '/>
+        <CheckboxComponentForm label='Посуда ' {...register('cook')} value='Посуда '/>
+        <CheckboxComponentForm label='Посудомоечная машина  ' {...register('cookMashins')} value='Посудомоечная машина  '/>
+        </CheckboxComponent>
         </div>
         <div className={styles.optoinsThree__div}>
             <p>Метро</p>
@@ -40,13 +69,34 @@ function ManyOptions (){
         <option value='octaibrMetro'>Октябрьская</option>
     </select>
     <img src={chevron} alt='Стрелка на кнопке' className={styles.select__img}/>
-        <CheckboxComponent/>
+    <CheckboxComponent>
+    <CheckboxComponentForm label='Газовая плита' {...register('gaz')} value='Газовая плита'/>
+        <CheckboxComponentForm label='Духовка' {...register('stove')} value='Духовка'/>
+        <CheckboxComponentForm label='Кофеварка' {...register('coffeMashins')} value='Кофеварка'/>
+        <CheckboxComponentForm label='Микроволновая печь ' {...register('electOver')} value='Микроволновая печь '/>
+        <CheckboxComponentForm label='Посуда ' {...register('cook')} value='Посуда '/>
+        <CheckboxComponentForm label='Посудомоечная машина  ' {...register('cookMashins')} value='Посудомоечная машина  '/>
+        </CheckboxComponent>
         </div>
         <div className={styles.optoinsFour__div}>
-        <CheckboxComponent/>
+        <CheckboxComponent>
+        <CheckboxComponentForm label='Газовая плита' {...register('gaz')} value='Газовая плита'/>
+        <CheckboxComponentForm label='Духовка' {...register('stove')} value='Духовка'/>
+        <CheckboxComponentForm label='Кофеварка' {...register('coffeMashins')} value='Кофеварка'/>
+        <CheckboxComponentForm label='Микроволновая печь ' {...register('electOver')} value='Микроволновая печь '/>
+        <CheckboxComponentForm label='Посуда ' {...register('cook')} value='Посуда '/>
+        <CheckboxComponentForm label='Посудомоечная машина  ' {...register('cookMashins')} value='Посудомоечная машина  '/>
+        </CheckboxComponent>
         </div>
         <div className={styles.optoinsFive__div}>
-        <CheckboxComponent/>
+        <CheckboxComponent>
+        <CheckboxComponentForm label='Газовая плита' {...register('gaz')} value='Газовая плита'/>
+        <CheckboxComponentForm label='Духовка' {...register('stove')} value='Духовка'/>
+        <CheckboxComponentForm label='Кофеварка' {...register('coffeMashins')} value='Кофеварка'/>
+        <CheckboxComponentForm label='Микроволновая печь ' {...register('electOver')} value='Микроволновая печь '/>
+        <CheckboxComponentForm label='Посуда ' {...register('cook')} value='Посуда '/>
+        <CheckboxComponentForm label='Посудомоечная машина  ' {...register('cookMashins')} value='Посудомоечная машина  '/>
+        </CheckboxComponent>
         </div>
    
 </div>

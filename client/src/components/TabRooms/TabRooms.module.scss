@@ -177,7 +177,8 @@ color: #1E2123;
         width: 18px;
         height: 18px;
         background-color: #fff;
-        border:0px
+        border:0px;
+        cursor: pointer;
     
     }
 
@@ -229,6 +230,10 @@ align-items: center;
 justify-content: center;
 margin-top: 16.5px;
 margin-left: 20px;
+font-family: 'Inter Bold';
+font-size: 14px;
+line-height: 17px;
+color: #242424;
 
     }
 
@@ -255,8 +260,26 @@ margin-left: 20px;
     width: 205px;
     display: flex;
     flex-direction: column;
-    position: relative;
+    //position: relative;
 }
+
+//Стили для нового компонента
+.select__div{
+    width: 205px;
+    height: 17px+11px+37px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.select__div label{
+    font-family: "Inter Medium";
+    font-size: 14px;
+    line-height: 17px;
+    color: $color-label;
+}
+
+//Конец стилей для нового компонента
 .label {
     font-family: "Inter Medium";
     font-size: 14px;
@@ -278,7 +301,7 @@ margin-left: 20px;
     appearance: none;
     background-color: #F8F8F8;
     margin-top: 11px;
-    margin-bottom: 30px;
+    //margin-bottom: 30px;
     outline: 0;
 }
 .select__img {
