@@ -1,5 +1,4 @@
 import React from "react";
-import "./index.scss";
 import styles from './Footer.module.scss';
 import Logo from "../../image/logo 1.png";
 import instagram from "../../image/footer/ant-design_instagram-outlined.svg";
