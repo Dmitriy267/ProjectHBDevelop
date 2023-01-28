@@ -1,70 +1,112 @@
-import { createSlice, createAsyncThunk  } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction  } from '@reduxjs/toolkit';
 import axios from 'axios';
-
-interface postSelectorProps{
-    posts:{
-    posts:[{
-        id:number;
-        imgSrc:string;
-      title:string;
-      description:string;
-      altTitle:string;
-    }]
-}
-}
+import {Post} from '../../models/models';
+import { AppDispatch } from '../../store';
+import { current } from '@reduxjs/toolkit'
 export interface PostsState{
-    posts:[];
-   status:string;
-   ErrorGet:boolean;
+    posts:Post[];
+   loading:boolean;
+   ErrorGet:string;
   
    
 }  
 const initialState:PostsState={
     posts:[],
-    status:'',
-    ErrorGet:false
+    loading:false,
+    ErrorGet:''
 }
 export const postsSlice=createSlice({
     name:'posts',
     initialState,
     reducers:{
-        createPostArticles:(state, action)=>{
-            state.posts=action.payload;
-        }
-    },
-    extraReducers:(builder)=>{
-        builder
-        .addCase(fetchPosts1.pending, (state)=>{
-state.status='loading';
-state.ErrorGet=false;
-})
-.addCase(fetchPosts1.fulfilled, (state, action)=>{
-    state.status='resolved';
-    state.ErrorGet=false;
-    
- 
-})
-.addCase(fetchPosts1.rejected, (state)=>{
-    state.status='reject';
-    state.ErrorGet=true;
-   
-})
+        getPosts:(state)=>{
+            state.loading=true;
+        },
+        createPostArticles:(state, action:PayloadAction<Post[]>)=>{
+            state.loading=false;
+            state.posts=action.payload.filter(item=>item.id<4);
+           
+        },
+        createPostArticles2:(state, action:PayloadAction<Post[]>)=>{
+            state.loading=false;
+            state.posts=action.payload.filter(item=>item.id<=6&&item.id>3);
+        },
+        createPostArticles3:(state, action:PayloadAction<Post[]>)=>{
+            state.loading=false;
+            state.posts=action.payload.filter(item=>item.id<=9&&item.id>6);
+        },
+        
+        getError:(state, action:PayloadAction<Error>)=>{
+            state.loading=false;
+            state.ErrorGet=action.payload.message
+        },
+       
 
-    }
+    },
+   
     
       
 })
 
-export  const fetchPosts1=createAsyncThunk(
-  'posts/fetchPosts1',
-  async (_, {rejectWithValue, dispatch})=> {
-   
-    const response = await axios.get('/articles');
-   dispatch(createPostArticles(response.data))
-  }
-)
+export  const fetchPost=()=>{
+ 
+     return async  (dispatch:AppDispatch)=>{
+      
+        try{
+            dispatch(postsSlice.actions.getPosts())
+           const res=await axios.get('/articles')
+           console.log(res)
+           dispatch(postsSlice.actions.createPostArticles(res.data))
+             
+        }
+        catch(e){
+            dispatch(postsSlice.actions.getError(e as Error))
+        }
+             
+     }
+    
+    }
+export  const fetchPost2=()=>{
+    return async (dispatch:AppDispatch)=>{
+        try{
+            dispatch(postsSlice.actions.getPosts())
+           const res=await axios.get('/articles')
+           console.log(res)
+           dispatch(postsSlice.actions.createPostArticles2(res.data))
+             
+        }
+        catch(e){
+            dispatch(postsSlice.actions.getError(e as Error))
 
-export const {createPostArticles}=postsSlice.actions;
-export const postSelector=(state: postSelectorProps)=>state.posts.posts;
+        }
 
+    }
+}
+export  const fetchPost3=()=>{
+    const error=new Error('Произошел сбой на сервере. Попробуйте ввести другое слово')
+    return async (dispatch:AppDispatch)=>{
+      
+        try{ 
+            
+            dispatch(postsSlice.actions.getPosts())
+           const res=await axios.get('/articles')
+           console.log(res)
+           dispatch(postsSlice.actions.createPostArticles3(res.data))
+             
+        }
+        catch(error){
+          
+            dispatch(postsSlice.actions.getError(error as Error))
+
+        }
+
+    }
+}
+
+
+
+export const {createPostArticles, createPostArticles2, createPostArticles3, getPosts, getError}=postsSlice.actions;
+export const postSelector=(state: PostsState)=>state.posts;
 export default postsSlice.reducer;
+
+

@@ -6,25 +6,18 @@
     justify-content: space-between;
     margin-top: 25.9px;
 }
-.row1__div{
-    display: flex;
-    width: 15px+10px+215px;
-    height: 19.64px;
-    justify-content: space-between;
-    img{
-        width: 15px;
-        height: 15.5px;
-    }
-    p{
+
+.text1__p{
         font-family: 'Inter Medium';
         font-size: 16px;
 line-height: 19px;
 color: #000;
-margin: 0px;
-width: 215px;
-height: 19.64px;
+margin-top: 0px;
+margin-bottom: 0px;
+margin-left: 10px;
     }
-}
+
+    
 .row2__div{
     display: flex;
     width: 20px+124.5px+66px;

@@ -7,7 +7,8 @@ import Footer from "../Footer";
 import NavigationSectionProducts from '../NavigationSectionProducts';
 function PageNewsMain() {
   return (
-    <> <Header/>
+    <> 
+    <Header/>
     <NavigationSectionProducts />
       <NewsTitleSection />
       <MainNewsSection />

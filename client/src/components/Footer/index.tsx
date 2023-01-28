@@ -1,5 +1,5 @@
 import React from "react";
-import "./index.scss";
+import styles from './Footer.module.scss';
 import Logo from "../../image/logo 1.png";
 import instagram from "../../image/footer/ant-design_instagram-outlined.svg";
 import vk from "../../image/footer/ant-design_vk-outlined.svg";
@@ -14,66 +14,63 @@ import belCard from "../../image/footer/banksCards/logotip-belkart-v-odnom-tsvet
 function Footer() {
   return (
     <footer>
-      <div className="block-footer__div_center">
-        <div className="block-footer__div_left">
-          <div className="block-footer-logo__div">
+      <div className={styles.BlockCenter__div}>
+        <div className={styles.blockLeft__div}>
+          <div className={styles.logo__div}>
             <img src={Logo} alt="Логотип сайта" />
             <p>СДАЁМ БАЙ</p>
           </div>
-          <div className="block-info-ip__div">
+          <div className={styles.infoIp__div}>
             <p>ИП Шушкевич Андрей Викторович</p>
-            <p>УНП 192602485 Минским</p>
-            <p>горисполкомом 10.02.2016 220068,</p>
-            <p>РБ, г. Минск, ул. Осипенко, 21, кв.23</p>
+            <p>УНП 192602485 Минским горисполкомом</p>
+            <p>10.02.2016</p>
+            <p>220068, РБ, г. Минск, ул. Осипенко, 21, кв.23</p>
             <p>+375 29 621 48 33, sdaem@sdaem.by</p>
             <p>Режим работы: 08:00-22:00</p>
           </div>
         </div>
-        <div className="block-footer__div_right">
-          <div className="block-info-footer__div_up">
-            <ul className="block-info__ul_boldLeft">
-              <li>Коттеджи и усадьбы</li>
-              <li>Бани и сауны</li>
-              <li>Авто на прокат</li>
+        <div className={styles.blockRight__div}>
+          <div className={styles.info__div}>
+            <ul className={styles.boldLeft__ul}>
+              <li><a href="#">Коттеджи и усадьбы</a></li>
+              <li><a href="#">Бани и сауны</a></li>
+              <li><a href="#">Авто на прокат</a></li>
             </ul>
-            <div className="block-info-home__div">
+            <div className={styles.infoHome__div}>
               <p>Квартиры</p>
-              <ul className="block-info-home__ul_first">
-                <li>Квартиры в Минске</li>
-                <li>Квартиры в Гомеле</li>
-                <li>Квартиры в Бресте</li>
+              <ul className={styles.infoFirst__ul}>
+                <li><a href='#'>Квартиры в Минске</a></li>
+                <li><a href='#'>Квартиры в Гомеле</a></li>
+                <li><a href="#">Квартиры в Бресте</a></li>
               </ul>
             </div>
-            <ul className="block-info-home__ul_second">
-              <li>Квартиры в Витебске</li>
-              <li>Квартиры в Гродно</li>
-              <li>Квартиры в Могилеве</li>
+            <ul className={styles.infoSecond__ul}>
+              <li><a href='#'>Квартиры в Витебске</a></li>
+              <li><a href='#'>Квартиры в Гродно</a></li>
+              <li><a href='#'>Квартиры в Могилеве</a></li>
             </ul>
-            <ul className="block-info__ul_three">
-              <li>Новости</li>
-              <li>Размещение и тарифы </li>
-              <li>Объявления на карте</li>
-              <li>Контакты</li>
+            <ul className={styles.infoThree__ul}>
+              <li><a href='#'>Новости</a></li>
+              <li><a href='#'>Размещение и тарифы </a></li>
+              <li><a href="#">Объявления на карте</a></li>
+              <li><a href="#">Контакты</a></li>
             </ul>
           </div>
-          <div className="block-info-footer__div_bottom">
-            <div className="block-info-footer__div_bottomLeft">
+          <div className={styles.infoBottom__div}>
+            <div className={styles.infoBottomLeft__div}>
               <p>Мы в соцсетях</p>
-              <div className="block-icons-message__div">
+              <div className={styles.message__div}>
                 <img src={instagram} alt="Изображение иконки инстаграмм" />
                 <img src={vk} alt="Изображение иконки вконтакте" />
                 <img src={fb} alt="Изображение иконки фейсбук" />
               </div>
             </div>
-            <div className="block-info-footer__div_bottomRight">
+            <div className={styles.messageBottom__div}>
               <img src={visa} alt="Изображение логотипа Виза" />
               <img src={webpay} alt="Изображение логотипа Вебпэй" />
               <img src={Verifed} alt="Изображение логотипа Верифед Виза" />
               <img src={MCard} alt="Изображение логотипа Мастеркард" />
-              <img
-                src={MCardSec}
-                alt="Изображение логотипа Мастеркард Секьюр Код"
-              />
+              <img src={MCardSec} alt="Изображение логотипа Мастеркард Секьюр Код"/>
               <img src={belCard} alt="Изображение логотипа Белкарт" />
             </div>
           </div>

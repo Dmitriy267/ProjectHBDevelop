@@ -4,6 +4,7 @@ import  {PlaceholderCardsGold} from '../common/PlaceholderCardsGold';
 import user from '../../image/cardsGold/user.svg';
 import PanelCardsGoldBottom from '../PanelCardsGoldBottom';
 import LabelGold from '../LabelGold';
+import {SummPeopleInfo} from '../common/SummPeopleInfo';
 
 interface CardsGoldProps {
     price:string;
@@ -28,10 +29,7 @@ return (
         <p className={styles.view__p}>за сутки</p>
         </div>
         <div className={styles.row2__div}>
-            <div className={styles.info__div}>
-            <img src={user} alt='Изображение пользователя'/>
-            <p>4 (2+2)</p>
-            </div>
+            <SummPeopleInfo/>
             <div className={styles.cwot__div}>
             <p>4 комн.</p>
             </div>

@@ -12,17 +12,9 @@ import {LinkDivTitle} from '../common/LinkDivTitle'
 import styles from './PageNewsList.module.scss';
 import {UlListComponent} from '../common/UlListComponent';
 import { useForm , SubmitHandler } from "react-hook-form";
-import { useDispatch } from "react-redux";
-import { fetchPosts1} from '../../redux/features/Post/postsSlice';
-import type { AppDispatch } from '../../redux/store';
-import { useSelector } from "react-redux";
-import {postSelector} from '../../redux/features/Post/postsSlice';
-import {post2Selector} from '../../redux/features/Post2/posts2Slice';
-import {post3Selector} from '../../redux/features/Post3/posts3Slice';
-import {post4Selector} from '../../redux/features/Post4/posts4Slice';
-import { fetchPosts2} from '../../redux/features/Post2/posts2Slice';
-import { fetchPosts3} from '../../redux/features/Post3/posts3Slice';
-import { fetchPosts4} from '../../redux/features/Post4/posts4Slice';
+import { fetchPost, fetchPost2, fetchPost3} from '../../redux/features/Post/postsSlice';
+import { useAppDispatch, useAppSelector } from "../../redux/hooks/hooks";
+
 
 
 interface PageNewsListProps {
@@ -30,13 +22,12 @@ interface PageNewsListProps {
 }
 function PageNewsList() {
 const [data, setData]=useState(false);
-const dispatch=useDispatch<AppDispatch>();
-const postsGet=useSelector(postSelector);
-const postsGet2=useSelector(post2Selector);
-const postsGet3=useSelector(post3Selector);
-const postsGet4=useSelector(post4Selector);
-console.log(postsGet)
-console.log(postsGet2)
+const dispatch=useAppDispatch();
+const {posts, loading, ErrorGet}=useAppSelector(state=>state.posts)
+
+
+console.log(posts)
+
 
 const { register, handleSubmit } = useForm<PageNewsListProps>();
 const onSubmit: SubmitHandler<PageNewsListProps> = data => {
@@ -44,21 +35,26 @@ const onSubmit: SubmitHandler<PageNewsListProps> = data => {
   setData(data=>!data);
   const {searchArticles}=data;
   console.log(searchArticles)
-  switch(searchArticles){
-case 'Баня':
-return dispatch((fetchPosts1()))
-case 'Коттедж':
-return dispatch((fetchPosts2()))
-case 'Усадьба':
-  return dispatch((fetchPosts3()))
-case '':
-  return dispatch((fetchPosts4()))
-  default:
-    return null
+  switch (searchArticles){
+    case ('Баня'):
+      return dispatch(fetchPost());
+      case ('Коттедж'):
+        return dispatch(fetchPost2());
+        case ('Усадьба'):
+          return dispatch(fetchPost3());
+        default:
+          return null;
   }
-
 }
-
+const renderSearchPost=()=>{
+  if (loading) {
+    return <p>Загрузка данных</p>
+  }
+  if( ErrorGet) {
+    return <p>Произошла ошибка на сервере.Попробуйте найти другую статью</p>
+  }
+return posts.map((el, id)=><ArticleComponent1 key={id} imgSrc={el.imgSrc} title={el.title} description={el.description} altTitle={el.altTitle}/>)
+}
   return (
     <>
     <Header/>
@@ -84,26 +80,18 @@ case '':
         <div className="block-articles__div_center">
 
         {
-    postsGet?postsGet.map((el, id)=><ArticleComponent1 key={id} imgSrc={el.imgSrc} title={el.title} description={el.description} altTitle={el.altTitle}/>):
-   <p>Статья не найдена</p>}
-   {postsGet2? postsGet2.map((el, id)=><ArticleComponent1 key={id} imgSrc={el.imgSrc} title={el.title} description={el.description} altTitle={el.altTitle}/>):
-   <p>Статья не найдена</p>
-   }
-    {
-    postsGet3? postsGet3.map((el, id)=><ArticleComponent1 key={id} imgSrc={el.imgSrc} title={el.title} description={el.description} altTitle={el.altTitle}/>):
-   <p>Статья не найдена</p>
-   }
+          renderSearchPost()
+}
 
 {
-    postsGet4? [...Array(9)].map(( index)=>
+    [...Array(9)].map(( index)=>
     <CardInfoNews key={index}
     altDescript={"Фото комнаты"}
     textTitle="Линия Сталина: суровый отдых в усадьбах на сутки"
     textInfo="Чем заняться в выходные? Когда нет безотлагательных домашних дел, а на улице 
     хорошая погода, хочется уехать из города, чтобы сменить обстановку. Например, снять коттедж на сутки для семьи или большой компании друзей. А..."
   />
-   ):
-   <p>Статья не найдена</p>
+   )
    }  
         
       </div>

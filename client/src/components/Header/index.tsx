@@ -1,5 +1,5 @@
 import React from "react";
-import "./index.scss";
+import styles from './Header.module.scss';
 import heart from "../../image/header/heart.svg";
 import Group5 from "../../image/header/Group5.svg";
 import { Link } from "react-router-dom";
@@ -12,11 +12,11 @@ export default function Header() {
   const user=useSelector(selectUser)
   return (
    
-      <header className="header">
+      <header className={styles.header}>
         <nav>
           <ul>
             <li>
-              <a href="#">Главная</a>
+              <Link to="/Главная">Главная</Link>
             </li>
             <li>
               <Link to="/Новости">Новости</Link>
@@ -36,12 +36,13 @@ export default function Header() {
             </li>
           </ul>
         </nav>
-        <div className="block-header__div_group">
-          <div className="block-header__div_left">
-            <a href="#">Закладки</a>
+        <div className={styles.group__div}>
+          <div className={styles.blockLeft__div}>
+            <p><a href="#">Закладки</a></p>
             <img src={heart} alt="Векторное изображение закладки" />
           </div>
           {user?<Login/>:<LinkRegistration/>}
+          
         </div>
       </header>
    

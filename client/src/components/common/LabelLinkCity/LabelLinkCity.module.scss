@@ -1,0 +1,17 @@
+.wrapp__div{
+    display: flex;
+    height: 33px;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    background-color: #664EF9;
+    border-radius: 16px;
+    padding: 8px 14px;
+}
+
+.wrapp__div a {
+    font-family: 'Inter Medium';
+    font-size: 14px;
+line-height: 17px;
+color: rgba(255, 255, 255, 0.7);
+}

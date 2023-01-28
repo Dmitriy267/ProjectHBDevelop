@@ -1,0 +1,29 @@
+.link__div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 194px;
+height: 37px;
+background: linear-gradient(270deg, #7E6AF3 0%, #6540CD 100%);
+box-shadow: 0px 15px 40px rgba(0, 96, 206, 0.15);
+border-radius: 17px;
+}
+
+.link__div p{
+margin: 0px;
+
+}
+
+.link__div p a{
+    font-family: 'Inter Bold';
+    font-size: 14px;
+line-height: 17px;
+color: #FFFFFF;
+width: 133px;
+height: 17px;
+}
+.link__div img{
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+}

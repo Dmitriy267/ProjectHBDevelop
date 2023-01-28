@@ -1,12 +1,12 @@
 import React from "react";
+import styles from './NavigationSectionProducts.module.scss';
 import Logo from "../../image/logo 1.png";
-import "./index.scss";
-import {Button} from "../common/Button/Button";
+import {Button} from "../common/Button";
 import { Link } from "react-router-dom";
 export default function NavigationSectionProducts() {
   return (
-    <section className="block-navigation__section">
-      <div className="block-navigation__div_center">
+    <section className={styles.navigation__section}>
+      <div className={styles.navigation__div}>
         <a href="#">
           <img src={Logo} alt="Логотип сайта" />
         </a>

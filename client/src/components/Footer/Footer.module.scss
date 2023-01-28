@@ -1,0 +1,219 @@
+ footer{
+    display: flex;
+    height: 250px;
+  }
+  .BlockCenter__div{
+    display:flex;
+    margin: 39px 161px 47px 80px;
+    width:297px+880px+22px;
+    height:30px+113px+17px;
+  }
+  .blockLeft__div{
+    display: flex;
+    width: 297px;
+    height: 78px+61px+19px;
+    flex-direction: column;
+  }
+  .logo__div{
+    display:flex;
+    width: 134px;
+    height: 44px;
+    flex-direction:column;
+   
+    img{
+      width:134px;
+      height: 19px;
+    }
+    p{
+      display:flex;
+      width: 73px;
+      height: 15px;
+      margin: 10px 0px 0px 0px;
+      font-family: 'Inter Medium';
+  font-size: 12px;
+  line-height: 15px;
+  color: #8291A3;
+    }
+    
+  }
+  .infoIp__div{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 297px;
+    height: 78px;
+    margin: 36px 0px 0px 0px;
+    p{
+      font-family: 'Inter Regular';
+  font-size: 11px;
+  line-height: 13px;
+  color: #8291A3;
+  margin:0px;
+    }
+  }
+  .blockRight__div{
+    display:flex;
+    flex-direction:column;
+    width:149px+701px+22px;
+    height:17px+124.29px+30px;
+    margin-left: 30px;
+  }
+  .info__div{
+    display:flex;
+    width:108px+548.5px+156px;
+    height:17px+62px+17px;
+  }
+  .boldLeft__ul{
+    display:flex;
+    justify-content:space-between;
+    flex-direction:column;
+    width:149px;
+  height:17px+59px+17px;
+  padding:0px;
+  margin:0px;
+  li{
+    a{
+        font-family: 'Inter Bold';
+  font-size: 14px;
+  line-height: 17px;
+  color: #1E2123;
+    }
+  }
+  }
+  .infoHome__div{
+    display:flex;
+    width:133px;
+    height:17px+62px+17px;
+    flex-direction:column;
+    margin-left: 69px;
+    p{
+      font-family: 'Inter Bold';
+  font-size: 14px;
+  line-height: 17px;
+  color: #1E2123;
+  margin:0px 0px 12px 0px;
+  
+  
+    }
+    .infoFirst__ul{
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+       width:136px;
+  height:17px+33px+17px;
+  padding:0px;
+  margin:0px;
+  li{
+    a{
+        font-family: 'Inter Regular';
+  font-size: 14px;
+  line-height: 17px;
+  color: #8291A3;
+  }
+    }
+  }
+    }
+  
+  .infoSecond__ul{
+    margin-top:12px+17px;
+    display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+       width:152px;
+  height:17px+33px+17px;
+  padding:0px;
+  margin-left: 53px;
+  li{
+   a{ font-family: 'Inter Regular';
+  font-size: 14px;
+  line-height: 17px;
+  color: #8291A3;
+   }
+  }
+  
+    }
+    .infoThree__ul{
+       margin-top:4px;
+    display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+       width:156px;
+  height:17px+58px+17px;
+  padding:0px;
+  margin-left: 97.5px;
+  li{
+    a{
+    font-family: 'Inter Regular';
+  font-size: 14px;
+  line-height: 17px;
+  color: #8291A3;
+    }
+  }
+  
+    }
+    .infoBottom__div{
+      display:flex;
+      justify-content:space-between;
+      width:104px+746px+22px;
+      height:30px;
+      margin-top:42px;
+      .infoBottomLeft__div{
+        display:flex;
+        width:104px+114.81px+30px;
+        height:30px;
+        justify-content:space-between;
+        align-items:center;
+        p{
+          font-family: 'Inter Medium';
+  font-size: 14px;
+  line-height: 17px;
+  color:#1E2123;
+  width:104px;
+  height:17px;
+  margin:0px;
+  display:flex;
+  
+        }
+        .message__div{
+          display:flex;
+          width:30px+65px+30px;
+          height:30px;
+          justify-content:space-between;
+          img{
+            width: 30px;
+            height: 30px;
+          }
+        }
+      }
+    }
+    .messageBottom__div{
+    display:flex;
+    width:42px+275px+22px;
+    height:30px;
+    justify-content:space-between;
+    align-items:center;
+    img:first-of-type{
+      width:42px;
+      height:13px;
+    }
+    img:nth-child(2){
+      width:86px;
+      height:16px;
+    }
+    img:nth-child(3){
+      width:38px;
+      height:16px;
+    }
+    img:nth-child(4){
+      width:26px;
+      height:20px;
+    }
+    img:nth-child(5){
+      width:46px;
+      height:16px;
+    }
+    img:last-of-type{
+      width:22px;
+      height:30px;
+    }
+  }
