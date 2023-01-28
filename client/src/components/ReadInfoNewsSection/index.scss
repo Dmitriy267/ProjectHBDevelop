@@ -1,0 +1,24 @@
+.read-info-news__section{
+  margin-top: 65.76px;
+  flex-direction:column;
+  height:737px;
+  background:rgba(148, 175, 255, 0.1);//Проверить
+  >p{
+    width: 190px;
+height: 30px;
+margin:62px 0px 44.57px 81px;
+font-family: 'Inter Bold';
+font-style: normal;
+font-weight: 700;
+font-size: 25px;
+line-height: 30px;
+  }
+}
+.block-cards__div_common{
+  display: flex;
+margin-top: 0px;
+margin-left: 81px;
+width: 406px*3+31.1px+30.1px;
+height: 500px;
+justify-content: space-between;
+}

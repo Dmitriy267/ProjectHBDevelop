@@ -1,0 +1,50 @@
+.contacts__section{
+    display: flex;
+    height: 688px;
+    background-image: linear-gradient(0deg, rgba(126, 106, 243, 0.7) 1.04%, rgba(101, 64, 205, 0.7) 100%), url(../../image/errorPage/depositphotos.png);
+}
+.contacts__div{
+    display: flex;
+    margin-top:77px;
+    margin-left: 79px;
+    width: 515px+31px+625px+64px+45px;
+    height: 30px+396px+90px;
+    justify-content: space-between;
+}
+.left__div{
+    display: flex;
+    margin: 0px;
+    height: 30px+396px+90px;
+    justify-content: space-between;
+    width: 515px;
+    flex-direction: column;
+    .title__p{
+        width: 148px;
+height: 30px;
+font-family: 'Inter Bold';
+font-size: 30px;
+line-height: 100%;
+display: flex;
+color: #FFFFFF;
+margin: 0px;
+    }
+    .textmaib__p{
+        font-family: 'Inter Medium';
+        font-size: 16px;
+line-height: 150%;
+color: #FFFFFF;
+width: 515px;
+height: 72px;
+display: flex;
+margin: 0px;
+    }
+}
+
+.iptext__p{
+    width: 516px;
+height: 42px;
+font-family: 'Inter Regular';
+font-size: 14px;
+line-height: 150%;
+color: #FFFFFF;
+}

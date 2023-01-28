@@ -1,0 +1,41 @@
+$color-label:#BDBDBD;
+.select__div{
+    width: 205px;
+    height: 17px+11px+37px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    position: relative;
+}
+.select__div label{
+    font-family: "Inter Medium";
+    font-size: 14px;
+    line-height: 17px;
+    color: $color-label;
+}
+
+.optoinsFirst__select {
+    display: block;
+    width: 200px;
+    height: 37px;
+    border-radius: 22px;
+    font-family: "Inter Medium";
+    font-size: 14px;
+    line-height: 17px;
+    color: #1E2123;
+    box-sizing: border-box;
+    padding-left: 12px;
+    border: 0px;
+    appearance: none;
+    background-color: #F8F8F8;
+    margin-top: 11px;
+    outline: 0;
+}
+.select__img {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 38px;
+    left: 171px;
+}

@@ -1,0 +1,7 @@
+.table__div{
+    display: grid;
+    grid-template-rows: repeat(2, 535px);
+    grid-template-columns: repeat(3, 406px);
+    grid-row-gap: 24.2px;
+    grid-column-gap: 31px;
+}

@@ -1,0 +1,332 @@
+$color-Input:#686868;
+.wrapper__form{
+    display: flex;
+    width: 150px+ 734.59px+123px;
+    //height: 37px+11px+17px;
+    margin-top: 15px;
+    margin-left: 20.5px;
+    flex-direction: column;
+    min-height: 85px;
+   
+}
+.top__div{
+    display: flex;
+    width: 1060px;
+    height: 84px;
+  
+}
+.city__div{
+    margin: 0px;
+    width: 150px+20px;
+    height: 68px;
+    border-right: 1px solid #664EF9;
+}
+.groupCity__div label,
+.groupRooms__div label,
+.groupPrice__div label
+{
+    font-family: 'Inter Medium';
+    font-size: 14px;
+line-height: 17px;
+color: #BDBDBD;
+}
+.groupCity__div,
+.groupRooms__div
+{
+display: flex;
+flex-direction: column;
+height: 37px+11px+17px;
+width: 150px;
+justify-content: space-between;
+margin: 0px;
+position: relative;
+}
+
+.panel1__select{
+    display: block;
+        width: 150px;
+        height: 37px;
+        border-radius: 20px;
+        font-family: 'Inter Medium';
+        font-size: 14px;
+line-height: 17px;
+box-sizing: border-box;
+padding-left: 12px;
+border:0px;
+color:#1E2123;
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+background-color: #F8F8F8;
+outline: 0;
+    }
+
+    .panel1__select:focus{
+        border: 2px solid rgba(78, 100, 249, 0.8);
+        background-color: #fff;
+    }
+    
+    .default__option{
+        color:$color-Input;
+    }
+
+    .groupCity__div img{
+        width: 18px;
+        height: 18px;
+        position: absolute;
+    top: 37px;
+    left: 123.92px;
+    }
+
+    .rooms__div{
+        margin-left: 20px;
+        width: 150px+20px;
+        height: 68px;
+        border-right: 1px solid #664EF9;
+    }
+
+    .rooms__div img{
+        width: 18px;
+        height: 18px;
+        position: absolute;
+    top: 37px;
+    left: 123.92px;
+    }
+
+    .price__div{
+        margin-left: 20px;
+        width: 80px+15px+80px+20px;
+        height: 68px;
+        border-right: 1px solid #664EF9;
+    }
+    .groupPrice__div{
+        display: flex;
+        flex-direction: column;
+        height: 17px+10px+37px;
+        width: 80px+15px+80px+20px;
+
+    }
+
+    .groupPriceRow__div{
+        display: flex;
+        width: 80px+15px+80px+20px;
+        height: 37px;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .groupPriceRow__div input[type='number']{
+        background-color: #F8F8F8;
+        border-radius: 20px;
+        border:0px;
+        box-sizing: border-box;
+        width: 80px;
+        height: 37px;
+        font-family: 'Inter Medium';
+        font-size: 14px;
+        line-height: 17px;
+        color: $color-Input;
+        outline: 0;
+    }
+    input[type='number']::-webkit-outer-spin-button,
+    input[type='number']::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0; 
+    }
+
+    .groupPriceRow__div input[type='number']:first-of-type{
+        padding-left: 14.22px;
+    }
+    .groupPriceRow__div input[type='number']:last-of-type{
+        padding-left: 14.6px;
+    }
+
+    .groupPriceRow__div hr{
+        height: 0px;
+    width: 14px;
+border:1px solid  #664EF9;
+margin-left: 5.5px;
+margin-right: 7.5px;
+    }
+
+    .moreOptions__div{
+        margin-left: 20px;
+        width: 100px+41.5px;
+        height: 68px;
+        border-right: 1px solid #664EF9;
+        display: flex;
+    align-items: center;
+    }
+    .groupOptions__div{
+        display: flex;
+        width: 100px+3.5px+18px;
+        height: 18px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .groupOptions__div label{
+        font-family: 'Inter Medium';
+        font-size: 14px;
+line-height: 17px;
+color: #1E2123;
+
+    }
+
+    .options__button{
+        width: 18px;
+        height: 18px;
+        background-color: #fff;
+        border:0px;
+        cursor: pointer;
+    
+    }
+
+    .groupOptions__div img{
+        width: 18px;
+        height: 18px;
+        position: relative;
+        right: 9px;
+    bottom: 3px;
+    }
+    .form__bottom{
+        display: flex;
+    width: 1062px;
+    height: auto;
+    border-top: 1px solid rgba(78, 100, 249, 0.1);
+    }
+
+    .map__div{
+        display: flex;
+        align-items: center;
+        width: 111.09px;
+        height: 68px;
+        justify-content: center;
+        margin-left: 17px;
+    }
+
+    .map__div a {
+        font-family: 'Inter Medium';
+        font-size: 14px;
+line-height: 17px;
+color: #1E2123;
+    }
+
+    .map__div img {
+        width: 12.09px;
+        height: 15px;
+        margin-left: 5px;
+    } 
+
+    .submit__button{
+        width: 123px;
+height: 37px;
+border: 0px;
+outline: 0px;
+background-color: #FFD54F;
+border-radius: 22px;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 16.5px;
+margin-left: 20px;
+font-family: 'Inter Bold';
+font-size: 14px;
+line-height: 17px;
+color: #242424;
+
+    }
+
+    .submit__img{
+        width: 19px;
+        height: 19px;
+        margin-left: 5px;
+    }
+
+    /*Стили для ползунка с опциями*/
+
+    $color-label:#BDBDBD;
+.block__options{
+    display: flex;
+    width: 1060px;
+    height: 265px;
+    margin-top: 20px;
+    margin-bottom: 29px;
+}
+.optoinsFirst__div,
+.optoinsTwo__div
+{
+    height: 264px;
+    width: 205px;
+    display: flex;
+    flex-direction: column;
+    //position: relative;
+}
+
+//Стили для нового компонента
+.select__div{
+    width: 205px;
+    height: 17px+11px+37px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.select__div label{
+    font-family: "Inter Medium";
+    font-size: 14px;
+    line-height: 17px;
+    color: $color-label;
+}
+
+//Конец стилей для нового компонента
+.label {
+    font-family: "Inter Medium";
+    font-size: 14px;
+    line-height: 17px;
+    color: $color-label;
+}
+.optoinsFirst__select {
+    display: block;
+    width: 200px;
+    height: 37px;
+    border-radius: 22px;
+    font-family: "Inter Medium";
+    font-size: 14px;
+    line-height: 17px;
+    color: #1E2123;
+    box-sizing: border-box;
+    padding-left: 12px;
+    border: 0px;
+    appearance: none;
+    background-color: #F8F8F8;
+    margin-top: 11px;
+    //margin-bottom: 30px;
+    outline: 0;
+}
+.select__img {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 38px;
+    left: 171px;
+}
+.optoinsTwo__div{
+margin-left: 48px;
+}
+.optoinsThree__div{
+    height: 264px;
+    width: 205px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-left: 48px;
+
+}
+.optoinsFour__div{
+    height: 170px;
+    width: 205px;
+    display: flex;
+    margin-left: 48px;
+    margin-top: 95px;
+}
