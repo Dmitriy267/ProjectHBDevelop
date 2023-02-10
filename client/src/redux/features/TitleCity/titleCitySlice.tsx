@@ -19,6 +19,7 @@ state.nameTiitleCity=action.payload;
     }
 })
 
+
 export const {getTitleCity}=titleCitySlice.actions;
 export const titleCitySelector=(state:TitleCityState)=>state.nameTiitleCity;
 export default titleCitySlice.reducer;

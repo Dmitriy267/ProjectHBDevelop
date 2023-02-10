@@ -6,8 +6,9 @@ import { useAppSelector } from "../../redux/hooks/hooks";
 
 function SectionRoomsList (){
   
-    const {nameTiitleCity,}=useAppSelector(state=>state.titleCity)
-  
+    const {nameTiitleCity}=useAppSelector(state=>state.titleCity)
+   
+    
 
     return(
 <section className={styles.roomsList__section}>
@@ -17,7 +18,7 @@ function SectionRoomsList (){
 <a href="#">Квартиры в Минске</a>
 </p>
 </LinkDivTitle>
-<p className={styles.text__p}>Аренда квартир на сутки  {nameTiitleCity}</p>
+<p className={styles.text__p}>Аренда квартир на сутки  {nameTiitleCity} </p>
 <p className={styles.rec__p}>Рекомендуем посмотреть</p>
 </div>
 <div className={styles.linkRooms__div}>
