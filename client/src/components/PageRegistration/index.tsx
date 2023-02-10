@@ -16,6 +16,8 @@ import {ButtonErrMessage} from '../common/ButtonErrMessage';
  import { Navigate } from 'react-router-dom';
 import { useDispatch } from "react-redux";
 import {userLogin } from '../../redux/features/User/userSlice';
+
+
 interface InputsRegistrationProps{
 login:string;
 mail:string;
@@ -45,10 +47,7 @@ mail:mail,
 password:password,
 confirmPassword:confirmPassword,
 }))
-
-
-       
-         
+        
     }
    const [data, setData]=useState(false);
  
@@ -56,7 +55,8 @@ confirmPassword:confirmPassword,
     return(
         <EnterMainSection>
             <PositionModulDiv>    
-            <ModuleRegistration  width="844px" height="654px" marginTop="175px">
+            <ModuleRegistration  >
+                <div className={styles.module__div}>
 <form className={styles.registration__form} onSubmit={handleSubmit(onSubmit)}>
     <p>Регистрация</p>
     <div className={styles.registration__div}>
@@ -77,7 +77,7 @@ confirmPassword:confirmPassword,
       <img src={password} alt='Иконка пароля' className={styles.registration__passwordtwo}/>
       <img src={userRoboto} alt='Изображение проверки пользователя' className={styles.userRoboto}/>
      {
-      errors.confirmPassword&& <ButtonErrMessage>Ошибка ввода</ButtonErrMessage>
+      errors.confirmPassword&& <ButtonErrMessage onClick={()=>console.log('Ошибка ввода')}>Ошибка ввода</ButtonErrMessage>
       }
        
       <ButtonModule >Зарегистрироваться</ButtonModule>
@@ -94,6 +94,7 @@ confirmPassword:confirmPassword,
     </div>
     {data&& <Navigate replace to="/Завершение регистрации" />}
 </form>
+</div>
             </ModuleRegistration>
 </PositionModulDiv>
 </EnterMainSection>

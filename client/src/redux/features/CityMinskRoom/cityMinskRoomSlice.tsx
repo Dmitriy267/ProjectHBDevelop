@@ -1,18 +1,20 @@
 import { createSlice, PayloadAction  } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { iteratorSymbol } from 'immer/dist/internal';
-import {MinskRoom} from '../../models/models';
 import { AppDispatch } from '../../store';
+import {Minsk} from '../../models/models';
 
-export interface  minskState{
-    minskRooms:MinskRoom[];
+
+interface MinskStateInit {
+    minskRooms:Minsk[];
     loading:boolean;
     hasErrors:string;
- }
-const initialState:minskState={
-    loading:false,
-    hasErrors:'',
-    minskRooms:[]
+}
+const initialState:MinskStateInit={
+    loading: false,
+    hasErrors: '',
+    minskRooms:[],
+   
+   
 }
 export const cityMinskRoomSlice=createSlice({
     name: 'MinskRooms',
@@ -21,52 +23,29 @@ export const cityMinskRoomSlice=createSlice({
         getMinskRooms:(state)=>{
             state.loading=true
         },
-         getMinskRoomsSuccess:(state, action:PayloadAction<MinskRoom[]>)=>{
+         getRoomsSuccess:(state, action:PayloadAction<Minsk[]>)=>{
             state.loading=false;
-            state.minskRooms=action.payload;
-           
-
+         state.minskRooms=action.payload;
+      
          },
-         getFilterRoomsOne:(state, action:PayloadAction<MinskRoom[]>)=>{
-            state.loading=false;
-            state.minskRooms=action.payload.filter(item=>item.rooms==='1 комн.');
     
-            console.log( state.minskRooms)
-         },
-         getFilterRoomsTwo:(state, action:PayloadAction<MinskRoom[]>)=>{
-            state.loading=false;
-            state.minskRooms=action.payload.filter(item=>item.rooms==='2 комн.');
-         },
-         getFilterRoomsThree:(state, action:PayloadAction<MinskRoom[]>)=>{
-            state.loading=false;
-            state.minskRooms=action.payload.filter(item=>item.rooms==='3 комн.');
-         },
-         getFilterRoomsFour:(state, action:PayloadAction<MinskRoom[]>)=>{
-            state.loading=false;
-            state.minskRooms=action.payload.filter(item=>item.rooms==='4 комн.');
-         },
-         getFilterRoomsFive:(state, action:PayloadAction<MinskRoom[]>)=>{
-            state.loading=false;
-            state.minskRooms=action.payload.filter(item=>item.rooms==='5 комн.');
-         },
         getMinskRoomsError:(state, action:PayloadAction<Error>)=>{
             state.loading=false
             state.hasErrors=action.payload.message
         }
-        
-
-
-
+    
     }
 })
+
 export const FetchMinskRooms=()=>{
     return async (dispatch:AppDispatch)=>{
         try{
-            dispatch(cityMinskRoomSlice.actions.getMinskRooms())
-           const res=await axios.get('/minsk')
+            dispatch(cityMinskRoomSlice.actions.getMinskRooms()) 
+           const res=await axios.get('/minsk/roomsOne')
            console.log(res)
-           dispatch(cityMinskRoomSlice.actions.getFilterRoomsOne(res.data))
-             
+           console.log(getRoomsSuccess(res.data))
+          
+           dispatch(cityMinskRoomSlice.actions.getRoomsSuccess(res.data))     
         }
         catch(e){
             dispatch(cityMinskRoomSlice.actions.getMinskRoomsError(e as Error))
@@ -75,14 +54,16 @@ export const FetchMinskRooms=()=>{
 
     }
 }
-export const FetchMinskRoomsTwo=()=>{
+
+export const FetchMinskRooms2=()=>{
     return async (dispatch:AppDispatch)=>{
         try{
-            dispatch(cityMinskRoomSlice.actions.getMinskRooms())
-           const res=await axios.get('/minsk')
+            dispatch(cityMinskRoomSlice.actions.getMinskRooms()) 
+           const res=await axios.get('/minsk/roomsTwo')
            console.log(res)
-           dispatch(cityMinskRoomSlice.actions.getFilterRoomsTwo(res.data))
-             
+           console.log(getRoomsSuccess(res.data))
+          
+           dispatch(cityMinskRoomSlice.actions.getRoomsSuccess(res.data))     
         }
         catch(e){
             dispatch(cityMinskRoomSlice.actions.getMinskRoomsError(e as Error))
@@ -91,14 +72,15 @@ export const FetchMinskRoomsTwo=()=>{
 
     }
 }
-export const FetchMinskRoomsThree=()=>{
+export const FetchMinskRooms3=()=>{
     return async (dispatch:AppDispatch)=>{
         try{
-            dispatch(cityMinskRoomSlice.actions.getMinskRooms())
-           const res=await axios.get('/minsk')
+            dispatch(cityMinskRoomSlice.actions.getMinskRooms()) 
+           const res=await axios.get('/minsk/roomsThree')
            console.log(res)
-           dispatch(cityMinskRoomSlice.actions.getFilterRoomsThree(res.data))
-             
+           console.log(getRoomsSuccess(res.data))
+          
+           dispatch(cityMinskRoomSlice.actions.getRoomsSuccess(res.data))     
         }
         catch(e){
             dispatch(cityMinskRoomSlice.actions.getMinskRoomsError(e as Error))
@@ -107,14 +89,15 @@ export const FetchMinskRoomsThree=()=>{
 
     }
 }
-export const FetchMinskRoomsFour=()=>{
+export const FetchMinskRooms4=()=>{
     return async (dispatch:AppDispatch)=>{
         try{
-            dispatch(cityMinskRoomSlice.actions.getMinskRooms())
-           const res=await axios.get('/minsk')
+            dispatch(cityMinskRoomSlice.actions.getMinskRooms()) 
+           const res=await axios.get('/minsk/roomsFour')
            console.log(res)
-           dispatch(cityMinskRoomSlice.actions.getFilterRoomsFour(res.data))
-             
+           console.log(getRoomsSuccess(res.data))
+          
+           dispatch(cityMinskRoomSlice.actions.getRoomsSuccess(res.data))     
         }
         catch(e){
             dispatch(cityMinskRoomSlice.actions.getMinskRoomsError(e as Error))
@@ -123,14 +106,15 @@ export const FetchMinskRoomsFour=()=>{
 
     }
 }
-export const FetchMinskRoomsFive=()=>{
+export const FetchMinskRooms5=()=>{
     return async (dispatch:AppDispatch)=>{
         try{
-            dispatch(cityMinskRoomSlice.actions.getMinskRooms())
-           const res=await axios.get('/minsk')
+            dispatch(cityMinskRoomSlice.actions.getMinskRooms()) 
+           const res=await axios.get('/minsk/roomsFive')
            console.log(res)
-           dispatch(cityMinskRoomSlice.actions.getFilterRoomsFive(res.data))
-             
+           console.log(getRoomsSuccess(res.data))
+          
+           dispatch(cityMinskRoomSlice.actions.getRoomsSuccess(res.data))     
         }
         catch(e){
             dispatch(cityMinskRoomSlice.actions.getMinskRoomsError(e as Error))
@@ -140,6 +124,7 @@ export const FetchMinskRoomsFive=()=>{
     }
 }
 
-export const {getMinskRooms, getMinskRoomsSuccess,getFilterRoomsOne,  getFilterRoomsTwo,  getFilterRoomsThree, getFilterRoomsFour, getFilterRoomsFive, getMinskRoomsError }=cityMinskRoomSlice.actions;
-export const cityMinskRoomSelector=(state:minskState)=>state.minskRooms;
+
+export const {getMinskRooms, getRoomsSuccess, getMinskRoomsError }=cityMinskRoomSlice.actions;
+export const cityMinskRoomSelector=(state:MinskStateInit)=>state.minskRooms;
 export default cityMinskRoomSlice.reducer;

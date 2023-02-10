@@ -22,7 +22,7 @@ display: flex;
 margin: 0px;
 width: 106px+201px+60px;
 height: 24px+0.74px+17.57px;
-
+align-items: center;
 
 }
 
@@ -73,7 +73,7 @@ padding-right: 8px;
     color: #000;
    margin-top: 0px;
    margin-bottom: 0px;
-    margin-left: 10px;
+    margin-left: 8px;
 }
 
 .row3__div{
@@ -81,6 +81,7 @@ padding-right: 8px;
     width: 20px+124.5px+66px;
     height: 20.67px;
     align-items: center;
+    margin-top: 11.37px;
 }
 .row3__div img:first-of-type{
     width: 20px;

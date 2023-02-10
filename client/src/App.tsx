@@ -15,7 +15,7 @@ import MainPage from './components/MainPage';
 
 function App() {
   return (
-    <div className="App">
+   
    
       <Routes>
         <Route path='/' element={<RouteMainCom/>}>
@@ -32,7 +32,7 @@ function App() {
       </Routes>
   
       
-    </div>
+ 
   );
 }
 

@@ -6,9 +6,9 @@ import InfoBlockContacts from '../InfoBlockContacts';
 import FormsContacts from '../FormsContacts';
 import  IconsMessageFormRight from '../IconsMessageFormRight';
 import Header from '../Header';
-import Footer from "../Footer";
+import FooterOther from '../FooterOther';
 import NavigationSectionProducts from '../NavigationSectionProducts';
-
+import imgSrc from '../../image/errorPage/depositphotos.png'
 function ContactsPage(){
 
 return(
@@ -16,6 +16,7 @@ return(
     <Header/>
     <NavigationSectionProducts />
 <section className={styles.contacts__section}>
+    <img src={imgSrc} alt='Фоновое изображение' className={styles.position__img}/>
     <div className={styles.contacts__div}>
         <div className={styles.left__div}>
 <p className={styles.title__p}>Контакты</p>
@@ -33,7 +34,7 @@ return(
     </div>
   
 </section>
-<Footer/>
+<FooterOther/>
 </>
 )
 }

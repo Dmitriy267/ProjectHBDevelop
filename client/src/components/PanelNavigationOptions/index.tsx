@@ -10,8 +10,10 @@ import { CheckboxComponentForm } from '../common/CheckboxComponentForm';
 import {PlaceEnum} from '../TabRooms';
 import {AreaEnum} from '../TabRooms';
 import {MetroEnum} from '../TabRooms';
-import { useAppDispatch } from "../../redux/hooks/hooks";
-import {FetchMinskRooms, FetchMinskRoomsTwo, FetchMinskRoomsThree, FetchMinskRoomsFour, FetchMinskRoomsFive} from '../../redux/features/CityMinskRoom/cityMinskRoomSlice';
+import { useAppDispatch, useAppSelector } from "../../redux/hooks/hooks";
+import {FetchMinskRooms, FetchMinskRooms2, FetchMinskRooms3, FetchMinskRooms4,FetchMinskRooms5} from '../../redux/features/CityMinskRoom/cityMinskRoomSlice';
+
+                                           
 interface IFormInput {
     MinPrice:number;
     MaxPrice:number;
@@ -28,6 +30,7 @@ gaz:string;
 }
 function PanelNavigationOptions (){
     const dispatch=useAppDispatch();
+    const {minskRooms} =useAppSelector(state=>state.cityMinskRoom);
     const { register, handleSubmit, setFocus } = useForm<IFormInput>();
 
   useEffect(() => {
@@ -40,23 +43,28 @@ function PanelNavigationOptions (){
     setManyOption(manyOption=>!manyOption)
   }
   const onSubmit = (data: IFormInput)=> {
-    console.log(data);
-    const {rooms}=data;
-    switch (rooms){
-        case ('1 комн.'):
-            return dispatch(FetchMinskRooms());
-    
-     case ('2 комн.'):
-        return dispatch(FetchMinskRoomsTwo());
-        case ('3 комн.'):
-            return dispatch(FetchMinskRoomsThree());
-            case ('4 комн.'):
-                return dispatch(FetchMinskRoomsFour());
-                case ('5 комн.'):
-                    return dispatch(FetchMinskRoomsFive());     
-                    
+ console.log(data)
+      const {rooms, place, MinPrice, MaxPrice, gaz,  stove, coffeMashins, electOver, cook, cookMashins, area, metro}=data;
+ switch(rooms){
+    case('1 комн.'):
+    return dispatch(FetchMinskRooms());
+  case ('2 комн.'):
+    return dispatch(FetchMinskRooms2());
+    case ('3 комн.'):
+    return dispatch(FetchMinskRooms3());
+    case ('4 комн.'):
+        return dispatch(FetchMinskRooms4());
+        case ('5 комн.'):
+            return dispatch(FetchMinskRooms5());
+            default:
+                return null;
+ }
 
-  }
+
+
+
+    
+
 }
     return(
 <div className={styles.options__div}>
@@ -67,7 +75,7 @@ function PanelNavigationOptions (){
         <p className={styles.panel1__p}>Комнаты</p>
     <select {...register('rooms')} className={styles.panel1__select} >
       
-    <option>Выберите</option>
+    <option value='Выберите'>Выберите</option>
           <option value='1 комн.'>1 комн.</option>
           <option value='2 комн.'>2 комн.</option>
           <option value='3 комн.'>3 комн.</option>
@@ -80,8 +88,8 @@ function PanelNavigationOptions (){
     <div className={styles.panel2__div}>
         <div className={styles.rowPanel2__div}>
         <p>Цена за сутки (BYN)</p>
-        <input type='number' placeholder='От' {...register('MinPrice', {min:20, max:50})}/>
-    <hr/>
+        <input type='number' placeholder='От' {...register('MinPrice', {min:20, max:50})} />
+   <hr/>
         <input type='number' placeholder='До'{...register('MaxPrice', {min:50, max:200}) }/>
         </div>
     </div>
@@ -93,7 +101,7 @@ function PanelNavigationOptions (){
     </div>
     <div className={styles.panel4__div}>
         <div className={styles.rowPanel4__div}>
-    <button className={styles.remove__button}>Очистить</button>
+    <button className={styles.remove__button} onClick={()=>{}}>Очистить</button>
     <button type='submit' className={styles.showObj__button}>Показать объекты<img src={chevronRight} alt='Стрелка кнопки' className={styles.chevronRight__img}/></button>
     </div>
     </div>

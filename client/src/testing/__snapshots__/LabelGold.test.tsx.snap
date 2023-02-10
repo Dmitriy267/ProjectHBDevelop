@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LabelCold component The correctli snapshot component 1`] = `
+<div
+  className="label__div"
+>
+  <p>
+    Gold
+  </p>
+</div>
+`;

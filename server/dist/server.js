@@ -164,7 +164,7 @@ app.get('/articles', (req, res) => {
             title: 'Дворец Потемкиных и Голынских',
             description: 'Известно, что дворец был построен для Григория Потемкина, фаворита Екатерины II, по проекту Ивана Старова, который работал над Таврическим дворцом в Санкт-Петербурге...',
             altTitle: 'Фото Усадьбы'
-        }
+        },
     ]);
 });
 app.get('/articlDefaultManor', (req, res) => {
@@ -202,7 +202,7 @@ app.get('/minsk', (req, res) => {
             altTitle: 'Фото Усадьбы',
             city: 'Минск',
             rooms: '1 комн.',
-            place: ['Односпальные', 'Двухместные', 'Полуторные'],
+            place: '',
             MinPrice: 50,
             MaxPrice: ''
         },
@@ -236,7 +236,7 @@ app.get('/minsk', (req, res) => {
             altTitle: 'Фото Усадьбы',
             city: 'Минск',
             rooms: '4 комн.',
-            MinPrice: 70,
+            MinPrice: 80,
             MaxPrice: ''
         },
         {
@@ -247,9 +247,242 @@ app.get('/minsk', (req, res) => {
             altTitle: 'Фото Усадьбы',
             city: 'Минск',
             rooms: '5 комн.',
-            MinPrice: 70,
+            MinPrice: 80,
             MaxPrice: ''
         }
+    ]);
+});
+app.get('/minsk/roomsOne', (req, res) => {
+    res.json([
+        {
+            id: 1,
+            imgSrc: 'http://localhost:5000/static/image/MinskRooms/roomsOne/1.jpg',
+            title: 'Сдается 1-комнатная квартира, г. Минск, пр-т Партизанский',
+            description: 'Квартира после ремонта. Полностью оборудованная всей необходимой мебелью и бытовой техникой. Имеется высокоскоростной интернет. Коммунальные платежи небольшие...',
+            altTitle: 'Фото квартиры',
+            city: 'Минск,  пр-т Партизанский, д.23',
+            textPeople: '1',
+            rooms: '1 комн.',
+            place: 'Односпальные',
+            coffeMashins: '',
+            cookMashins: '',
+            electOver: 'Микроволновая печь',
+            metro: 'Грушевка',
+            area: 'Заводской',
+            MinPrice: '30',
+            MaxPrice: '76',
+            stove: '',
+            cook: 'Посуда',
+            gaz: 'Газовая плита'
+        },
+        {
+            id: 2,
+            imgSrc: 'http://localhost:5000/static/image/MinskRooms/roomsOne/2.jpg',
+            title: 'Сдается 1-комнатная квартира с ремонтом в Серебрянке',
+            description: '. Квартира после хорошего ремонта, с практически новой мебелью. Есть необходимая бытовая техника. Инфраструктура развита - до остановки общественного транспорта 5 минут пешком...',
+            altTitle: 'Фото квартиры',
+            city: 'Минск, ул. Малинина, д.14',
+            textPeople: '1',
+            rooms: '1 комн.',
+            place: 'Односпальные',
+            coffeMashins: '',
+            cookMashins: '',
+            electOver: 'Микроволновая печь',
+            metro: 'Первомайская',
+            area: 'Ленинский',
+            MinPrice: '23',
+            MaxPrice: '76',
+            stove: 'Духовка',
+            cook: 'Посуда',
+            gaz: ''
+        },
+        {
+            id: 3,
+            imgSrc: 'http://localhost:5000/static/image/MinskRooms/roomsOne/3.jpg',
+            title: 'Новая студия от собственника - первое заселение!',
+            description: 'Качественный современный ремонт, есть гардеробная, оборудованный санузел и кухонная зона. Новая мебель и техника. Все делалось для себя...',
+            altTitle: 'Фото квартиры',
+            city: 'Минск, ул. Щорса 2-я, д.1',
+            textPeople: '1',
+            rooms: '1 комн.',
+            place: 'Полуторные',
+            cookMashins: 'Посудомоечная машина',
+            electOver: 'Микроволновая печь',
+            metro: 'Вокзальная',
+            area: 'Московский',
+            MinPrice: '24',
+            MaxPrice: '80',
+            cook: 'Посуда',
+            gaz: 'Газовая плита'
+        },
+    ]);
+});
+app.get('/minsk/roomsTwo', (req, res) => {
+    res.json([
+        {
+            id: 1,
+            imgSrc: 'http://localhost:5000/static/image/MinskRooms/roomsTwo/1.jpg',
+            title: 'Снять 2-комнатную квартиру, г. Минск, ул. Восточная, 44',
+            description: 'Сдаётся уютная 2-х комнатная квартира в аренду на длительный срок. В квартире есть все необходимое для проживания..',
+            altTitle: 'Фото квартиры',
+            city: 'Минскб ул. Восточная, 44',
+            textPeople: '2 (1+1)',
+            rooms: '2 комн.',
+            place: 'Двухместные',
+            cookMashins: 'Посудомоечная машина',
+            electOver: 'Микроволновая печь',
+            metro: 'Октябрьская',
+            area: 'Партизанский',
+            MinPrice: '24',
+            MaxPrice: '80',
+            cook: 'Посуда',
+            gaz: 'Газовая плита'
+        },
+        {
+            id: 2,
+            imgSrc: 'http://localhost:5000/static/image/MinskRooms/roomsTwo/2.jpg',
+            title: '2-ная VIP кв с гардеробной ком.на Маркса от собственника',
+            description: 'VIP квартира в стиле современного минимализма. Расположена к `золотом квадрате` Минска. Стены отделаны кирпичом и выкрашены в белый цвет..',
+            altTitle: 'Фото квартиры',
+            city: 'Минск ул. Ленина, д.21',
+            textPeople: '2 (1+1)',
+            rooms: '2 комн.',
+            place: 'Двухместные',
+            cookMashins: 'Посудомоечная машина',
+            electOver: 'Микроволновая печь',
+            metro: 'Первомайская',
+            area: 'Ленинский',
+            MinPrice: '40',
+            MaxPrice: '90',
+            cook: 'Посуда',
+            gaz: 'Газовая плита'
+        },
+        {
+            id: 3,
+            imgSrc: 'http://localhost:5000/static/image/MinskRooms/roomsTwo/3.jpg',
+            title: 'Двухкомнатная квартира на 28 этаже по ул. Кальварийская 16.',
+            description: 'В квартире есть всё для проживания. Подземная парковка включена в стоимость. Здается только на длительный срок...',
+            altTitle: 'Фото квартиры',
+            city: 'Минск, ул. Кальварийская 16',
+            textPeople: '2 (1+1)',
+            rooms: '2 комн.',
+            place: 'Двухместные',
+            cookMashins: 'Посудомоечная машина',
+            electOver: 'Микроволновая печь',
+            metro: 'Грушевка',
+            area: 'Фрунзенский',
+            MinPrice: '40',
+            MaxPrice: '90',
+            cook: 'Посуда',
+            gaz: 'Газовая плита'
+        },
+    ]);
+});
+app.get('/minsk/roomsThree', (req, res) => {
+    res.json([
+        {
+            id: 1,
+            imgSrc: 'http://localhost:5000/static/image/MinskRooms/roomsThree/1.jpg',
+            title: 'Аренда 3-комнатной квартиры ул. Щорса д. 1',
+            description: ' Квартира комфортной планировки, две изолированные спальни, просторная гостиная с полностью оборудованной кухней, раздельный санузел...',
+            altTitle: 'Фото квартиры',
+            city: 'Минск, ул. Щорса д. 1',
+            textPeople: '3 (1+2)',
+            rooms: '3 комн.',
+            place: 'Двухместные',
+            cookMashins: 'Посудомоечная машина',
+            electOver: 'Микроволновая печь',
+            metro: 'Октябрьская',
+            area: 'Московский',
+            MinPrice: '40',
+            MaxPrice: '90',
+            cook: '',
+            gaz: 'Газовая плита'
+        },
+        {
+            id: 2,
+            imgSrc: 'http://localhost:5000/static/image/MinskRooms/roomsThree/2.jpg',
+            title: 'Элитная 3-х комнатная квартира в аренду на длительный срок',
+            description: 'В шаговой доступности расположены крупнейшие магазины, развлекательные и увеселительные заведения белорусской столицы...',
+            altTitle: 'Фото квартиры',
+            city: 'Минск, ул. Ратомская, д.7',
+            textPeople: '3 (1+2)',
+            rooms: '3 комн.',
+            place: 'Двухместные',
+            cookMashins: 'Посудомоечная машина',
+            electOver: 'Микроволновая печь',
+            metro: 'Грушевка',
+            area: 'Центральный',
+            MinPrice: '40',
+            MaxPrice: '90',
+            cook: 'Посуда',
+            gaz: 'Газовая плита'
+        },
+    ]);
+});
+app.get('/minsk/roomsFour', (req, res) => {
+    res.json([
+        {
+            id: 1,
+            imgSrc: 'http://localhost:5000/static/image/MinskRooms/roomsFour/1.jpg',
+            title: 'Снять 4-комнатную квартиру, г. Минск',
+            description: 'Сдаётся в аренду на длительный срок 4-комнатная квартира. Рядом Стелла, парк Победы, школа, детский сад...',
+            altTitle: 'Фото квартиры',
+            city: 'Минск, пр. Машерова, д. 76',
+            textPeople: '4 (2+2)',
+            rooms: '4 комн.',
+            place: 'Двухместные',
+            cookMashins: 'Посудомоечная машина',
+            electOver: 'Микроволновая печь',
+            metro: 'Фрунзенская',
+            area: 'Центральный',
+            MinPrice: '40',
+            MaxPrice: '90',
+            cook: 'Посуда',
+            gaz: 'Газовая плита'
+        },
+        {
+            id: 2,
+            imgSrc: 'http://localhost:5000/static/image/MinskRooms/roomsFour/2.jpg',
+            title: 'Снять 4-комнатную квартиру, г. Минск',
+            description: 'Собственное газовое отопление, система водоподготовки, сауна, душ Шарко, оптика, французская печка...',
+            altTitle: 'Фото квартиры',
+            city: 'Минск, ул. Гамарника, д.21',
+            textPeople: '4 (2+2)',
+            rooms: '4 комн.',
+            place: 'Двухместные',
+            cookMashins: 'Посудомоечная машина',
+            electOver: 'Микроволновая печь',
+            metro: 'Фрунзенская',
+            area: 'Советский',
+            MinPrice: '40',
+            MaxPrice: '90',
+            cook: '',
+            gaz: 'Газовая плита'
+        },
+    ]);
+});
+app.get('/minsk/roomsFive', (req, res) => {
+    res.json([
+        {
+            id: 1,
+            imgSrc: 'http://localhost:5000/static/image/MinskRooms/roomsFive/1.jpg',
+            title: 'Снять 5-комнатную квартиру, г. Минск',
+            description: ' В непосредственной близости находятся культурно-деловой центр столицы, крупнейшие парки и торговые центры...',
+            altTitle: 'Фото квартиры',
+            city: 'Минск,  просп. Победителей, д.115',
+            textPeople: '5 (2+3)',
+            rooms: '5 комн.',
+            place: 'Двухместные',
+            cookMashins: 'Посудомоечная машина',
+            electOver: '',
+            metro: 'Фрунзенская',
+            area: 'Центральный',
+            MinPrice: '40',
+            MaxPrice: '90',
+            cook: '',
+            gaz: 'Газовая плита'
+        },
     ]);
 });
 app.listen(PORT, () => { console.log(`server is listening on port ${PORT}`); });

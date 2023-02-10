@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, useEffect, useState , MouseEvent} from "react";
+import React, { ChangeEvent, FormEvent, useEffect, useState , MouseEvent, useRef} from "react";
 import styles from './ViewRooms.module.scss';
 import  chevron from './../../image/viewRooms/chevron-down.svg';
 import  sort from './../../image/viewRooms/sort.svg';
@@ -16,33 +16,37 @@ import tg from '../../image/viewRooms/bx_bxl-telegram (1).svg';
 import wp from '../../image/viewRooms/icomoon-free_whatsapp (1).svg';
 import RowsCardsGold from '../RowsCardsGold';
 import CardsGoldViewRow from '../CardsGoldViewRow';
-import { useAppSelector } from "../../redux/hooks/hooks";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks/hooks";
 import { CardMinskRoom } from "../common/CardMinskRoom";
+import MyTableViewCardsGold from '../MyTableViewCardsGold';
+import CardsGoldSliders from '../CardsGoldSliders';
 function ViewRooms (){
-  
-    const {minskRooms, hasErrors, loading}=useAppSelector(state=>state.cityMinskRoom)
-    const [selectValue, setSelectValue]=useState('defolt');
+ const dispatch=useAppDispatch();
+    const {minskRooms, loading, hasErrors} =useAppSelector(state=>state.cityMinskRoom);
+   const divSelectRooms=useRef<HTMLDivElement>(null)
+    const [selectValue, setSelectValue]=useState('По умолчанию');
     const [data, setData]=useState<any[]>([])
     const handleRoomsSubmit=()=>{
        console.log(setData)
     }
+    
 function handleSelectRoom(event:ChangeEvent<HTMLSelectElement>){
     setSelectValue(event.target.value);
-    console.log(event.target.value)
+
 }
-{/*useEffect(()=>{
-    dispatch(FetchMinsRooms())
-  }, [dispatch]);
-*/}
-  const renderRoomMinsk=()=>{
-    if(loading){
-        <p>Загрузка результата поиска...</p>
-    }
-    if(hasErrors){
-        <p>{hasErrors}</p>
-    }
-    return minskRooms.map((minskRoom, id)=>  <CardMinskRoom key={id} minskRoom={minskRoom}/>)
-}
+
+  
+ console.log(minskRooms)
+  
+         let minskResult= minskRooms.map((el, id)=><CardMinskRoom  key={id} imgSrc={el.imgSrc} altTitle={el.altTitle} rooms={el.rooms}
+     description={el.description} id={0} city={el.city} coffeMashins={el.coffeMashins} metro={el.metro} cook={el.cook} gaz={el.gaz}
+     stove={el.stove} cookMashins={el.cookMashins}
+     electOver={el.electOver} MinPrice={el.MinPrice} textPeople={el.textPeople} title={el.title} />)
+     
+   
+
+
+
 useEffect(()=>{
     const fetchData = async () => {
         const result = await axios(
@@ -75,8 +79,8 @@ const ClickRowRooms=(e:MouseEvent)=>{
         <form className={styles.view__form} onSubmit={handleRoomsSubmit}>
             <div className={styles.viewSelect__div}>
                 <img src={sort} alt='Векторное изображение сортировки'/>
-<select className={styles.view__select} value={selectValue} onChange={handleSelectRoom}>
-    <option value='defolt'>По умолчанию</option>
+<select  value={selectValue} onChange={handleSelectRoom}>
+    <option value='По умолчанию'>По умолчанию</option>
         <option value='room1'>1 комн.</option>
         <option value='room2'>2 комн.</option>
         <option value='room3'>3 комн.</option>
@@ -92,8 +96,13 @@ const ClickRowRooms=(e:MouseEvent)=>{
     </div>
         </form>
         <p className={styles.resultText__p}>Найдено 234 результата</p>
+      {loading? <p>Загрузка результата поиска...</p>:null}
+      {hasErrors? <p>{hasErrors}</p>:null}
+        { minskRooms?<div className={styles.selectRooms__div} ref={divSelectRooms}><MyTableViewCardsGold>{minskResult} </MyTableViewCardsGold></div>:null}
+ 
+     
         {columToggle? <TableViewCardsGold>
-            <p>Слайд</p>
+            <CardsGoldSliders price={'65.00 BYN'} text1={"Минск, б-р Мулявина, д. 10"} text2={"Грушевка"} text3={"Шабаны"} descript={"Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ..."} />
         {
           
            data.map((el, id)=>{ 
@@ -123,9 +132,7 @@ const ClickRowRooms=(e:MouseEvent)=>{
 }
         </RowsCardsGold>:null
     }
-    {
-renderRoomMinsk()
-    }
+   
         <div className={styles.page__div}>
         <UlListComponent/>
         <div className={styles.rowLink__div}>

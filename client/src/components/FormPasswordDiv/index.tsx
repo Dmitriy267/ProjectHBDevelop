@@ -1,9 +1,13 @@
-import React from "react";
-import styles from './FormPasswordDiv.module.scss'
+import React, {useState, ChangeEvent} from "react";
+import styles from './FormPasswordDiv.module.scss';
 function FormPasswordDiv (){
+    const [value, setValue]=useState(2);
+    const handleChenge=(event:ChangeEvent<any>)=>{
+setValue(event.target.value)
+    }
     return(
         <div className={styles.password__div}>
-        <input type="range" min="0" max="1" step="1" value="0.5" className={styles.slider__input}/>  
+            <input type='range' defaultValue={value} onChange={handleChenge} className={styles.range__input} min={1} max={3} step={1}/>
     <p>Запомнить меня</p>
     <a href="#">Забыли пароль?</a>
     </div>

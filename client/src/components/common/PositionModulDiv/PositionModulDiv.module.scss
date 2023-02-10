@@ -1,5 +1,5 @@
 .positionModul__div{
-    position: fixed;
+    position: absolute;
     left: 0px;
     top:0px;
     right: 0px;
@@ -8,5 +8,20 @@
     justify-content: center;
     width: 1440px;
     height: 900px;
-    align-items: center;
+align-items: center;
+}
+
+@media screen and (max-width: 768px){
+    .positionModul__div{
+        position: absolute;
+    left: 0px;
+    top:0px;
+    right: 0px;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    width: 768px;
+    height: 1024px;
+align-items: center;
+    }   
 }

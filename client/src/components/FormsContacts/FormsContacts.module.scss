@@ -5,13 +5,13 @@ height: 516px;
 border-radius: 10px;
 background-color: #FFFEFE;
 box-shadow: 0px 20px 40px rgba(39, 95, 158, 0.2);
+margin-left: 31px;
 }
 .form__div{
     width: 548px;
     height: 48px+40px+200px+127px+17px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     margin-left: 38px;
     margin-top: 40px;
     align-items: center;
@@ -21,7 +21,6 @@ box-shadow: 0px 20px 40px rgba(39, 95, 158, 0.2);
     height: 17px+15px+50px;
     width: 260px*2+30px;
     margin: 0px;
-    justify-content: space-between;
 }
 
 .formgroup1__div{
@@ -70,9 +69,11 @@ padding: 0px 0px 0px 55px;
     width: 260px;
     height: 17px+15px+47.5px;
     justify-content: space-between;
+
     label{
         width: 173px;
         height: 17px;
+        margin-left: 11px;
     }
     .form__inputEmail{
         background-color: #F8F8F8;
@@ -88,7 +89,7 @@ border:0px;
     height: 50px;
     border-radius: 30px;
     display: flex;
-
+    margin-left: 11px;
     }
 }
 .mail__div{
@@ -104,6 +105,8 @@ border:0px;
     img{
         width: 17.5px;
         height: 17.5px;
+        position: absolute;
+        left: 11px;
     }
 
 }
@@ -111,7 +114,6 @@ border:0px;
 .message__div{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     width: 548px;
     height: 200px+15px+17px;
     margin-top:30px;
@@ -133,6 +135,8 @@ line-height: 17px;
 color: #686868;
 border:0px;
 resize: none;
+margin-top: 15px;
+
     }
 }
 .form__button{
@@ -144,7 +148,9 @@ font-family: 'Inter Bold';
 font-size: 16px;
 line-height: 24px;
 color: #FFFFFF;
-
+margin-top: 40px;
+border: 0px;
+outline: 0;
 }
 
 .form__input{

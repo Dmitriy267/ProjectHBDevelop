@@ -1,5 +1,4 @@
-import React, {useState, ChangeEvent, MouseEventHandler, useReducer, useEffect } from "react";
-import "./index.scss";
+import React, {useState} from "react";
 import home from "../../image/home.svg";
 import loup from "../../image/loup.svg";
 import circle from "../../image/circle.svg";
@@ -21,7 +20,7 @@ interface PageNewsListProps {
   searchArticles: string;
 }
 function PageNewsList() {
-const [data, setData]=useState(false);
+const [data, setData]=useState('');
 const dispatch=useAppDispatch();
 const {posts, loading, ErrorGet}=useAppSelector(state=>state.posts)
 
@@ -32,7 +31,7 @@ console.log(posts)
 const { register, handleSubmit } = useForm<PageNewsListProps>();
 const onSubmit: SubmitHandler<PageNewsListProps> = data => {
   console.log(data);
-  setData(data=>!data);
+  {setData(data.searchArticles)}
   const {searchArticles}=data;
   console.log(searchArticles)
   switch (searchArticles){
@@ -46,6 +45,15 @@ const onSubmit: SubmitHandler<PageNewsListProps> = data => {
           return null;
   }
 }
+
+const cardDefolt= [...Array(9)].map(( index)=>
+<CardInfoNews key={index}
+altDescript={"Фото комнаты"}
+textTitle="Линия Сталина: суровый отдых в усадьбах на сутки"
+textInfo="Чем заняться в выходные? Когда нет безотлагательных домашних дел, а на улице 
+хорошая погода, хочется уехать из города, чтобы сменить обстановку. Например, снять коттедж на сутки для семьи или большой компании друзей. А..."
+/>
+)
 const renderSearchPost=()=>{
   if (loading) {
     return <p>Загрузка данных</p>
@@ -59,16 +67,16 @@ return posts.map((el, id)=><ArticleComponent1 key={id} imgSrc={el.imgSrc} title=
     <>
     <Header/>
     <NavigationSectionProducts />
-    <section className="page-news__section">
-      <div className="block-page-news__div">
+    <section className={styles.pageNews__section}>
+      <div className={styles.pageNews__div}>
         <LinkDivTitle>
           <p className={styles.newsLink__p}>
             <a href="#">Новости</a>
           </p>
         </LinkDivTitle>
-        <p className="title-news-text__p">Новости </p>
+        <p className={styles.titleText__p}>Новости </p>
       </div>
-      <div className="block-search-articles__div_right">
+      <div className={styles.searchArticles__div}>
         <form onSubmit={handleSubmit(onSubmit)}>
         <input {...register("searchArticles", { required: false, maxLength: 20 })}placeholder="Поиск по статьям" />
         <button type="submit">
@@ -77,22 +85,12 @@ return posts.map((el, id)=><ArticleComponent1 key={id} imgSrc={el.imgSrc} title=
         </form>
       </div>
 
-        <div className="block-articles__div_center">
+        <div className={styles.blockArticles__div}>
 
-        {
-          renderSearchPost()
+        {data?renderSearchPost():cardDefolt
 }
 
-{
-    [...Array(9)].map(( index)=>
-    <CardInfoNews key={index}
-    altDescript={"Фото комнаты"}
-    textTitle="Линия Сталина: суровый отдых в усадьбах на сутки"
-    textInfo="Чем заняться в выходные? Когда нет безотлагательных домашних дел, а на улице 
-    хорошая погода, хочется уехать из города, чтобы сменить обстановку. Например, снять коттедж на сутки для семьи или большой компании друзей. А..."
-  />
-   )
-   }  
+ 
         
       </div>
     

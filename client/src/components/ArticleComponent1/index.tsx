@@ -1,5 +1,6 @@
 import React  from "react";
-import {CardDivRight} from '../common/CardDivRight';
+import styles from './ArticleComponent1.module.scss';
+import {CardRead} from '../common/CardRead';
 import {CardDivLeft} from '../common/CardDivLeft';
 import {CardDivBottom} from '../common/CardDivBottom';
 import {CardDivCommon} from '../common/CardDivCommon';
@@ -13,12 +14,12 @@ const ArticleComponent1 =({imgSrc, title, description, altTitle}:ArticleComponen
     return(
         <>
   <CardDivCommon>
-     <img src={imgSrc} alt={altTitle} />
-      <p className="card-title__p_center">{title}</p>
-      <p className="card-text-info__p">{description}</p>
+     <img src={imgSrc} alt={altTitle} className={styles.main__img}/>
+      <p className={styles.title__p}>{title}</p>
+      <p className={styles.info__p}>{description}</p>
       <CardDivBottom>
         <CardDivLeft textDataCard="14 Января 2008"/>
-        <CardDivRight ReadText="Читать" />
+        <CardRead ReadText="Читать"/>
       </CardDivBottom>
       </CardDivCommon>
 </>

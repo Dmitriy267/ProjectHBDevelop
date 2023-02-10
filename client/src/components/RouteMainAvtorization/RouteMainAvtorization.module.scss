@@ -1,5 +1,5 @@
 .positionModul__div{
-    position: fixed;
+    position: absolute;
     left: 0px;
     top:0px;
     right: 0px;
@@ -51,6 +51,8 @@ font-size: 14px;
 line-height: 17px;
 color: #1E2123;
 display: flex;
+outline: 0;
+
 }
 
 .avtorization__img{
@@ -79,11 +81,11 @@ font-size: 14px;
 line-height: 17px;
 color: #686868;
 border: 0px;
+outline: 0;
 }
 
 .text__p{
     display: flex;
-    margin-left: 25px;
     margin-top: 50px;
     margin-bottom: 0px;
     align-items: center;
@@ -106,4 +108,119 @@ line-height: 20px;
 button{
     margin-top: 38px;
 }
+}
+
+@media screen and (max-width: 768px){
+    .positionModul__div{
+        position: absolute;
+        left: 0px;
+        top:0px;
+        right: 0px;
+        bottom: 0px;
+        display: flex;
+        justify-content: center;
+        width: 768px;
+        height: 1024px;
+    }
+    .avtorization__form{
+        display: flex;
+        width: 306px;
+        height: 30px+380px+26px;
+        margin-top: 50px;
+        margin-left: 50px;
+        align-items: center;
+        flex-direction: column;
+        .form__p_bold{
+            font-family: 'Inter Bold';
+            font-size: 25px;
+    line-height: 30px;
+    color: #000000;
+    width: 167px;
+    height: 30px;
+    margin: 0px;
+        }
+        .form__p{
+            font-family: 'Inter Regular';
+            font-size: 14px;
+    line-height: 17px;
+    color: #686868;
+    width: 310px;
+    height: 34px;
+    margin: 15px 0px 35px 0px;
+    text-align: center;
+    
+        }
+    
+    }
+    .avtorization__input{
+        width: 306px;
+        height: 50px;
+        background: #FFFFFF;
+    border-radius: 30px;
+    padding: 0px 0px 0px 55px;
+    box-sizing: border-box;
+    font-family: 'Inter Medium';
+    font-size: 14px;
+    line-height: 17px;
+    color: #1E2123;
+    display: flex;
+    outline: 0;
+    
+    }
+    
+    .avtorization__img{
+        width: 20px;
+        height: 20px;
+        position: relative;
+        bottom: 35px;
+        right: 120px;   
+    }
+    .password__img{
+        width: 20px;
+        height: 20px;
+        position: relative;
+        bottom: 35px;
+        right: 120px;   
+    }
+    .password__input{
+        width: 306px;
+        height: 50px;
+        background-color: #F7F7F7;
+    border-radius: 30px;
+    padding: 0px 0px 0px 55px;
+    box-sizing: border-box;
+    font-family: 'Inter Medium';
+    font-size: 14px;
+    line-height: 17px;
+    color: #686868;
+    border: 0px;
+    outline: 0;
+    }
+    
+    .text__p{
+        display: flex;
+        margin-top: 50px;
+        margin-bottom: 0px;
+        align-items: center;
+        justify-content: space-between;
+        width: 257px;
+        height: 26px;
+        font-family: 'Inter Regular';
+        font-size: 14px;
+    line-height: 20px;
+    color: #686868;
+    a{
+        color: #664EF9;
+        font-family: 'Inter Medium';
+        font-size: 14px;
+    line-height: 20px;
+    }
+    }
+    
+    .avtorization__form{
+    button{
+        margin-top: 38px;
+    }
+    }
+    
 }

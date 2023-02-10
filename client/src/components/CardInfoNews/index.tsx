@@ -1,7 +1,6 @@
 import React from "react";
-import "./index.scss";
-import room from "../../image/room.png";
-
+import room from "../../image/room1.png";
+import styles from './CardInfoNews.module.scss';
 import {CardDivRight} from '../common/CardDivRight';
 import {CardDivLeft} from '../common/CardDivLeft';
 import {CardDivBottom} from '../common/CardDivBottom';
@@ -20,9 +19,9 @@ function CardInfoNews({
 
   return (
     <CardDivCommon>
-     <img src={room} alt={altDescript} />
-      <p className="card-title__p_center">{textTitle}</p>
-      <p className="card-text-info__p">{textInfo}</p>
+     <img src={room} alt={altDescript} className={styles.room__img}/>
+      <p className={styles.center__p}>{textTitle}</p>
+      <p className={styles.info__p}>{textInfo}</p>
       <CardDivBottom>
         <CardDivLeft textDataCard="14 Января 2008"/>
         <CardDivRight ReadText="Читать" />

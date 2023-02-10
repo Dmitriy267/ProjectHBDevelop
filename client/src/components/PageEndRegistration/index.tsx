@@ -18,13 +18,14 @@ console.log('Регистрация завершена')
     return(
         <EnterMainSection>
                <PositionModulDiv>
-               <ModuleRegistration width="406px" height="330px">
+               <div className={styles.window__div}>
                 <div className={styles.endRegist__div}>
                 <p>Подтвердите регистрацию</p>
                 <p className={styles.endRegist__p}>Письмо для подтверждения аккаунта отправлено почту. Перейдите по ссылке, указанной в письме. Если письма нет, то проверьте спам.</p>
                 <button className={styles.endRegist__button} onClick={ClickEndRegist}>Понятно</button>
                     </div>
-                </ModuleRegistration>  
+                    </div>
+                  
                </PositionModulDiv>  
             </EnterMainSection>
 

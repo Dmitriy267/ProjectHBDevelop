@@ -1,7 +1,14 @@
 .contacts__section{
     display: flex;
     height: 688px;
-    background-image: linear-gradient(0deg, rgba(126, 106, 243, 0.7) 1.04%, rgba(101, 64, 205, 0.7) 100%), url(../../image/errorPage/depositphotos.png);
+    //background-image: linear-gradient(0deg, rgba(126, 106, 243, 0.7) 1.04%, rgba(101, 64, 205, 0.7) 100%), url(../../image/errorPage/depositphotos.png);
+    background: linear-gradient(0deg, #7E6AF3 0.06%, #6540CD 100.06%), linear-gradient(90deg, #94AFFF 0%, #4E64F9 94.5%);
+flex-direction: column;
+}
+.position__img{
+    position: absolute;
+    width: 1440px;
+    height: 688px;
 }
 .contacts__div{
     display: flex;
@@ -9,13 +16,13 @@
     margin-left: 79px;
     width: 515px+31px+625px+64px+45px;
     height: 30px+396px+90px;
-    justify-content: space-between;
+    z-index: 1;
+  
 }
 .left__div{
     display: flex;
     margin: 0px;
     height: 30px+396px+90px;
-    justify-content: space-between;
     width: 515px;
     flex-direction: column;
     .title__p{
@@ -36,7 +43,8 @@ color: #FFFFFF;
 width: 515px;
 height: 72px;
 display: flex;
-margin: 0px;
+margin-bottom: 0px;
+margin-top: 30px;
     }
 }
 
@@ -47,4 +55,6 @@ font-family: 'Inter Regular';
 font-size: 14px;
 line-height: 150%;
 color: #FFFFFF;
+margin-bottom: 0px;
+margin-top: 30px;
 }

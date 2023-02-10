@@ -194,10 +194,6 @@ function TabRooms (){
         <CheckboxComponentForm label='Посудомоечная машина  ' {...register('cookMashins')} value='Посудомоечная машина  '/>
         </CheckboxComponent>
         </div>
-
-
-
-
     </div>)
 }
     </div>

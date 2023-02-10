@@ -40,6 +40,7 @@ export default function Header() {
           <div className={styles.blockLeft__div}>
             <p><a href="#">Закладки</a></p>
             <img src={heart} alt="Векторное изображение закладки" />
+
           </div>
           {user?<Login/>:<LinkRegistration/>}
           

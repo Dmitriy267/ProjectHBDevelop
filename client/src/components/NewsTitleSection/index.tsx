@@ -1,5 +1,5 @@
 import React from "react";
-import "./index.scss";
+import styles from './NewsTitleSection.module.scss';
 import MainNewsDiv from "../MainNewsDiv";
 import vk from "../../image/iconsMessage/vk.svg";
 import fb from "../../image/iconsMessage/facebook.svg";
@@ -11,7 +11,7 @@ import IconsNewsDivGroup from '../IconsNewsDivGroup';
 function NewsTitleSection() {
   return (
     <React.Fragment>
-      <section className="block-news-title__section">
+      <section className={styles.news__section}>
         <MainNewsDiv
           altImageHome="Изображение дома"
           altImageCircle="Изображение точки"
@@ -19,28 +19,28 @@ function NewsTitleSection() {
           rubricTextP="Новости"
         />
 
-        <p className="title-main-news__p_center">
-          Линия Сталина: суровый отдых в усадьбах на сутки{" "}
+        <p className={styles.news__p}>
+          Линия Сталина: суровый отдых в усадьбах на сутки
         </p>
-        <div className="main-news__div_bottom">
+        <div className={styles.newsBottom__div}>
           <DateText text='14 Января 2008'/>
-          <div className="icons-news__div_right">
+          <div className={styles.newsRight__div}>
             <p>Поделиться</p>
             <IconsNewsDivGroup>
-              <div className="icons-background__div">
-                <img src={vk} alt="Изображение иконки вконтакте" className="iconsbackground__img"/>
+              <div className={styles.icons__div}>
+                <img src={vk} alt="Изображение иконки вконтакте" className={styles.iconsbackground__img}/>
               </div>
-              <div className="icons-background__div">
-                <img src={fb} alt="Изображение иконки фейсбук" className="iconsbackground__img"/>
+              <div className={styles.icons__div}>
+                <img src={fb} alt="Изображение иконки фейсбук" className={styles.iconsbackground__img}/>
               </div>
-              <div className="icons-background__div">
-                <img src={viber} alt="Изображение иконки вайбер" className="iconsbackground__img_other"/>
+              <div className={styles.icons__div}>
+                <img src={viber} alt="Изображение иконки вайбер" className={styles.iconsOther__img}/>
               </div>
-              <div className="icons-background__div">
-                <img src={telegram} alt="Изображение иконки телеграмм" className="iconsbackground__img_other"/>
+              <div className={styles.icons__div}>
+                <img src={telegram} alt="Изображение иконки телеграмм" className={styles.iconsOther__img}/>
               </div>
-              <div className="icons-background__div">
-                <img src={whatsap} alt="Изображение иконки ватсап" className="iconsbackground__img_other"/>
+              <div className={styles.icons__div}>
+                <img src={whatsap} alt="Изображение иконки ватсап" className={styles.iconsOther__img}/>
               </div>
             </IconsNewsDivGroup>
           </div>
