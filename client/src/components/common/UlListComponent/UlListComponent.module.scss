@@ -1,0 +1,24 @@
+.numberPage__ul{
+    display: flex;
+  width: 9px+188px+17px;
+  height: 22px;
+  justify-content: space-between;
+  padding: 0px;
+  li{
+    a{
+      font-family: 'Inter Regular';
+      font-size: 18px;
+      line-height: 22px;
+      color: #686868;
+&:hover{
+  font-family: 'Inter Bold';
+font-size: 18px;
+line-height: 22px;
+color:#000;
+  border-bottom: 2px #FFD54F solid;
+  padding-bottom: 2px;
+}
+    }
+
+  }
+}

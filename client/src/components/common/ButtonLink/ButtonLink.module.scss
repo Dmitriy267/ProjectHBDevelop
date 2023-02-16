@@ -1,0 +1,16 @@
+.btnLink__button{
+    height: 26px;
+    width: auto;
+    border-radius: 17px;
+    background-color: rgba(102, 78, 249, 0.1);
+    display: flex;
+    border: 0px;
+    font-family: 'Inter Regular';
+    font-size: 14px;
+line-height: 100%;
+color: #664EF9;
+padding: 6px 10px;
+&:hover{
+    background-color: rgba(102, 78, 249, 0.2);
+}
+}

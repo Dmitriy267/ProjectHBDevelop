@@ -1,0 +1,14 @@
+.groupright__div{
+    display: flex;
+    flex-direction: column;
+    width: 45px;
+    height: 45px*3+30px;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 64px;
+    img{
+        width: 45px;
+        height: 45px;
+    }
+   
+}
